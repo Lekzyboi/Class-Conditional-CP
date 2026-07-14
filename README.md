@@ -1,4 +1,4 @@
-# Conformal Biomedical CP Framework
+﻿# Conformal Biomedical CP Framework
 
 This repository contains the code and lightweight reproducibility artifacts for the manuscript:
 
@@ -88,8 +88,8 @@ docs/ZENODO_ARCHIVE_MANIFEST.md
 
 ## Code Availability Statement
 
-The archived release DOI is `10.5281/zenodo.21362039`.
+The archived release DOI is `10.5281/zenodo.21362369`.
 
 ## Citation
 
-Citation metadata are provided in `CITATION.cff`. The archived release is available at https://doi.org/10.5281/zenodo.21362039.
+Citation metadata are provided in `CITATION.cff`. The archived release is available at https://doi.org/10.5281/zenodo.21362369.

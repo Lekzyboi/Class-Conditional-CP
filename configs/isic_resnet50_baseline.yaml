@@ -1,13 +1,10 @@
-# Baseline ISIC ResNet-50 reproduction config scaffold.
+# Baseline ISIC ResNet-50 summary reproduction config.
 name: isic_resnet50_baseline
 alpha_values: [0.05, 0.10, 0.20]
-methods: [standard_cp, aps, mondrian_cp]
+methods: [standard_cp, aps, raps, mondrian_cp, frequency_grouped_cp]
 paths:
-  checkpoint: assets/output/best_model.pth
-  test_dir: assets/ISIC_2019_Test_Organized
-  output_dir: assets/output/paper1_conformal_fairness
-  source_results_json: assets/output/paper1_conformal_fairness/complete_results.json
+  source_results_json: reproducibility_artifacts/isic_resnet50_framework_inputs/results.json
   framework_output_dir: assets/output/framework_runs/isic_resnet50_baseline
 metadata:
   split_seed: 42
-  status: summary_reproduction_until_probability_arrays_are_archived
+  status: summary_reproduction_from_release_artifact

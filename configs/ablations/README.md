@@ -13,7 +13,7 @@ The expanded conformal baseline grid includes:
 - `conf_trust_conditional`
 - `temperature_scaling`
 
-`frequency_grouped_cp` partitions classes by training-set frequency. It is not a score-distribution clustering method or a faithful RC3P implementation.
+`frequency_grouped_cp` partitions classes by training-set frequency. It is not a score-distribution clustering method.
 
 The Conf-Trust methods require extra arrays:
 

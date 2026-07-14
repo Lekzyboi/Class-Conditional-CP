@@ -1,12 +1,12 @@
-cff-version: 1.2.0
+﻿cff-version: 1.2.0
 title: "A Reproducible Evaluation Framework for Class-Conditional Conformal Prediction in Imbalanced Biomedical Image Classification"
 message: "Citation metadata for the accompanying manuscript and archived software release."
 type: software
 authors:
   - family-names: Bello
     given-names: Sadeeq O.
-date-released: 2026-07-13
-version: "0.1.0"
+date-released: 2026-07-14
+version: "v3"
 repository-code: "https://github.com/Lekzyboi/Class-Conditional-CP"
-doi: "10.5281/zenodo.21362039"
+doi: "10.5281/zenodo.21362369"
 license: MIT
