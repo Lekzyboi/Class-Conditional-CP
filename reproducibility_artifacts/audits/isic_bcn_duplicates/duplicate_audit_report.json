@@ -43639,7 +43639,7 @@
       "sample_image_ids": "ISIC_0062190;ISIC_0067779"
     }
   ],
-  "note": "Perceptual-hash groups are exact average-hash matches. They are useful screening signals and should be reviewed before treating non-identical filenames as confirmed duplicates.",
+  "note": "Perceptual-hash groups are exact average-hash matches. They are useful screening signals rather than confirmed duplicates for non-identical filenames.",
   "name": "isic_bcn_duplicate_audit",
   "output_dir": "assets\\output\\audits\\isic_bcn_duplicates"
 }

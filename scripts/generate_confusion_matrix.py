@@ -4,14 +4,14 @@ regenerate_test_predictions.py.
 
 Reads:  assets/output/test_evaluation/raw/{test_softmax,test_argmax,test_labels}.npy
 Writes: assets/output/test_evaluation/
-  confusion_matrix.csv             8?8 raw counts + row/col totals
+  confusion_matrix.csv             8x8 raw counts plus row and column totals
   confusion_matrix_normalized.csv  row-normalised (each row sums to 1.0)
   confusion_matrix.png             heatmap matching existing visual style
   prediction_frequencies.json      diagonal_pct and column_sum_pct per class
   confusion_summary.json           accuracy, per-class metrics, top-5 confusions
 
-If any Task-3 verification fails the script saves to a staging directory
-instead and exits with code 1 ? existing files are never overwritten on failure.
+If any Task-3 verification fails, the script saves to a staging directory
+and exits with code 1. Existing files are not overwritten on failure.
 """
 
 import os
@@ -43,10 +43,10 @@ AUDIT_CLASS_COUNTS = {
     "AK": 168, "BCC": 491, "BKL": 316, "DF": 46,
     "MEL": 679, "NV": 1272, "SCC": 87, "VASC": 37,
 }
-AUDIT_DIAG_SUM = 2205  # tolerance ?2
+AUDIT_DIAG_SUM = 2205  # tolerance +/- 2
 
-# confusion_analysis block (Standard CP ?=0.10 FAILED-coverage subset)
-# Each entry: (true_class, pred_class, audit_count) ? new matrix must be ? audit_count
+# confusion_analysis block for the Standard CP alpha=0.10 failed-coverage subset.
+# Each entry is (true_class, pred_class, audit_count).
 AUDIT_SUBSETS = [
     ("AK",  "BCC", 31), ("AK",  "BKL", 12), ("AK",  "MEL",  8),
     ("AK",  "NV",   3), ("AK",  "SCC",  2),
@@ -80,7 +80,7 @@ def load_arrays():
     assert labels.shape  == (N_TOTAL,), f"Unexpected labels shape {labels.shape}"
     return softmax, argmax, labels
 
-print("Loading raw prediction arrays ?")
+print("Loading raw prediction arrays.")
 softmax_arr, argmax_arr, label_arr = load_arrays()
 print(f"  test_softmax : {softmax_arr.shape}  {softmax_arr.dtype}")
 print(f"  test_argmax  : {argmax_arr.shape}   {argmax_arr.dtype}")
@@ -106,9 +106,9 @@ failures = []
 # V1: diagonal sum
 diag_sum = int(np.trace(cm))
 v1 = abs(diag_sum - AUDIT_DIAG_SUM) <= 2
-print(f"\nV1  Diagonal sum: {diag_sum}  (expected {AUDIT_DIAG_SUM} ?2)  {'OK' if v1 else 'FAIL'}")
+print(f"\nV1  Diagonal sum: {diag_sum}  (expected {AUDIT_DIAG_SUM} +/- 2)  {'OK' if v1 else 'FAIL'}")
 if not v1:
-    failures.append(f"V1 diagonal sum {diag_sum} != {AUDIT_DIAG_SUM} ?2")
+    failures.append(f"V1 diagonal sum {diag_sum} != {AUDIT_DIAG_SUM} +/- 2")
 
 # V2: per-class row sums
 print("\nV2  Per-class row sums:")
@@ -123,7 +123,7 @@ for i, code in enumerate(CLASS_CODES):
     print(f"  {code:5s}: {actual:5d}  expected {expected:5d}  {'OK' if ok else 'FAIL'}")
 
 # V3: confusion_analysis is a strict subset
-print("\nV3  confusion_analysis ? new matrix off-diagonal:")
+print("\nV3  confusion_analysis subset of new matrix off-diagonal:")
 v3 = True
 subset_detail = []
 for true_cls, pred_cls, audit_count in AUDIT_SUBSETS:
@@ -135,18 +135,18 @@ for true_cls, pred_cls, audit_count in AUDIT_SUBSETS:
         v3 = False
         failures.append(f"V3 cm[{true_cls}->{pred_cls}]={new} < audit {audit_count}")
     subset_detail.append((true_cls, pred_cls, audit_count, new, ok))
-    print(f"  [{true_cls:4s}->{pred_cls:4s}]  new={new:3d}  audit?{audit_count:2d}  {'OK' if ok else 'FAIL'}")
+    print(f"  [{true_cls:4s}->{pred_cls:4s}]  new={new:3d}  audit>={audit_count:2d}  {'OK' if ok else 'FAIL'}")
 
 all_pass = v1 and v2 and v3
 save_dir = OUT_DIR if all_pass else STAGING_DIR
 os.makedirs(save_dir, exist_ok=True)
 
 if not all_pass:
-    print("\n!  Verification failures detected ? saving to STAGING, not overwriting existing files.")
+    print("\nVerification failures detected. Saving to staging without overwriting existing files.")
     for f in failures:
         print(f"   FAIL {f}")
 else:
-    print("\nAll verifications PASSED ? saving to final output directory.")
+    print("\nAll verifications passed. Saving to final output directory.")
 
 # ============================================================
 # OUTPUT 1: Raw counts CSV (rows = true, cols = predicted)
@@ -180,7 +180,7 @@ norm_df.to_csv(norm_csv)
 print(f"Saved: {norm_csv}")
 
 # ============================================================
-# OUTPUT 3: Heatmap PNG ? matches existing visual style
+# OUTPUT 3: Heatmap PNG matching existing visual style
 #   (Blues colormap, black bold labels on axes, white annotations,
 #    seaborn linewidths, title with accuracy)
 # ============================================================
@@ -319,7 +319,7 @@ for fname in [
 
 # Verification summary
 print(f"\nVerification results:")
-print(f"  V1 Diagonal sum = {diag_sum} (expected {AUDIT_DIAG_SUM} ?2): {'OK' if v1 else 'FAIL'}")
+print(f"  V1 Diagonal sum = {diag_sum} (expected {AUDIT_DIAG_SUM} +/- 2): {'OK' if v1 else 'FAIL'}")
 print(f"  V2 Per-class row sums match audit:                           {'OK' if v2 else 'FAIL'}")
 print(f"  V3 confusion_analysis is subset of off-diagonal cells:       {'OK' if v3 else 'FAIL'}")
 
@@ -335,7 +335,7 @@ for code in CLASS_CODES:
           f"{pf['column_sum_pct']:>7.2f}%")
 
 # Resolve manuscript claims
-print(f"\nManuscript ? 3.4 claim resolution ('model predicted X in Y% of cases'):")
+print(f"\nManuscript Section 3.4 claim resolution ('model predicted X in Y% of cases'):")
 for code, claimed_pct in MANUSCRIPT_CLAIMS.items():
     pf = pred_freq[code]
     d_diff = abs(pf["diagonal_pct"]  - claimed_pct)
@@ -371,5 +371,5 @@ if bkl_mel:
     print(f"  Verdict: {'CONFIRMED as top confusion' if in_top5 else 'Present but not top-5'}")
 
 if not all_pass:
-    print(f"\n!  Outputs saved to STAGING ({STAGING_DIR})  ? existing files unchanged.")
+    print(f"\nOutputs saved to staging ({STAGING_DIR}). Existing files unchanged.")
     sys.exit(1)

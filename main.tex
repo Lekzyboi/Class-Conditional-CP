@@ -38,9 +38,7 @@
 
 \author[ufscar]{Sadeeq O. Bello\corref{cor1}}
 \ead{sadeeqbello@estudante.ufscar.br}
-\author[ufscar]{Tiago A. Almeida\corref{cor1}}
-\ead{talmeida@ufscar.br}
-\cortext[cor1]{Corresponding authors.}
+\cortext[cor1]{Corresponding author.}
 
 \affiliation[ufscar]{organization={Department of Computer Science (DComp)},
             addressline={Federal University of S{\~a}o Carlos (UFSCar)},
@@ -50,7 +48,7 @@
             country={Brazil}}
 
 \begin{abstract}
-\textbf{Background and Objective.} Marginal conformal prediction guarantees can hold even when clinically important diagnostic classes remain under-covered, especially under the class imbalance common in biomedical image classification. We present a reproducible evaluation pipeline for auditing conformal prediction beyond marginal validity.
+\textbf{Background and Objective.} Marginal conformal prediction guarantees can hold even when clinically important diagnostic classes remain under-covered, especially under the class imbalance common in biomedical image classification. This study presents a reproducible evaluation pipeline for auditing conformal prediction beyond marginal validity.
 \textbf{Methods.} Given stored probability arrays, labels, split indices, class mappings, and provenance manifests, the pipeline compares standard conformal prediction, adaptive and regularized adaptive prediction sets, Mondrian/classwise calibration, and frequency-grouped calibration. It reports marginal, per-class, prevalence-stratified, and size-stratified coverage with bootstrap confidence intervals and per-class below-target tests, and includes non-destructive split, overlap, and duplicate-checking utilities.
 \textbf{Results.} On an eight-class ISIC 2019 dermatoscopic classification task using a fixed ResNet-50 checkpoint, standard conformal prediction reached 0.8995 marginal coverage at 90\% target coverage yet nominally under-covered five of eight classes. Per-class coverage ranged from 0.6667 for actinic keratosis to 0.9662 for melanocytic nevus, and the descriptive high-versus-low prevalence coverage gap was 0.1900. Mondrian/classwise calibration reduced this gap to 0.0189 while increasing average set size from 2.04 to 2.67. Frequency-grouped calibration reduced it to 0.0408 at average set size 2.50.
 \textbf{Conclusions.} Biomedical conformal prediction studies should report class-conditional reliability, dataset provenance, and overlap structure alongside marginal validity.
@@ -74,15 +72,15 @@ Dermatoscopic classification is a useful stress test because lesion datasets com
 
 Biomedical researchers need reproducible software that evaluates conformal predictors beyond marginal validity. Such software should operate on archived model outputs, preserve split and provenance information, compare calibration strategies, quantify class-conditional failures, and flag dataset overlap that would invalidate independent-validation claims.
 
-We describe a reproducible evaluation pipeline for class-conditional conformal coverage in imbalanced biomedical image classification. The pipeline is demonstrated on ISIC 2019, but its inputs are generic probability arrays and labels.
+This study describes a reproducible evaluation pipeline for class-conditional conformal coverage in imbalanced biomedical image classification. The pipeline is demonstrated on ISIC 2019, but its inputs are generic probability arrays and labels.
 
 The main contributions of this study are as follows.
 \begin{itemize}
-    \item \textit{Evaluation pipeline.} We implement a modular pipeline that consumes stored probabilities, labels, split indices, class mappings, configuration files, and provenance manifests. Results can be reproduced from a fixed checkpoint without retraining.
-    \item \textit{Calibration comparison.} We compare global, adaptive, regularized adaptive, Mondrian/classwise, and frequency-grouped calibration using marginal coverage, average set size, per-class coverage, prevalence-stratified coverage, size-stratified coverage, and prevalence coverage gaps.
-    \item \textit{Uncertainty quantification.} We report bootstrap confidence intervals for global metrics and exact per-class below-target tests with Holm correction.
-    \item \textit{Provenance tooling.} We include non-destructive utilities for split reproduction, overlap detection and filtering, and duplicate screening, so that sensitivity analyses remain separated from independent-validation claims.
-    \item \textit{Demonstration.} We apply the pipeline to an eight-class dermatoscopic classification task and show that standard conformal prediction can achieve near-nominal marginal coverage while substantially under-covering low-prevalence or difficult diagnostic classes.
+    \item \textit{Evaluation pipeline.} The study implements a modular pipeline that consumes stored probabilities, labels, split indices, class mappings, configuration files, and provenance manifests. Results can be reproduced from a fixed checkpoint without retraining.
+    \item \textit{Calibration comparison.} The study compares global, adaptive, regularized adaptive, Mondrian/classwise, and frequency-grouped calibration using marginal coverage, average set size, per-class coverage, prevalence-stratified coverage, size-stratified coverage, and prevalence coverage gaps.
+    \item \textit{Uncertainty quantification.} The framework reports bootstrap confidence intervals for global metrics and exact per-class below-target tests with Holm correction.
+    \item \textit{Provenance tooling.} The framework includes non-destructive utilities for split reproduction, overlap detection and filtering, and duplicate screening, so that sensitivity analyses remain separated from independent-validation claims.
+    \item \textit{Demonstration.} The pipeline is applied to an eight-class dermatoscopic classification task and shows that standard conformal prediction can achieve near-nominal marginal coverage while substantially under-covering low-prevalence or difficult diagnostic classes.
 \end{itemize}
 
 Section~\ref{sec-related-work} summarizes related work. Section~\ref{sec-framework} describes the framework. Section~\ref{sec-case-study} presents the case study. Section~\ref{sec-results} reports results, and Section~\ref{sec-discussion} discusses implications and limitations.
@@ -196,7 +194,7 @@ The selected checkpoint achieved 71.2\% top-1 accuracy on the conformal test sub
 
 \subsection{Evaluation Protocol}
 
-We evaluated $\alpha \in \{0.05,0.10,0.20\}$, corresponding to target coverage levels of 95\%, 90\%, and 80\%. The primary results emphasize $\alpha=0.10$, while the full grid shows changes across operating points.
+The evaluation used $\alpha \in \{0.05,0.10,0.20\}$, corresponding to target coverage levels of 95\%, 90\%, and 80\%. The primary results emphasize $\alpha=0.10$, while the full grid shows changes across operating points.
 
 The main framework run evaluated the standard CP, APS, RAPS, Mondrian/classwise CP, and frequency-grouped CP. Bootstrap intervals used 1,000 resamples with fixed random seeds. Per-class below-target tests were computed using exact binomial tests with Holm correction across the eight diagnostic classes for each method and target level.
 
@@ -369,7 +367,7 @@ The grouped calibration procedure used class frequency rather than score-distrib
 \section{Conclusion}
 \label{sec-conclusion}
 
-We described a reproducible evaluation pipeline for class-conditional conformal prediction in imbalanced biomedical image classification. In the fixed-checkpoint ISIC 2019 case study, standard CP achieved near-nominal marginal coverage while under-covering several diagnostic classes. Mondrian/classwise calibration reduced the high-versus-low prevalence gap from 0.1900 to 0.0189 with larger prediction sets, while frequency-grouped calibration gave a prevalence-gap point estimate of 0.0408.
+This study described a reproducible evaluation pipeline for class-conditional conformal prediction in imbalanced biomedical image classification. In the fixed-checkpoint ISIC 2019 case study, standard CP achieved near-nominal marginal coverage while under-covering several diagnostic classes. Mondrian/classwise calibration reduced the high-versus-low prevalence gap from 0.1900 to 0.0189 with larger prediction sets, while frequency-grouped calibration gave a prevalence-gap point estimate of 0.0408.
 
 Biomedical conformal prediction studies should report class-conditional reliability, prevalence-stratified behavior, set-size trade-offs, and provenance checks for secondary datasets alongside marginal coverage. Without these, a system can appear well calibrated while failing on clinically important diagnostic categories.
 
@@ -382,13 +380,13 @@ This study did not receive any specific grants from funding agencies in the publ
 This study used publicly available, de-identified dermatoscopic images from the ISIC 2019 Challenge and BCN20000 dataset releases. Ethics approval was not required for this secondary analysis of public data. All original data collections were conducted under the ethical approvals, consent procedures, and governance frameworks described in the primary dataset publications and releases.
 
 \subsection*{Author Contributions}
-Sadeeq O. Bello. Conceptualization, methodology, software, validation, formal analysis, investigation, data curation, visualization, and writing original draft. Tiago A. Almeida. Conceptualization, methodology, supervision, writing review and editing, and project administration. The authors have read and approved the final manuscript.
+Sadeeq O. Bello. Conceptualization, methodology, software, validation, formal analysis, investigation, data curation, visualization, and writing original draft. The author has read and approved the final manuscript.
 
 \subsection*{Declaration of competing interest}
-The authors declare no conflicts of interest relevant to this study.
+The author declares no conflicts of interest relevant to this study.
 
 \subsection*{Code Availability}
-The source code, configuration files, environment specification, exported manifests, and analysis scripts are available at \url{https://github.com/Lekzyboi/Class-Conditional-CP}. The release used for this manuscript will be archived with a permanent DOI before submission. The framework is organized to reproduce the conformal analyses from archived probability arrays and labels without retraining the base classifier.
+The source code, configuration files, environment specification, exported manifests, and analysis scripts are available at \url{https://github.com/Lekzyboi/Class-Conditional-CP}. The release used for this manuscript is archived at Zenodo with DOI \url{https://doi.org/10.5281/zenodo.21361646}. The framework is organized to reproduce the conformal analyses from archived probability arrays and labels without retraining the base classifier.
 
 \subsection*{Data availability}
 The datasets used in this study are publicly available from the ISIC 2019 Challenge and BCN20000 dataset releases cited in the manuscript. Derived artifacts generated in this study include calibration/test split indices, class mappings, overlap-filter manifests, prediction manifests, result tables, and figure-generation outputs.

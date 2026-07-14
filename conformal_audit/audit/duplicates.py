@@ -78,7 +78,7 @@ def audit_duplicates(
         "within_dataset_perceptual_hash_groups": within_perceptual_groups,
         "note": (
             "Perceptual-hash groups are exact average-hash matches. They are useful screening signals "
-            "and should be reviewed before treating non-identical filenames as confirmed duplicates."
+            "and are screening signals rather than confirmed duplicates for non-identical filenames."
         ),
     }
 

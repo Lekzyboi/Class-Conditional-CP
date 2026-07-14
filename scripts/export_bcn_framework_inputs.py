@@ -135,7 +135,7 @@ def import_torch_stack():
         from torch.utils.data import Dataset, DataLoader
         from torchvision import models, transforms
     except ModuleNotFoundError as exc:
-        print("Missing PyTorch/torchvision runtime. Run inside an environment such as `skincon`.", file=sys.stderr)
+        print("Missing PyTorch/torchvision runtime for BCN export.", file=sys.stderr)
         raise exc
     return torch, nn, Dataset, DataLoader, models, transforms, tqdm
 

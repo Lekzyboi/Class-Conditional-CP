@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This manifest describes the model checkpoint used to export the probability arrays for the manuscript analyses. The checkpoint is not included in the GitHub repository because it is a large binary artifact. It should be deposited in the archived release together with the exported arrays and labels.
+This manifest describes the model checkpoint used to export the probability arrays for the manuscript analyses. The checkpoint is not included in the GitHub repository because it is a large binary artifact. The archived release is identified by DOI `10.5281/zenodo.21361646`.
 
 ## Main Checkpoint
 
@@ -28,6 +28,6 @@ This manifest describes the model checkpoint used to export the probability arra
 
 The conformal evaluation is deterministic given the exported arrays. The original training run did not fully record all random seeds, so independently retraining the same architecture may not reproduce the exact checkpoint. This limitation is stated in the manuscript.
 
-## Archive Requirement
+## Archive Record
 
-Before submission, deposit `best_model.pth` in the Zenodo release or another permanent archive. The DOI archive should also include the exported probability arrays, labels, split indices, class mapping, final configs, generated tables, and the Git commit identifier for the public code release.
+The archive record for this release is `10.5281/zenodo.21361646`. The binary reproducibility set tracked for this manuscript consists of the checkpoint, exported probability arrays, labels, split indices, class mapping, final configs, generated tables, and the Git commit identifier for the public code release.

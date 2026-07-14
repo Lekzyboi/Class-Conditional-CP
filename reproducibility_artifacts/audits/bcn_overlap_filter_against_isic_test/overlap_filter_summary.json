@@ -22,7 +22,7 @@
     "image_stem_in_source_metadata": 6533,
     "target_metadata_identifier_in_source_metadata": 6533
   },
-  "note": "This manifest is non-destructive. It only marks target images that should be excluded from an independence claim because their image stem or metadata identifiers overlap the source.",
+  "note": "This manifest is non-destructive. It marks target images excluded from independence claims because their image stem or metadata identifiers overlap the source.",
   "name": "bcn_overlap_filter_against_isic_test",
   "output_dir": "assets\\output\\audits\\bcn_overlap_filter_against_isic_test"
 }

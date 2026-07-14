@@ -1,8 +1,8 @@
 # Overlap-aware BCN sensitivity analysis.
 #
 # This uses ISIC calibration arrays and evaluates the existing checkpoint on
-# non-overlapping, mappable BCN kept images. It must not be described as
-# independent external validation.
+# mappable BCN kept images after partial identifier-overlap filtering.
+# Interpretation is limited to sensitivity analysis.
 name: bcn_kept_overlap_aware_sensitivity
 alpha_values: [0.05, 0.10, 0.20]
 methods: [standard_cp, aps, raps, mondrian_cp, frequency_grouped_cp]

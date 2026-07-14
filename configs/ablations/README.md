@@ -2,7 +2,7 @@
 
 This folder holds config files for expanded method grids, polynomial degree, binning strategy, and trust-score k-NN ablations.
 
-The full conformal baseline grid should include:
+The expanded conformal baseline grid includes:
 
 - `standard_cp`
 - `aps`

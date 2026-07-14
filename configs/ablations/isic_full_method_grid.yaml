@@ -1,7 +1,6 @@
-# Full ISIC method-grid config template.
-#
-# This config requires archived calibration/test probability arrays before it can
-# recompute all method outputs. The current baseline summary config remains:
+# Full ISIC method-grid config.
+# Inputs are archived calibration/test probability arrays.
+# Baseline summary config:
 # configs/isic_resnet50_baseline.yaml
 name: isic_resnet50_full_method_grid
 alpha_values: [0.05, 0.10, 0.20]

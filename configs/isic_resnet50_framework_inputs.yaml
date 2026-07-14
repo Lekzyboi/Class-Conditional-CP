@@ -1,7 +1,5 @@
-# Config for rerunning the current ResNet-50 checkpoint through the framework.
-#
-# Before using this config, export arrays with:
-# python scripts/export_framework_inputs.py
+# Config for the ResNet-50 checkpoint evaluation reported in the manuscript.
+# Probability arrays were exported with scripts/export_framework_inputs.py.
 name: isic_resnet50_framework_inputs
 alpha_values: [0.05, 0.10, 0.20]
 methods: [standard_cp, aps, raps, mondrian_cp, frequency_grouped_cp]

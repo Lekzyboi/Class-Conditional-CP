@@ -9,8 +9,7 @@ description = "Reproducible evaluation framework for class-conditional conformal
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
-  {name = "Sadeeq O. Bello"},
-  {name = "Tiago A. Almeida"}
+  {name = "Sadeeq O. Bello"}
 ]
 dependencies = [
   "numpy",

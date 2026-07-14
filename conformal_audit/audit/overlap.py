@@ -198,8 +198,8 @@ def build_overlap_filter_manifest(
         "reason_counts": dict(sorted(reason_counts.items())),
         "manifest_rows": manifest_rows,
         "note": (
-            "This manifest is non-destructive. It only marks target images that should be excluded "
-            "from an independence claim because their image stem or metadata identifiers overlap the source."
+            "This manifest is non-destructive. It marks target images excluded from independence claims "
+            "because their image stem or metadata identifiers overlap the source."
         ),
     }
 

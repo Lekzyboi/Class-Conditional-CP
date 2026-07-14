@@ -17,11 +17,11 @@ The framework evaluates conformal prediction methods from exported probability a
 
 ## What Is Not Included
 
-The public ISIC 2019 and BCN20000 images are not redistributed here. Download them from their original public release pages and place them under the paths expected by the relevant config files. Model checkpoints are also not included because they are binary artifacts and should be archived separately if released.
+The public ISIC 2019 and BCN20000 images are not redistributed here. Local reruns use the original dataset releases under the paths recorded in the configuration files. Model checkpoints and exported NumPy arrays are tracked through the Zenodo archive manifest rather than stored in GitHub.
 
 ## Environment
 
-Create the environment with:
+Conda environment:
 
 ```bash
 conda env create -f environment.yml
@@ -32,7 +32,7 @@ For lightweight framework tests, a modern Python environment with `numpy`, `scip
 
 ## Quick Checks
 
-Run the test suite:
+Test suite:
 
 ```bash
 pytest
@@ -50,9 +50,9 @@ Regenerate figures from an existing result file:
 python -m conformal_audit.cli report figures --results reproducibility_artifacts/isic_resnet50_framework_inputs/results.json
 ```
 
-## Running A Framework Evaluation
+## Framework Evaluation Command
 
-After exporting probability arrays and labels, run:
+Framework evaluations use configuration files such as `configs/isic_resnet50_framework_inputs.yaml`:
 
 ```bash
 python -m conformal_audit.cli run --config configs/isic_resnet50_framework_inputs.yaml
@@ -80,7 +80,7 @@ The partial identifier-overlap BCN20000 sensitivity artifacts are in:
 reproducibility_artifacts/bcn_kept_overlap_aware_sensitivity/
 ```
 
-The binary array and checkpoint files that should be deposited in Zenodo are listed in:
+The binary array and checkpoint files associated with the Zenodo release are listed in:
 
 ```text
 docs/ZENODO_ARCHIVE_MANIFEST.md
@@ -88,8 +88,8 @@ docs/ZENODO_ARCHIVE_MANIFEST.md
 
 ## Code Availability Statement
 
-Before manuscript submission, replace the remaining DOI placeholder in `docs/CODE_AVAILABILITY_TEMPLATE.md` with the archived release DOI.
+The archived release DOI is `10.5281/zenodo.21361646`.
 
 ## Citation
 
-Use the `CITATION.cff` file after adding the final Zenodo DOI.
+Citation metadata are provided in `CITATION.cff`. The archived release is available at https://doi.org/10.5281/zenodo.21361646.

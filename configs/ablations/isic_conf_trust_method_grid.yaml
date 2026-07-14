@@ -1,6 +1,5 @@
-# ISIC Conf-Trust method-grid config template.
-#
-# Requires archived calibration/test probability arrays plus trust-score arrays.
+# ISIC Conf-Trust method-grid config.
+# Inputs are archived calibration/test probability arrays plus trust-score arrays.
 name: isic_resnet50_conf_trust_method_grid
 alpha_values: [0.05, 0.10, 0.20]
 methods: [standard_cp, conf_trust_naive, conf_trust_conditional]
