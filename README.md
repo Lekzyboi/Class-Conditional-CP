@@ -88,8 +88,8 @@ docs/ZENODO_ARCHIVE_MANIFEST.md
 
 ## Code Availability Statement
 
-The archived release DOI is `10.5281/zenodo.21361646`.
+The archived release DOI is `10.5281/zenodo.21362039`.
 
 ## Citation
 
-Citation metadata are provided in `CITATION.cff`. The archived release is available at https://doi.org/10.5281/zenodo.21361646.
+Citation metadata are provided in `CITATION.cff`. The archived release is available at https://doi.org/10.5281/zenodo.21362039.
