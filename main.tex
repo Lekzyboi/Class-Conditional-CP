@@ -151,7 +151,7 @@ Standard CP uses a single global threshold for all calibration scores. It target
 Adaptive prediction sets (APS) order labels by descending probability and calibrate the cumulative probability mass assigned up to the true label~\cite{romano2020classification}. Ties are handled deterministically, labels are included while their cumulative sorted probability is below the calibrated threshold, and the top-ranked label is returned if the set would otherwise be empty. The implementation omits randomized perturbation.
 
 \paragraph{Deterministic regularized adaptive prediction sets with argmax fallback.}
-Regularized adaptive prediction sets (RAPS) extend APS by penalizing lower-ranked labels when the probability mass is diffuse. The score is the APS cumulative score plus $\lambda \max(r-k_{\mathrm{reg}},0)$, where $r$ is the one-indexed label rank, $\lambda=0.01$, and $k_{\mathrm{reg}}=3$. These parameters are fixed rather than selected on the calibration or test set.
+Regularized adaptive prediction sets (RAPS) extend APS by penalizing lower-ranked labels when the probability mass is diffuse~\cite{angelopoulos2021raps}. The score is the APS cumulative score plus $\lambda \max(r-k_{\mathrm{reg}},0)$, where $r$ is the one-indexed label rank, $\lambda=0.01$, and $k_{\mathrm{reg}}=3$. These parameters are fixed rather than selected on the calibration or test set.
 
 \paragraph{Mondrian/classwise conformal prediction.}
 The Mondrian CP computes a separate threshold for each true class in the calibration set~\cite{vovk2005algorithmic,balasubramanian2014conformal}. In this multiclass setting, the classwise CP is the same class-conditional procedure and is reported as an explicit alias for clarity.
@@ -169,7 +169,7 @@ For each method and value of $\alpha$, the framework reports marginal coverage, 
 \]
 A positive value indicates higher macro-average coverage for high-prevalence classes than for low-prevalence classes. Here, $\mathcal{H}=\{\mathrm{NV}\}$ and $\mathcal{L}=\{\mathrm{DF},\mathrm{SCC},\mathrm{VASC}\}$, so the gap compares NV with the average of the three lowest-prevalence classes. It is descriptive, not a worst-class disparity metric, and medium-prevalence classes such as AK are evaluated through per-class tables and tests.
 
-Size-stratified coverage groups test samples by prediction-set cardinality. Bootstrap confidence intervals were percentile intervals computed by resampling test images. Per-class below-target tests used the null hypothesis $H_0, p_c \geq 1-\alpha$ and the alternative $H_1, p_c < 1-\alpha$. Tests used one-sided exact binomial tails at significance level 0.05, with Holm correction across the eight classes within each method and target level. Raw and Holm-adjusted $p$ values are reported in Supplementary Table S2 and in the generated table artifact \texttt{per\_class\_below\_target\_tests.csv}.
+Size-stratified coverage groups test samples by prediction-set cardinality. The metric module supports this stratification, but it was not computed for the archived ISIC 2019 run reported here and is left for a future release of the result artifacts. Bootstrap confidence intervals were percentile intervals computed by resampling test images. Per-class below-target tests used the null hypothesis $H_0, p_c \geq 1-\alpha$ and the alternative $H_1, p_c < 1-\alpha$. Tests used one-sided exact binomial tails at significance level 0.05, with Holm correction across the eight classes within each method and target level. Raw and Holm-adjusted $p$ values are reported in the generated table artifact \texttt{per\_class\_below\_target\_tests.csv}, released with the code and data archive.
 
 \subsection{Dataset Provenance Checks}
 
@@ -362,7 +362,7 @@ The ISIC 2019 organized test metadata did not provide patient or lesion identifi
 
 The BCN20000 experiment was a sensitivity analysis. The overlap filter was based on organized ISIC 2019 test images and did not establish absence of overlap with every image used during model development. The retained subset should not be interpreted as prospective clinical validation, and the high coverage values motivate additional overlap, score-distribution, and difficulty diagnostics.
 
-The grouped calibration procedure used class frequency rather than score-distribution clustering or label-rank calibration. Full label-rank class-conditional methods such as RC3P remain future work. The demonstration also focused on disease class and prevalence strata, not demographics, devices, institutions, or image quality.
+The grouped calibration procedure used class frequency rather than score-distribution clustering or label-rank calibration. Clustered conformal prediction, RC3P, and equalized-coverage calibration are discussed in Section~\ref{sec-related-work} as alternative class-conditional strategies but were not implemented or benchmarked here; frequency-grouped CP is a simpler proxy for that family of methods, and a direct comparison remains future work. The demonstration also focused on disease class and prevalence strata, not demographics, devices, institutions, or image quality.
 
 \section{Conclusion}
 \label{sec-conclusion}
@@ -379,11 +379,14 @@ This study did not receive any specific grants from funding agencies in the publ
 \subsection*{Ethics approval}
 This study used publicly available, de-identified dermatoscopic images from the ISIC 2019 Challenge and BCN20000 dataset releases. Ethics approval was not required for this secondary analysis of public data. All original data collections were conducted under the ethical approvals, consent procedures, and governance frameworks described in the primary dataset publications and releases.
 
-\subsection*{Author Contributions}
-Sadeeq O. Bello. Conceptualization, methodology, software, validation, formal analysis, investigation, data curation, visualization, and writing original draft. The author has read and approved the final manuscript.
+\subsection*{CRediT authorship contribution statement}
+Sadeeq O. Bello: Conceptualization, Methodology, Software, Validation, Formal analysis, Investigation, Data curation, Visualization, Writing -- original draft. The author has read and approved the final manuscript.
 
 \subsection*{Declaration of competing interest}
 The author declares no conflicts of interest relevant to this study.
+
+\subsection*{Use of AI-assisted tools}
+AI-assisted coding tools supported development of the analysis and evaluation software, including refactoring the conformal prediction methods into the shared framework, writing unit tests, and generating reproducibility documentation. The author specified the experimental design, reviewed all generated code, and independently verified the reported coverage, set-size, and statistical-test values against the exported probability arrays. This declaration covers the analysis-code process only.
 
 \subsection*{Code Availability}
 The source code, configuration files, environment specification, exported manifests, and analysis scripts are available at \url{https://github.com/Lekzyboi/Class-Conditional-CP}. The release used for this manuscript is archived at Zenodo with DOI \url{https://doi.org/10.5281/zenodo.21362694}. The framework is organized to reproduce the conformal analyses from archived probability arrays and labels without retraining the base classifier.
