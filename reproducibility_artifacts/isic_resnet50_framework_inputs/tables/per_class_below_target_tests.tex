@@ -1,0 +1,52 @@
+\begin{table}[htbp]
+\centering
+\caption{Multiplicity-adjusted per-class below-target coverage tests.}
+\label{tab:per\_class\_tests}
+\begin{tabular}{llllllllllll}
+\hline
+Method & alpha & class\_name & count & covered & coverage\_rate & target\_coverage & p\_value & adjustment & adjusted\_p\_value & below\_target & significant\_below\_target \\
+\hline
+standard\_cp & 0.0500 & AK & 168 & 148 & 0.8810 & 0.9500 & 0.0003 & holm & 0.0021 & True & True \\
+standard\_cp & 0.0500 & BCC & 491 & 478 & 0.9735 & 0.9500 & 0.9966 & holm & 1.0000 & False & False \\
+standard\_cp & 0.0500 & BKL & 316 & 274 & 0.8671 & 0.9500 & 0.0000 & holm & 0.0000 & True & True \\
+standard\_cp & 0.0500 & DF & 46 & 43 & 0.9348 & 0.9500 & 0.4060 & holm & 1.0000 & True & False \\
+standard\_cp & 0.0500 & MEL & 679 & 658 & 0.9691 & 0.9500 & 0.9941 & holm & 1.0000 & False & False \\
+standard\_cp & 0.0500 & NV & 1272 & 1250 & 0.9827 & 0.9500 & 1.0000 & holm & 1.0000 & False & False \\
+standard\_cp & 0.0500 & SCC & 87 & 79 & 0.9080 & 0.9500 & 0.0696 & holm & 0.3481 & True & False \\
+standard\_cp & 0.0500 & VASC & 37 & 30 & 0.8108 & 0.9500 & 0.0021 & holm & 0.0128 & True & True \\
+aps & 0.0500 & AK & 168 & 155 & 0.9226 & 0.9500 & 0.0797 & holm & 0.5576 & True & False \\
+aps & 0.0500 & BCC & 491 & 485 & 0.9878 & 0.9500 & 1.0000 & holm & 1.0000 & False & False \\
+aps & 0.0500 & BKL & 316 & 299 & 0.9462 & 0.9500 & 0.4137 & holm & 1.0000 & True & False \\
+aps & 0.0500 & DF & 46 & 44 & 0.9565 & 0.9500 & 0.6768 & holm & 1.0000 & False & False \\
+aps & 0.0500 & MEL & 679 & 671 & 0.9882 & 0.9500 & 1.0000 & holm & 1.0000 & False & False \\
+aps & 0.0500 & NV & 1272 & 1247 & 0.9803 & 0.9500 & 1.0000 & holm & 1.0000 & False & False \\
+aps & 0.0500 & SCC & 87 & 84 & 0.9655 & 0.9500 & 0.8161 & holm & 1.0000 & False & False \\
+aps & 0.0500 & VASC & 37 & 30 & 0.8108 & 0.9500 & 0.0021 & holm & 0.0171 & True & True \\
+raps & 0.0500 & AK & 168 & 142 & 0.8452 & 0.9500 & 0.0000 & holm & 0.0000 & True & True \\
+raps & 0.0500 & BCC & 491 & 478 & 0.9735 & 0.9500 & 0.9966 & holm & 1.0000 & False & False \\
+raps & 0.0500 & BKL & 316 & 281 & 0.8892 & 0.9500 & 0.0000 & holm & 0.0001 & True & True \\
+raps & 0.0500 & DF & 46 & 42 & 0.9130 & 0.9500 & 0.1969 & holm & 0.9845 & True & False \\
+raps & 0.0500 & MEL & 679 & 669 & 0.9853 & 0.9500 & 1.0000 & holm & 1.0000 & False & False \\
+raps & 0.0500 & NV & 1272 & 1248 & 0.9811 & 0.9500 & 1.0000 & holm & 1.0000 & False & False \\
+raps & 0.0500 & SCC & 87 & 81 & 0.9310 & 0.9500 & 0.2688 & holm & 1.0000 & True & False \\
+raps & 0.0500 & VASC & 37 & 31 & 0.8378 & 0.9500 & 0.0095 & holm & 0.0572 & True & False \\
+mondrian\_cp & 0.0500 & AK & 168 & 160 & 0.9524 & 0.9500 & 0.6061 & holm & 1.0000 & False & False \\
+mondrian\_cp & 0.0500 & BCC & 491 & 462 & 0.9409 & 0.9500 & 0.2036 & holm & 1.0000 & True & False \\
+mondrian\_cp & 0.0500 & BKL & 316 & 305 & 0.9652 & 0.9500 & 0.9209 & holm & 1.0000 & False & False \\
+mondrian\_cp & 0.0500 & DF & 46 & 44 & 0.9565 & 0.9500 & 0.6768 & holm & 1.0000 & False & False \\
+mondrian\_cp & 0.0500 & MEL & 679 & 635 & 0.9352 & 0.9500 & 0.0505 & holm & 0.4041 & True & False \\
+mondrian\_cp & 0.0500 & NV & 1272 & 1212 & 0.9528 & 0.9500 & 0.6962 & holm & 1.0000 & False & False \\
+mondrian\_cp & 0.0500 & SCC & 87 & 85 & 0.9770 & 0.9500 & 0.9357 & holm & 1.0000 & False & False \\
+mondrian\_cp & 0.0500 & VASC & 37 & 33 & 0.8919 & 0.9500 & 0.1119 & holm & 0.7832 & True & False \\
+classwise\_cp & 0.0500 & AK & 168 & 160 & 0.9524 & 0.9500 & 0.6061 & holm & 1.0000 & False & False \\
+classwise\_cp & 0.0500 & BCC & 491 & 462 & 0.9409 & 0.9500 & 0.2036 & holm & 1.0000 & True & False \\
+classwise\_cp & 0.0500 & BKL & 316 & 305 & 0.9652 & 0.9500 & 0.9209 & holm & 1.0000 & False & False \\
+classwise\_cp & 0.0500 & DF & 46 & 44 & 0.9565 & 0.9500 & 0.6768 & holm & 1.0000 & False & False \\
+classwise\_cp & 0.0500 & MEL & 679 & 635 & 0.9352 & 0.9500 & 0.0505 & holm & 0.4041 & True & False \\
+classwise\_cp & 0.0500 & NV & 1272 & 1212 & 0.9528 & 0.9500 & 0.6962 & holm & 1.0000 & False & False \\
+classwise\_cp & 0.0500 & SCC & 87 & 85 & 0.9770 & 0.9500 & 0.9357 & holm & 1.0000 & False & False \\
+classwise\_cp & 0.0500 & VASC & 37 & 33 & 0.8919 & 0.9500 & 0.1119 & holm & 0.7832 & True & False \\
+\multicolumn{12}{l}{Table truncated to first 40 rows.} \\
+\hline
+\end{tabular}
+\end{table}

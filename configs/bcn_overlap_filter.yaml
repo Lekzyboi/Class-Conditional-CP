@@ -1,0 +1,12 @@
+# Non-destructive partial identifier-overlap BCN keep/exclude manifest.
+name: bcn_overlap_filter_against_isic_test
+paths:
+  source_dir: assets/ISIC_2019_Test_Organized
+  target_dir: assets/bcn_20000_data
+  source_metadata: assets/ISIC_2019_Test_GroundTruth.csv
+  target_metadata: assets/bcn_20000_data/metadata.csv
+  output_dir: assets/output/audits/bcn_overlap_filter_against_isic_test
+metadata:
+  source_name: ISIC_2019_Test_Organized
+  target_name: BCN20000
+  id_columns: [image, isic_id, lesion_id, patient_id]

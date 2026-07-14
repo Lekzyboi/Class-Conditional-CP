@@ -1,0 +1,13 @@
+# BCN partial identifier-overlap sensitivity analysis config scaffold.
+name: bcn_sensitivity
+alpha_values: [0.05, 0.10, 0.20]
+methods: [standard_cp, aps, mondrian_cp]
+paths:
+  checkpoint: assets/output/best_model.pth
+  bcn_metadata: metadata.csv
+  bcn_images_dir: assets/bcn_20000_data
+  output_dir: assets/output/paper1_bcn20000_validation
+metadata:
+  split_seed: 42
+  status: scaffold
+  interpretation: partial identifier-overlap sensitivity analysis, not independent external validation

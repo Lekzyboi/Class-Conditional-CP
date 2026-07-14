@@ -1,0 +1,4500 @@
+{
+  "name": "isic_resnet50_framework_inputs",
+  "mode": "probability_arrays",
+  "output_dir": "assets\\output\\framework_runs\\isic_resnet50_framework_inputs",
+  "comparison_table": [
+    {
+      "Method": "standard_cp",
+      "alpha": 0.05,
+      "Coverage": 0.9560723514211886,
+      "Avg Size": 2.988372093023256,
+      "Coverage Equity Gap": 0.09815793700973752,
+      "# Below Target": 5,
+      "Coverage CI Low": 0.9492894056847545,
+      "Coverage CI High": 0.9628552971576227
+    },
+    {
+      "Method": "aps",
+      "alpha": 0.05,
+      "Coverage": 0.9738372093023255,
+      "Avg Size": 4.46673126614987,
+      "Coverage Equity Gap": 0.06939598150950022,
+      "# Below Target": 3,
+      "Coverage CI Low": 0.9686692506459949,
+      "Coverage CI High": 0.979328165374677
+    },
+    {
+      "Method": "raps",
+      "alpha": 0.05,
+      "Coverage": 0.9599483204134367,
+      "Avg Size": 3.587532299741602,
+      "Coverage Equity Gap": 0.08716014251925552,
+      "# Below Target": 5,
+      "Coverage CI Low": 0.9528423772609819,
+      "Coverage CI High": 0.9664082687338501
+    },
+    {
+      "Method": "mondrian_cp",
+      "alpha": 0.05,
+      "Coverage": 0.9483204134366925,
+      "Avg Size": 3.531330749354005,
+      "Coverage Equity Gap": 0.011021813587511975,
+      "# Below Target": 3,
+      "Coverage CI Low": 0.9405684754521964,
+      "Coverage CI High": 0.9557493540051679
+    },
+    {
+      "Method": "classwise_cp",
+      "alpha": 0.05,
+      "Coverage": 0.9483204134366925,
+      "Avg Size": 3.531330749354005,
+      "Coverage Equity Gap": 0.011021813587511975,
+      "# Below Target": 3,
+      "Coverage CI Low": 0.9405684754521964,
+      "Coverage CI High": 0.9557493540051679
+    },
+    {
+      "Method": "clustered_cp",
+      "alpha": 0.05,
+      "Coverage": 0.9525193798449613,
+      "Avg Size": 3.4799741602067185,
+      "Coverage Equity Gap": 0.0325652871337575,
+      "# Below Target": 5,
+      "Coverage CI Low": 0.9444444444444444,
+      "Coverage CI High": 0.9599483204134367
+    },
+    {
+      "Method": "rc3p",
+      "alpha": 0.05,
+      "Coverage": 0.9525193798449613,
+      "Avg Size": 3.4799741602067185,
+      "Coverage Equity Gap": 0.0325652871337575,
+      "# Below Target": 5,
+      "Coverage CI Low": 0.9444444444444444,
+      "Coverage CI High": 0.9599483204134367
+    },
+    {
+      "Method": "standard_cp",
+      "alpha": 0.1,
+      "Coverage": 0.899547803617571,
+      "Avg Size": 2.041989664082687,
+      "Coverage Equity Gap": 0.1899547103042054,
+      "# Below Target": 5,
+      "Coverage CI Low": 0.8898578811369509,
+      "Coverage CI High": 0.9095607235142119
+    },
+    {
+      "Method": "aps",
+      "alpha": 0.1,
+      "Coverage": 0.9525193798449613,
+      "Avg Size": 3.66828165374677,
+      "Coverage Equity Gap": 0.0732989042619605,
+      "# Below Target": 2,
+      "Coverage CI Low": 0.9454134366925064,
+      "Coverage CI High": 0.959625322997416
+    },
+    {
+      "Method": "raps",
+      "alpha": 0.1,
+      "Coverage": 0.938953488372093,
+      "Avg Size": 3.0513565891472867,
+      "Coverage Equity Gap": 0.11134017387022965,
+      "# Below Target": 5,
+      "Coverage CI Low": 0.9302244832041343,
+      "Coverage CI High": 0.9470364987080104
+    },
+    {
+      "Method": "mondrian_cp",
+      "alpha": 0.1,
+      "Coverage": 0.9069767441860465,
+      "Avg Size": 2.673449612403101,
+      "Coverage Equity Gap": 0.018899164220371523,
+      "# Below Target": 4,
+      "Coverage CI Low": 0.8972868217054264,
+      "Coverage CI High": 0.9166747416020672
+    },
+    {
+      "Method": "classwise_cp",
+      "alpha": 0.1,
+      "Coverage": 0.9069767441860465,
+      "Avg Size": 2.673449612403101,
+      "Coverage Equity Gap": 0.018899164220371523,
+      "# Below Target": 4,
+      "Coverage CI Low": 0.8972868217054264,
+      "Coverage CI High": 0.9166747416020672
+    },
+    {
+      "Method": "clustered_cp",
+      "alpha": 0.1,
+      "Coverage": 0.9027777777777778,
+      "Avg Size": 2.501937984496124,
+      "Coverage Equity Gap": 0.04083174289109048,
+      "# Below Target": 4,
+      "Coverage CI Low": 0.8930797803617571,
+      "Coverage CI High": 0.9121447028423773
+    },
+    {
+      "Method": "rc3p",
+      "alpha": 0.1,
+      "Coverage": 0.9027777777777778,
+      "Avg Size": 2.501937984496124,
+      "Coverage Equity Gap": 0.04083174289109048,
+      "# Below Target": 4,
+      "Coverage CI Low": 0.8930797803617571,
+      "Coverage CI High": 0.9121447028423773
+    },
+    {
+      "Method": "standard_cp",
+      "alpha": 0.2,
+      "Coverage": 0.8003875968992248,
+      "Avg Size": 1.309108527131783,
+      "Coverage Equity Gap": 0.4066690838670415,
+      "# Below Target": 6,
+      "Coverage CI Low": 0.7861757105943152,
+      "Coverage CI High": 0.8139615633074936
+    },
+    {
+      "Method": "aps",
+      "alpha": 0.2,
+      "Coverage": 0.9218346253229974,
+      "Avg Size": 2.862403100775194,
+      "Coverage Equity Gap": 0.1041653021865746,
+      "# Below Target": 2,
+      "Coverage CI Low": 0.9131056201550387,
+      "Coverage CI High": 0.9312015503875969
+    },
+    {
+      "Method": "raps",
+      "alpha": 0.2,
+      "Coverage": 0.9108527131782945,
+      "Avg Size": 2.5733204134366927,
+      "Coverage Equity Gap": 0.11976127778368162,
+      "# Below Target": 2,
+      "Coverage CI Low": 0.9018007105943152,
+      "Coverage CI High": 0.9202277131782947
+    },
+    {
+      "Method": "mondrian_cp",
+      "alpha": 0.2,
+      "Coverage": 0.8078165374677002,
+      "Avg Size": 1.7406330749354004,
+      "Coverage Equity Gap": 0.0015385495251694081,
+      "# Below Target": 3,
+      "Coverage CI Low": 0.7942425710594315,
+      "Coverage CI High": 0.8210594315245479
+    },
+    {
+      "Method": "classwise_cp",
+      "alpha": 0.2,
+      "Coverage": 0.8078165374677002,
+      "Avg Size": 1.7406330749354004,
+      "Coverage Equity Gap": 0.0015385495251694081,
+      "# Below Target": 3,
+      "Coverage CI Low": 0.7942425710594315,
+      "Coverage CI High": 0.8210594315245479
+    },
+    {
+      "Method": "clustered_cp",
+      "alpha": 0.2,
+      "Coverage": 0.8016795865633075,
+      "Avg Size": 1.5549095607235142,
+      "Coverage Equity Gap": 0.05614504281090793,
+      "# Below Target": 4,
+      "Coverage CI Low": 0.7877906976744186,
+      "Coverage CI High": 0.8152535529715763
+    },
+    {
+      "Method": "rc3p",
+      "alpha": 0.2,
+      "Coverage": 0.8016795865633075,
+      "Avg Size": 1.5549095607235142,
+      "Coverage Equity Gap": 0.05614504281090793,
+      "# Below Target": 4,
+      "Coverage CI Low": 0.7877906976744186,
+      "Coverage CI High": 0.8152535529715763
+    }
+  ],
+  "detailed_results": [
+    {
+      "Method": "standard_cp",
+      "alpha": 0.05,
+      "Coverage": 0.9560723514211886,
+      "Avg Size": 2.988372093023256,
+      "Coverage Equity Gap": 0.09815793700973752,
+      "# Below Target": 5,
+      "Coverage CI Low": 0.9492894056847545,
+      "Coverage CI High": 0.9628552971576227,
+      "target_coverage": 0.95,
+      "failing_classes": [
+        "AK",
+        "BKL",
+        "DF",
+        "SCC",
+        "VASC"
+      ],
+      "per_class": {
+        "AK": {
+          "count": 168,
+          "covered": 148,
+          "coverage_rate": 0.8809523809523809,
+          "avg_set_size": 4.095238095238095
+        },
+        "BCC": {
+          "count": 491,
+          "covered": 478,
+          "coverage_rate": 0.9735234215885947,
+          "avg_set_size": 3.5621181262729125
+        },
+        "BKL": {
+          "count": 316,
+          "covered": 274,
+          "coverage_rate": 0.8670886075949367,
+          "avg_set_size": 3.651898734177215
+        },
+        "DF": {
+          "count": 46,
+          "covered": 43,
+          "coverage_rate": 0.9347826086956522,
+          "avg_set_size": 4.195652173913044
+        },
+        "MEL": {
+          "count": 679,
+          "covered": 658,
+          "coverage_rate": 0.9690721649484536,
+          "avg_set_size": 2.8924889543446244
+        },
+        "NV": {
+          "count": 1272,
+          "covered": 1250,
+          "coverage_rate": 0.9827044025157232,
+          "avg_set_size": 2.358490566037736
+        },
+        "SCC": {
+          "count": 87,
+          "covered": 79,
+          "coverage_rate": 0.9080459770114943,
+          "avg_set_size": 4.402298850574713
+        },
+        "VASC": {
+          "count": 37,
+          "covered": 30,
+          "coverage_rate": 0.8108108108108109,
+          "avg_set_size": 3.27027027027027
+        }
+      },
+      "bootstrap": {
+        "coverage": {
+          "estimate": 0.9560723514211886,
+          "ci_low": 0.9492894056847545,
+          "ci_high": 0.9628552971576227,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "average_set_size": {
+          "estimate": 2.988372093023256,
+          "ci_low": 2.9341004521963825,
+          "ci_high": 3.050734819121447,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "coverage_equity_gap": {
+          "estimate": 0.09815793700973752,
+          "ci_low": 0.04998741505527491,
+          "ci_high": 0.15259938446817056,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        }
+      },
+      "per_class_tests": [
+        {
+          "class_name": "AK",
+          "count": 168,
+          "covered": 148,
+          "coverage_rate": 0.8809523809523809,
+          "target_coverage": 0.95,
+          "p_value": 0.00030593321723917325,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.0021415325206742128,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "BCC",
+          "count": 491,
+          "covered": 478,
+          "coverage_rate": 0.9735234215885947,
+          "target_coverage": 0.95,
+          "p_value": 0.9966330499218401,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BKL",
+          "count": 316,
+          "covered": 274,
+          "coverage_rate": 0.8670886075949367,
+          "target_coverage": 0.95,
+          "p_value": 1.0667451643998955e-08,
+          "adjustment": "holm",
+          "adjusted_p_value": 8.533961315199164e-08,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "DF",
+          "count": 46,
+          "covered": 43,
+          "coverage_rate": 0.9347826086956522,
+          "target_coverage": 0.95,
+          "p_value": 0.4059753069455319,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "MEL",
+          "count": 679,
+          "covered": 658,
+          "coverage_rate": 0.9690721649484536,
+          "target_coverage": 0.95,
+          "p_value": 0.9941265429111688,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "NV",
+          "count": 1272,
+          "covered": 1250,
+          "coverage_rate": 0.9827044025157232,
+          "target_coverage": 0.95,
+          "p_value": 0.999999999756388,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "SCC",
+          "count": 87,
+          "covered": 79,
+          "coverage_rate": 0.9080459770114943,
+          "target_coverage": 0.95,
+          "p_value": 0.06962137069029677,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.34810685345148384,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "VASC",
+          "count": 37,
+          "covered": 30,
+          "coverage_rate": 0.8108108108108109,
+          "target_coverage": 0.95,
+          "p_value": 0.002134692806106684,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.012808156836640106,
+          "below_target": true,
+          "significant_below_target": true
+        }
+      ],
+      "diagnostics": {
+        "method": "standard_cp",
+        "alpha": 0.05,
+        "threshold": 0.9848638772964478
+      }
+    },
+    {
+      "Method": "aps",
+      "alpha": 0.05,
+      "Coverage": 0.9738372093023255,
+      "Avg Size": 4.46673126614987,
+      "Coverage Equity Gap": 0.06939598150950022,
+      "# Below Target": 3,
+      "Coverage CI Low": 0.9686692506459949,
+      "Coverage CI High": 0.979328165374677,
+      "target_coverage": 0.95,
+      "failing_classes": [
+        "AK",
+        "BKL",
+        "VASC"
+      ],
+      "per_class": {
+        "AK": {
+          "count": 168,
+          "covered": 155,
+          "coverage_rate": 0.9226190476190477,
+          "avg_set_size": 5.404761904761905
+        },
+        "BCC": {
+          "count": 491,
+          "covered": 485,
+          "coverage_rate": 0.9877800407331976,
+          "avg_set_size": 5.4663951120162935
+        },
+        "BKL": {
+          "count": 316,
+          "covered": 299,
+          "coverage_rate": 0.9462025316455697,
+          "avg_set_size": 5.2974683544303796
+        },
+        "DF": {
+          "count": 46,
+          "covered": 44,
+          "coverage_rate": 0.9565217391304348,
+          "avg_set_size": 5.282608695652174
+        },
+        "MEL": {
+          "count": 679,
+          "covered": 671,
+          "coverage_rate": 0.9882179675994109,
+          "avg_set_size": 4.132547864506628
+        },
+        "NV": {
+          "count": 1272,
+          "covered": 1247,
+          "coverage_rate": 0.9803459119496856,
+          "avg_set_size": 3.8372641509433962
+        },
+        "SCC": {
+          "count": 87,
+          "covered": 84,
+          "coverage_rate": 0.9655172413793104,
+          "avg_set_size": 5.390804597701149
+        },
+        "VASC": {
+          "count": 37,
+          "covered": 30,
+          "coverage_rate": 0.8108108108108109,
+          "avg_set_size": 4.4324324324324325
+        }
+      },
+      "bootstrap": {
+        "coverage": {
+          "estimate": 0.9738372093023255,
+          "ci_low": 0.9686692506459949,
+          "ci_high": 0.979328165374677,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "average_set_size": {
+          "estimate": 4.46673126614987,
+          "ci_low": 4.404707687338502,
+          "ci_high": 4.530054909560723,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "coverage_equity_gap": {
+          "estimate": 0.06939598150950022,
+          "ci_low": 0.02365431142456233,
+          "ci_high": 0.11757365093403627,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        }
+      },
+      "per_class_tests": [
+        {
+          "class_name": "AK",
+          "count": 168,
+          "covered": 155,
+          "coverage_rate": 0.9226190476190477,
+          "target_coverage": 0.95,
+          "p_value": 0.0796619489902119,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.5576336429314832,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BCC",
+          "count": 491,
+          "covered": 485,
+          "coverage_rate": 0.9877800407331976,
+          "target_coverage": 0.95,
+          "p_value": 0.9999986648616209,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BKL",
+          "count": 316,
+          "covered": 299,
+          "coverage_rate": 0.9462025316455697,
+          "target_coverage": 0.95,
+          "p_value": 0.41366551552605235,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "DF",
+          "count": 46,
+          "covered": 44,
+          "coverage_rate": 0.9565217391304348,
+          "target_coverage": 0.95,
+          "p_value": 0.6768191647919565,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "MEL",
+          "count": 679,
+          "covered": 671,
+          "coverage_rate": 0.9882179675994109,
+          "target_coverage": 0.95,
+          "p_value": 0.9999999867453617,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "NV",
+          "count": 1272,
+          "covered": 1247,
+          "coverage_rate": 0.9803459119496856,
+          "target_coverage": 0.95,
+          "p_value": 0.999999993888446,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "SCC",
+          "count": 87,
+          "covered": 84,
+          "coverage_rate": 0.9655172413793104,
+          "target_coverage": 0.95,
+          "p_value": 0.8161380820262923,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "VASC",
+          "count": 37,
+          "covered": 30,
+          "coverage_rate": 0.8108108108108109,
+          "target_coverage": 0.95,
+          "p_value": 0.002134692806106684,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.017077542448853473,
+          "below_target": true,
+          "significant_below_target": true
+        }
+      ],
+      "diagnostics": {
+        "method": "aps",
+        "alpha": 0.05,
+        "threshold": 0.9962034821510315
+      }
+    },
+    {
+      "Method": "raps",
+      "alpha": 0.05,
+      "Coverage": 0.9599483204134367,
+      "Avg Size": 3.587532299741602,
+      "Coverage Equity Gap": 0.08716014251925552,
+      "# Below Target": 5,
+      "Coverage CI Low": 0.9528423772609819,
+      "Coverage CI High": 0.9664082687338501,
+      "target_coverage": 0.95,
+      "failing_classes": [
+        "AK",
+        "BKL",
+        "DF",
+        "SCC",
+        "VASC"
+      ],
+      "per_class": {
+        "AK": {
+          "count": 168,
+          "covered": 142,
+          "coverage_rate": 0.8452380952380952,
+          "avg_set_size": 4.0476190476190474
+        },
+        "BCC": {
+          "count": 491,
+          "covered": 478,
+          "coverage_rate": 0.9735234215885947,
+          "avg_set_size": 4.002036659877801
+        },
+        "BKL": {
+          "count": 316,
+          "covered": 281,
+          "coverage_rate": 0.8892405063291139,
+          "avg_set_size": 3.9462025316455698
+        },
+        "DF": {
+          "count": 46,
+          "covered": 42,
+          "coverage_rate": 0.9130434782608695,
+          "avg_set_size": 4.173913043478261
+        },
+        "MEL": {
+          "count": 679,
+          "covered": 669,
+          "coverage_rate": 0.9852724594992637,
+          "avg_set_size": 3.4624447717231224
+        },
+        "NV": {
+          "count": 1272,
+          "covered": 1248,
+          "coverage_rate": 0.9811320754716981,
+          "avg_set_size": 3.285377358490566
+        },
+        "SCC": {
+          "count": 87,
+          "covered": 81,
+          "coverage_rate": 0.9310344827586207,
+          "avg_set_size": 4.160919540229885
+        },
+        "VASC": {
+          "count": 37,
+          "covered": 31,
+          "coverage_rate": 0.8378378378378378,
+          "avg_set_size": 3.5405405405405403
+        }
+      },
+      "bootstrap": {
+        "coverage": {
+          "estimate": 0.9599483204134367,
+          "ci_low": 0.9528423772609819,
+          "ci_high": 0.9664082687338501,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "average_set_size": {
+          "estimate": 3.587532299741602,
+          "ci_low": 3.5565245478036176,
+          "ci_high": 3.617264211886305,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "coverage_equity_gap": {
+          "estimate": 0.08716014251925552,
+          "ci_low": 0.039372662260886045,
+          "ci_high": 0.13829989066856216,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        }
+      },
+      "per_class_tests": [
+        {
+          "class_name": "AK",
+          "count": 168,
+          "covered": 142,
+          "coverage_rate": 0.8452380952380952,
+          "target_coverage": 0.95,
+          "p_value": 3.268866365732902e-07,
+          "adjustment": "holm",
+          "adjusted_p_value": 2.615093092586322e-06,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "BCC",
+          "count": 491,
+          "covered": 478,
+          "coverage_rate": 0.9735234215885947,
+          "target_coverage": 0.95,
+          "p_value": 0.9966330499218401,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BKL",
+          "count": 316,
+          "covered": 281,
+          "coverage_rate": 0.8892405063291139,
+          "target_coverage": 0.95,
+          "p_value": 1.1318655993435043e-05,
+          "adjustment": "holm",
+          "adjusted_p_value": 7.92305919540453e-05,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "DF",
+          "count": 46,
+          "covered": 42,
+          "coverage_rate": 0.9130434782608695,
+          "target_coverage": 0.95,
+          "p_value": 0.19690285527460738,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.9845142763730369,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "MEL",
+          "count": 679,
+          "covered": 669,
+          "coverage_rate": 0.9852724594992637,
+          "target_coverage": 0.95,
+          "p_value": 0.9999997533579217,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "NV",
+          "count": 1272,
+          "covered": 1248,
+          "coverage_rate": 0.9811320754716981,
+          "target_coverage": 0.95,
+          "p_value": 0.9999999978194642,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "SCC",
+          "count": 87,
+          "covered": 81,
+          "coverage_rate": 0.9310344827586207,
+          "target_coverage": 0.95,
+          "p_value": 0.2688122967809309,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "VASC",
+          "count": 37,
+          "covered": 31,
+          "coverage_rate": 0.8378378378378378,
+          "target_coverage": 0.95,
+          "p_value": 0.00954155727461616,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.05724934364769696,
+          "below_target": true,
+          "significant_below_target": false
+        }
+      ],
+      "diagnostics": {
+        "method": "raps",
+        "alpha": 0.05,
+        "lambda_reg": 0.01,
+        "k_reg": 3,
+        "threshold": 0.9990653395652771
+      }
+    },
+    {
+      "Method": "mondrian_cp",
+      "alpha": 0.05,
+      "Coverage": 0.9483204134366925,
+      "Avg Size": 3.531330749354005,
+      "Coverage Equity Gap": 0.011021813587511975,
+      "# Below Target": 3,
+      "Coverage CI Low": 0.9405684754521964,
+      "Coverage CI High": 0.9557493540051679,
+      "target_coverage": 0.95,
+      "failing_classes": [
+        "BCC",
+        "MEL",
+        "VASC"
+      ],
+      "per_class": {
+        "AK": {
+          "count": 168,
+          "covered": 160,
+          "coverage_rate": 0.9523809523809523,
+          "avg_set_size": 4.434523809523809
+        },
+        "BCC": {
+          "count": 491,
+          "covered": 462,
+          "coverage_rate": 0.9409368635437881,
+          "avg_set_size": 4.5336048879837065
+        },
+        "BKL": {
+          "count": 316,
+          "covered": 305,
+          "coverage_rate": 0.9651898734177216,
+          "avg_set_size": 4.132911392405063
+        },
+        "DF": {
+          "count": 46,
+          "covered": 44,
+          "coverage_rate": 0.9565217391304348,
+          "avg_set_size": 4.521739130434782
+        },
+        "MEL": {
+          "count": 679,
+          "covered": 635,
+          "coverage_rate": 0.93519882179676,
+          "avg_set_size": 3.3829160530191458
+        },
+        "NV": {
+          "count": 1272,
+          "covered": 1212,
+          "coverage_rate": 0.9528301886792453,
+          "avg_set_size": 2.8254716981132075
+        },
+        "SCC": {
+          "count": 87,
+          "covered": 85,
+          "coverage_rate": 0.9770114942528736,
+          "avg_set_size": 4.873563218390805
+        },
+        "VASC": {
+          "count": 37,
+          "covered": 33,
+          "coverage_rate": 0.8918918918918919,
+          "avg_set_size": 3.5945945945945947
+        }
+      },
+      "bootstrap": {
+        "coverage": {
+          "estimate": 0.9483204134366925,
+          "ci_low": 0.9405684754521964,
+          "ci_high": 0.9557493540051679,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "average_set_size": {
+          "estimate": 3.531330749354005,
+          "ci_low": 3.4718992248062017,
+          "ci_high": 3.60077519379845,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "coverage_equity_gap": {
+          "estimate": 0.011021813587511975,
+          "ci_low": -0.027824220949232596,
+          "ci_high": 0.050510058425965655,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        }
+      },
+      "per_class_tests": [
+        {
+          "class_name": "AK",
+          "count": 168,
+          "covered": 160,
+          "coverage_rate": 0.9523809523809523,
+          "target_coverage": 0.95,
+          "p_value": 0.6060947345576547,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BCC",
+          "count": 491,
+          "covered": 462,
+          "coverage_rate": 0.9409368635437881,
+          "target_coverage": 0.95,
+          "p_value": 0.20362127939252125,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BKL",
+          "count": 316,
+          "covered": 305,
+          "coverage_rate": 0.9651898734177216,
+          "target_coverage": 0.95,
+          "p_value": 0.920893244216339,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "DF",
+          "count": 46,
+          "covered": 44,
+          "coverage_rate": 0.9565217391304348,
+          "target_coverage": 0.95,
+          "p_value": 0.6768191647919565,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "MEL",
+          "count": 679,
+          "covered": 635,
+          "coverage_rate": 0.93519882179676,
+          "target_coverage": 0.95,
+          "p_value": 0.05051765975612129,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.4041412780489703,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "NV",
+          "count": 1272,
+          "covered": 1212,
+          "coverage_rate": 0.9528301886792453,
+          "target_coverage": 0.95,
+          "p_value": 0.6961675827601491,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "SCC",
+          "count": 87,
+          "covered": 85,
+          "coverage_rate": 0.9770114942528736,
+          "target_coverage": 0.95,
+          "p_value": 0.9356563157603505,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "VASC",
+          "count": 37,
+          "covered": 33,
+          "coverage_rate": 0.8918918918918919,
+          "target_coverage": 0.95,
+          "p_value": 0.11189095720311054,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.7832367004217737,
+          "below_target": true,
+          "significant_below_target": false
+        }
+      ],
+      "diagnostics": {
+        "method": "mondrian_cp",
+        "alpha": 0.05,
+        "n_classes": 8,
+        "thresholds": [
+          0.9967044591903687,
+          0.9418628811836243,
+          0.9959269762039185,
+          0.9905307292938232,
+          0.9693711996078491,
+          0.9150643348693848,
+          0.995442271232605,
+          0.993575930595398
+        ]
+      }
+    },
+    {
+      "Method": "classwise_cp",
+      "alpha": 0.05,
+      "Coverage": 0.9483204134366925,
+      "Avg Size": 3.531330749354005,
+      "Coverage Equity Gap": 0.011021813587511975,
+      "# Below Target": 3,
+      "Coverage CI Low": 0.9405684754521964,
+      "Coverage CI High": 0.9557493540051679,
+      "target_coverage": 0.95,
+      "failing_classes": [
+        "BCC",
+        "MEL",
+        "VASC"
+      ],
+      "per_class": {
+        "AK": {
+          "count": 168,
+          "covered": 160,
+          "coverage_rate": 0.9523809523809523,
+          "avg_set_size": 4.434523809523809
+        },
+        "BCC": {
+          "count": 491,
+          "covered": 462,
+          "coverage_rate": 0.9409368635437881,
+          "avg_set_size": 4.5336048879837065
+        },
+        "BKL": {
+          "count": 316,
+          "covered": 305,
+          "coverage_rate": 0.9651898734177216,
+          "avg_set_size": 4.132911392405063
+        },
+        "DF": {
+          "count": 46,
+          "covered": 44,
+          "coverage_rate": 0.9565217391304348,
+          "avg_set_size": 4.521739130434782
+        },
+        "MEL": {
+          "count": 679,
+          "covered": 635,
+          "coverage_rate": 0.93519882179676,
+          "avg_set_size": 3.3829160530191458
+        },
+        "NV": {
+          "count": 1272,
+          "covered": 1212,
+          "coverage_rate": 0.9528301886792453,
+          "avg_set_size": 2.8254716981132075
+        },
+        "SCC": {
+          "count": 87,
+          "covered": 85,
+          "coverage_rate": 0.9770114942528736,
+          "avg_set_size": 4.873563218390805
+        },
+        "VASC": {
+          "count": 37,
+          "covered": 33,
+          "coverage_rate": 0.8918918918918919,
+          "avg_set_size": 3.5945945945945947
+        }
+      },
+      "bootstrap": {
+        "coverage": {
+          "estimate": 0.9483204134366925,
+          "ci_low": 0.9405684754521964,
+          "ci_high": 0.9557493540051679,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "average_set_size": {
+          "estimate": 3.531330749354005,
+          "ci_low": 3.4718992248062017,
+          "ci_high": 3.60077519379845,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "coverage_equity_gap": {
+          "estimate": 0.011021813587511975,
+          "ci_low": -0.027824220949232596,
+          "ci_high": 0.050510058425965655,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        }
+      },
+      "per_class_tests": [
+        {
+          "class_name": "AK",
+          "count": 168,
+          "covered": 160,
+          "coverage_rate": 0.9523809523809523,
+          "target_coverage": 0.95,
+          "p_value": 0.6060947345576547,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BCC",
+          "count": 491,
+          "covered": 462,
+          "coverage_rate": 0.9409368635437881,
+          "target_coverage": 0.95,
+          "p_value": 0.20362127939252125,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BKL",
+          "count": 316,
+          "covered": 305,
+          "coverage_rate": 0.9651898734177216,
+          "target_coverage": 0.95,
+          "p_value": 0.920893244216339,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "DF",
+          "count": 46,
+          "covered": 44,
+          "coverage_rate": 0.9565217391304348,
+          "target_coverage": 0.95,
+          "p_value": 0.6768191647919565,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "MEL",
+          "count": 679,
+          "covered": 635,
+          "coverage_rate": 0.93519882179676,
+          "target_coverage": 0.95,
+          "p_value": 0.05051765975612129,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.4041412780489703,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "NV",
+          "count": 1272,
+          "covered": 1212,
+          "coverage_rate": 0.9528301886792453,
+          "target_coverage": 0.95,
+          "p_value": 0.6961675827601491,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "SCC",
+          "count": 87,
+          "covered": 85,
+          "coverage_rate": 0.9770114942528736,
+          "target_coverage": 0.95,
+          "p_value": 0.9356563157603505,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "VASC",
+          "count": 37,
+          "covered": 33,
+          "coverage_rate": 0.8918918918918919,
+          "target_coverage": 0.95,
+          "p_value": 0.11189095720311054,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.7832367004217737,
+          "below_target": true,
+          "significant_below_target": false
+        }
+      ],
+      "diagnostics": {
+        "method": "classwise_cp",
+        "alpha": 0.05,
+        "n_classes": 8,
+        "thresholds": [
+          0.9967044591903687,
+          0.9418628811836243,
+          0.9959269762039185,
+          0.9905307292938232,
+          0.9693711996078491,
+          0.9150643348693848,
+          0.995442271232605,
+          0.993575930595398
+        ]
+      }
+    },
+    {
+      "Method": "clustered_cp",
+      "alpha": 0.05,
+      "Coverage": 0.9525193798449613,
+      "Avg Size": 3.4799741602067185,
+      "Coverage Equity Gap": 0.0325652871337575,
+      "# Below Target": 5,
+      "Coverage CI Low": 0.9444444444444444,
+      "Coverage CI High": 0.9599483204134367,
+      "target_coverage": 0.95,
+      "failing_classes": [
+        "AK",
+        "BKL",
+        "MEL",
+        "SCC",
+        "VASC"
+      ],
+      "per_class": {
+        "AK": {
+          "count": 168,
+          "covered": 154,
+          "coverage_rate": 0.9166666666666666,
+          "avg_set_size": 4.5773809523809526
+        },
+        "BCC": {
+          "count": 491,
+          "covered": 486,
+          "coverage_rate": 0.9898167006109979,
+          "avg_set_size": 4.281059063136456
+        },
+        "BKL": {
+          "count": 316,
+          "covered": 295,
+          "coverage_rate": 0.9335443037974683,
+          "avg_set_size": 4.319620253164557
+        },
+        "DF": {
+          "count": 46,
+          "covered": 45,
+          "coverage_rate": 0.9782608695652174,
+          "avg_set_size": 4.630434782608695
+        },
+        "MEL": {
+          "count": 679,
+          "covered": 620,
+          "coverage_rate": 0.9131075110456554,
+          "avg_set_size": 3.4285714285714284
+        },
+        "NV": {
+          "count": 1272,
+          "covered": 1234,
+          "coverage_rate": 0.970125786163522,
+          "avg_set_size": 2.686320754716981
+        },
+        "SCC": {
+          "count": 87,
+          "covered": 82,
+          "coverage_rate": 0.9425287356321839,
+          "avg_set_size": 5.0344827586206895
+        },
+        "VASC": {
+          "count": 37,
+          "covered": 33,
+          "coverage_rate": 0.8918918918918919,
+          "avg_set_size": 3.8378378378378377
+        }
+      },
+      "bootstrap": {
+        "coverage": {
+          "estimate": 0.9525193798449613,
+          "ci_low": 0.9444444444444444,
+          "ci_high": 0.9599483204134367,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "average_set_size": {
+          "estimate": 3.4799741602067185,
+          "ci_low": 3.4153504521963827,
+          "ci_high": 3.5461967054263566,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "coverage_equity_gap": {
+          "estimate": 0.032565287133757725,
+          "ci_low": -0.005523009707936726,
+          "ci_high": 0.07050238719799524,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        }
+      },
+      "per_class_tests": [
+        {
+          "class_name": "AK",
+          "count": 168,
+          "covered": 154,
+          "coverage_rate": 0.9166666666666666,
+          "target_coverage": 0.95,
+          "p_value": 0.043213661110908484,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.3024956277763594,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BCC",
+          "count": 491,
+          "covered": 486,
+          "coverage_rate": 0.9898167006109979,
+          "target_coverage": 0.95,
+          "p_value": 0.9999997509774934,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BKL",
+          "count": 316,
+          "covered": 295,
+          "coverage_rate": 0.9335443037974683,
+          "target_coverage": 0.95,
+          "p_value": 0.11519710829510191,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.6713457432186632,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "DF",
+          "count": 46,
+          "covered": 45,
+          "coverage_rate": 0.9782608695652174,
+          "target_coverage": 0.95,
+          "p_value": 0.9055317558622709,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "MEL",
+          "count": 679,
+          "covered": 620,
+          "coverage_rate": 0.9131075110456554,
+          "target_coverage": 0.95,
+          "p_value": 3.7155237717904917e-05,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.00029724190174323933,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "NV",
+          "count": 1272,
+          "covered": 1234,
+          "coverage_rate": 0.970125786163522,
+          "target_coverage": 0.95,
+          "p_value": 0.9998430976104363,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "SCC",
+          "count": 87,
+          "covered": 82,
+          "coverage_rate": 0.9425287356321839,
+          "target_coverage": 0.95,
+          "p_value": 0.4409192503589057,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "VASC",
+          "count": 37,
+          "covered": 33,
+          "coverage_rate": 0.8918918918918919,
+          "target_coverage": 0.95,
+          "p_value": 0.11189095720311054,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.6713457432186632,
+          "below_target": true,
+          "significant_below_target": false
+        }
+      ],
+      "diagnostics": {
+        "method": "clustered_cp",
+        "alpha": 0.05,
+        "n_classes": 8,
+        "n_clusters": 3,
+        "class_counts": [
+          867,
+          3323,
+          2624,
+          238,
+          4522,
+          12874,
+          628,
+          253
+        ],
+        "class_to_cluster": {
+          "3": 0,
+          "7": 0,
+          "6": 0,
+          "0": 1,
+          "2": 1,
+          "1": 1,
+          "4": 2,
+          "5": 2
+        },
+        "cluster_thresholds": {
+          "0": 0.9925361275672913,
+          "1": 0.9937618970870972,
+          "2": 0.9562908411026001
+        },
+        "global_threshold": 0.9848638772964478
+      }
+    },
+    {
+      "Method": "rc3p",
+      "alpha": 0.05,
+      "Coverage": 0.9525193798449613,
+      "Avg Size": 3.4799741602067185,
+      "Coverage Equity Gap": 0.0325652871337575,
+      "# Below Target": 5,
+      "Coverage CI Low": 0.9444444444444444,
+      "Coverage CI High": 0.9599483204134367,
+      "target_coverage": 0.95,
+      "failing_classes": [
+        "AK",
+        "BKL",
+        "MEL",
+        "SCC",
+        "VASC"
+      ],
+      "per_class": {
+        "AK": {
+          "count": 168,
+          "covered": 154,
+          "coverage_rate": 0.9166666666666666,
+          "avg_set_size": 4.5773809523809526
+        },
+        "BCC": {
+          "count": 491,
+          "covered": 486,
+          "coverage_rate": 0.9898167006109979,
+          "avg_set_size": 4.281059063136456
+        },
+        "BKL": {
+          "count": 316,
+          "covered": 295,
+          "coverage_rate": 0.9335443037974683,
+          "avg_set_size": 4.319620253164557
+        },
+        "DF": {
+          "count": 46,
+          "covered": 45,
+          "coverage_rate": 0.9782608695652174,
+          "avg_set_size": 4.630434782608695
+        },
+        "MEL": {
+          "count": 679,
+          "covered": 620,
+          "coverage_rate": 0.9131075110456554,
+          "avg_set_size": 3.4285714285714284
+        },
+        "NV": {
+          "count": 1272,
+          "covered": 1234,
+          "coverage_rate": 0.970125786163522,
+          "avg_set_size": 2.686320754716981
+        },
+        "SCC": {
+          "count": 87,
+          "covered": 82,
+          "coverage_rate": 0.9425287356321839,
+          "avg_set_size": 5.0344827586206895
+        },
+        "VASC": {
+          "count": 37,
+          "covered": 33,
+          "coverage_rate": 0.8918918918918919,
+          "avg_set_size": 3.8378378378378377
+        }
+      },
+      "bootstrap": {
+        "coverage": {
+          "estimate": 0.9525193798449613,
+          "ci_low": 0.9444444444444444,
+          "ci_high": 0.9599483204134367,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "average_set_size": {
+          "estimate": 3.4799741602067185,
+          "ci_low": 3.4153504521963827,
+          "ci_high": 3.5461967054263566,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "coverage_equity_gap": {
+          "estimate": 0.032565287133757725,
+          "ci_low": -0.005523009707936726,
+          "ci_high": 0.07050238719799524,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        }
+      },
+      "per_class_tests": [
+        {
+          "class_name": "AK",
+          "count": 168,
+          "covered": 154,
+          "coverage_rate": 0.9166666666666666,
+          "target_coverage": 0.95,
+          "p_value": 0.043213661110908484,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.3024956277763594,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BCC",
+          "count": 491,
+          "covered": 486,
+          "coverage_rate": 0.9898167006109979,
+          "target_coverage": 0.95,
+          "p_value": 0.9999997509774934,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BKL",
+          "count": 316,
+          "covered": 295,
+          "coverage_rate": 0.9335443037974683,
+          "target_coverage": 0.95,
+          "p_value": 0.11519710829510191,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.6713457432186632,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "DF",
+          "count": 46,
+          "covered": 45,
+          "coverage_rate": 0.9782608695652174,
+          "target_coverage": 0.95,
+          "p_value": 0.9055317558622709,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "MEL",
+          "count": 679,
+          "covered": 620,
+          "coverage_rate": 0.9131075110456554,
+          "target_coverage": 0.95,
+          "p_value": 3.7155237717904917e-05,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.00029724190174323933,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "NV",
+          "count": 1272,
+          "covered": 1234,
+          "coverage_rate": 0.970125786163522,
+          "target_coverage": 0.95,
+          "p_value": 0.9998430976104363,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "SCC",
+          "count": 87,
+          "covered": 82,
+          "coverage_rate": 0.9425287356321839,
+          "target_coverage": 0.95,
+          "p_value": 0.4409192503589057,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "VASC",
+          "count": 37,
+          "covered": 33,
+          "coverage_rate": 0.8918918918918919,
+          "target_coverage": 0.95,
+          "p_value": 0.11189095720311054,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.6713457432186632,
+          "below_target": true,
+          "significant_below_target": false
+        }
+      ],
+      "diagnostics": {
+        "method": "rc3p",
+        "alpha": 0.05,
+        "n_classes": 8,
+        "n_clusters": 3,
+        "class_counts": [
+          867,
+          3323,
+          2624,
+          238,
+          4522,
+          12874,
+          628,
+          253
+        ],
+        "class_to_cluster": {
+          "3": 0,
+          "7": 0,
+          "6": 0,
+          "0": 1,
+          "2": 1,
+          "1": 1,
+          "4": 2,
+          "5": 2
+        },
+        "cluster_thresholds": {
+          "0": 0.9925361275672913,
+          "1": 0.9937618970870972,
+          "2": 0.9562908411026001
+        },
+        "global_threshold": 0.9848638772964478,
+        "implementation_note": "frequency-clustered substitute for RC3P"
+      }
+    },
+    {
+      "Method": "standard_cp",
+      "alpha": 0.1,
+      "Coverage": 0.899547803617571,
+      "Avg Size": 2.041989664082687,
+      "Coverage Equity Gap": 0.1899547103042054,
+      "# Below Target": 5,
+      "Coverage CI Low": 0.8898578811369509,
+      "Coverage CI High": 0.9095607235142119,
+      "target_coverage": 0.9,
+      "failing_classes": [
+        "AK",
+        "BKL",
+        "DF",
+        "SCC",
+        "VASC"
+      ],
+      "per_class": {
+        "AK": {
+          "count": 168,
+          "covered": 112,
+          "coverage_rate": 0.6666666666666666,
+          "avg_set_size": 2.6726190476190474
+        },
+        "BCC": {
+          "count": 491,
+          "covered": 463,
+          "coverage_rate": 0.9429735234215886,
+          "avg_set_size": 2.2321792260692463
+        },
+        "BKL": {
+          "count": 316,
+          "covered": 237,
+          "coverage_rate": 0.75,
+          "avg_set_size": 2.5537974683544302
+        },
+        "DF": {
+          "count": 46,
+          "covered": 39,
+          "coverage_rate": 0.8478260869565217,
+          "avg_set_size": 3.0
+        },
+        "MEL": {
+          "count": 679,
+          "covered": 614,
+          "coverage_rate": 0.9042709867452136,
+          "avg_set_size": 2.008836524300442
+        },
+        "NV": {
+          "count": 1272,
+          "covered": 1229,
+          "coverage_rate": 0.9661949685534591,
+          "avg_set_size": 1.6816037735849056
+        },
+        "SCC": {
+          "count": 87,
+          "covered": 63,
+          "coverage_rate": 0.7241379310344828,
+          "avg_set_size": 2.7586206896551726
+        },
+        "VASC": {
+          "count": 37,
+          "covered": 28,
+          "coverage_rate": 0.7567567567567568,
+          "avg_set_size": 2.4054054054054053
+        }
+      },
+      "bootstrap": {
+        "coverage": {
+          "estimate": 0.899547803617571,
+          "ci_low": 0.8898578811369509,
+          "ci_high": 0.9095607235142119,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "average_set_size": {
+          "estimate": 2.041989664082687,
+          "ci_low": 2.0015988372093023,
+          "ci_high": 2.083995478036176,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "coverage_equity_gap": {
+          "estimate": 0.1899547103042052,
+          "ci_low": 0.12545523358089,
+          "ci_high": 0.2602355022011593,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        }
+      },
+      "per_class_tests": [
+        {
+          "class_name": "AK",
+          "count": 168,
+          "covered": 112,
+          "coverage_rate": 0.6666666666666666,
+          "target_coverage": 0.9,
+          "p_value": 1.723438531664917e-16,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.3787508253319336e-15,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "BCC",
+          "count": 491,
+          "covered": 463,
+          "coverage_rate": 0.9429735234215886,
+          "target_coverage": 0.9,
+          "p_value": 0.9997609744117211,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BKL",
+          "count": 316,
+          "covered": 237,
+          "coverage_rate": 0.75,
+          "target_coverage": 0.9,
+          "p_value": 1.6386425266425562e-14,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.1470497686497893e-13,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "DF",
+          "count": 46,
+          "covered": 39,
+          "coverage_rate": 0.8478260869565217,
+          "target_coverage": 0.9,
+          "p_value": 0.17188418299957542,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.6875367319983017,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "MEL",
+          "count": 679,
+          "covered": 614,
+          "coverage_rate": 0.9042709867452136,
+          "target_coverage": 0.9,
+          "p_value": 0.6631068258408023,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "NV",
+          "count": 1272,
+          "covered": 1229,
+          "coverage_rate": 0.9661949685534591,
+          "target_coverage": 0.9,
+          "p_value": 0.9999999999999478,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "SCC",
+          "count": 87,
+          "covered": 63,
+          "coverage_rate": 0.7241379310344828,
+          "target_coverage": 0.9,
+          "p_value": 3.0943428196224334e-06,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.8566056917734602e-05,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "VASC",
+          "count": 37,
+          "covered": 28,
+          "coverage_rate": 0.7567567567567568,
+          "target_coverage": 0.9,
+          "p_value": 0.0092564856701659,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.046282428350829505,
+          "below_target": true,
+          "significant_below_target": true
+        }
+      ],
+      "diagnostics": {
+        "method": "standard_cp",
+        "alpha": 0.1,
+        "threshold": 0.9518738985061646
+      }
+    },
+    {
+      "Method": "aps",
+      "alpha": 0.1,
+      "Coverage": 0.9525193798449613,
+      "Avg Size": 3.66828165374677,
+      "Coverage Equity Gap": 0.0732989042619605,
+      "# Below Target": 2,
+      "Coverage CI Low": 0.9454134366925064,
+      "Coverage CI High": 0.959625322997416,
+      "target_coverage": 0.9,
+      "failing_classes": [
+        "AK",
+        "VASC"
+      ],
+      "per_class": {
+        "AK": {
+          "count": 168,
+          "covered": 146,
+          "coverage_rate": 0.8690476190476191,
+          "avg_set_size": 4.714285714285714
+        },
+        "BCC": {
+          "count": 491,
+          "covered": 483,
+          "coverage_rate": 0.9837067209775967,
+          "avg_set_size": 4.708757637474542
+        },
+        "BKL": {
+          "count": 316,
+          "covered": 287,
+          "coverage_rate": 0.9082278481012658,
+          "avg_set_size": 4.560126582278481
+        },
+        "DF": {
+          "count": 46,
+          "covered": 43,
+          "coverage_rate": 0.9347826086956522,
+          "avg_set_size": 4.695652173913044
+        },
+        "MEL": {
+          "count": 679,
+          "covered": 645,
+          "coverage_rate": 0.9499263622974963,
+          "avg_set_size": 3.3770250368188512
+        },
+        "NV": {
+          "count": 1272,
+          "covered": 1233,
+          "coverage_rate": 0.9693396226415094,
+          "avg_set_size": 2.94811320754717
+        },
+        "SCC": {
+          "count": 87,
+          "covered": 82,
+          "coverage_rate": 0.9425287356321839,
+          "avg_set_size": 4.816091954022989
+        },
+        "VASC": {
+          "count": 37,
+          "covered": 30,
+          "coverage_rate": 0.8108108108108109,
+          "avg_set_size": 3.6216216216216215
+        }
+      },
+      "bootstrap": {
+        "coverage": {
+          "estimate": 0.9525193798449613,
+          "ci_low": 0.9454134366925064,
+          "ci_high": 0.959625322997416,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "average_set_size": {
+          "estimate": 3.66828165374677,
+          "ci_low": 3.6062419250645994,
+          "ci_high": 3.7303294573643413,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "coverage_equity_gap": {
+          "estimate": 0.0732989042619604,
+          "ci_low": 0.025107960228401092,
+          "ci_high": 0.1242624568205177,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        }
+      },
+      "per_class_tests": [
+        {
+          "class_name": "AK",
+          "count": 168,
+          "covered": 146,
+          "coverage_rate": 0.8690476190476191,
+          "target_coverage": 0.9,
+          "p_value": 0.11574302690726151,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.8102011883508307,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BCC",
+          "count": 491,
+          "covered": 483,
+          "coverage_rate": 0.9837067209775967,
+          "target_coverage": 0.9,
+          "p_value": 1.0,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BKL",
+          "count": 316,
+          "covered": 287,
+          "coverage_rate": 0.9082278481012658,
+          "target_coverage": 0.9,
+          "p_value": 0.7137813978163757,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "DF",
+          "count": 46,
+          "covered": 43,
+          "coverage_rate": 0.9347826086956522,
+          "target_coverage": 0.9,
+          "p_value": 0.8516246193425211,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "MEL",
+          "count": 679,
+          "covered": 645,
+          "coverage_rate": 0.9499263622974963,
+          "target_coverage": 0.9,
+          "p_value": 0.9999992616096733,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "NV",
+          "count": 1272,
+          "covered": 1233,
+          "coverage_rate": 0.9693396226415094,
+          "target_coverage": 0.9,
+          "p_value": 0.9999999999999478,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "SCC",
+          "count": 87,
+          "covered": 82,
+          "coverage_rate": 0.9425287356321839,
+          "target_coverage": 0.9,
+          "p_value": 0.9434144206471515,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "VASC",
+          "count": 37,
+          "covered": 30,
+          "coverage_rate": 0.8108108108108109,
+          "target_coverage": 0.9,
+          "p_value": 0.07108505827175707,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.5686804661740565,
+          "below_target": true,
+          "significant_below_target": false
+        }
+      ],
+      "diagnostics": {
+        "method": "aps",
+        "alpha": 0.1,
+        "threshold": 0.9923323392868042
+      }
+    },
+    {
+      "Method": "raps",
+      "alpha": 0.1,
+      "Coverage": 0.938953488372093,
+      "Avg Size": 3.0513565891472867,
+      "Coverage Equity Gap": 0.11134017387022965,
+      "# Below Target": 5,
+      "Coverage CI Low": 0.9302244832041343,
+      "Coverage CI High": 0.9470364987080104,
+      "target_coverage": 0.9,
+      "failing_classes": [
+        "AK",
+        "BKL",
+        "DF",
+        "SCC",
+        "VASC"
+      ],
+      "per_class": {
+        "AK": {
+          "count": 168,
+          "covered": 137,
+          "coverage_rate": 0.8154761904761905,
+          "avg_set_size": 3.755952380952381
+        },
+        "BCC": {
+          "count": 491,
+          "covered": 475,
+          "coverage_rate": 0.9674134419551935,
+          "avg_set_size": 3.7209775967413443
+        },
+        "BKL": {
+          "count": 316,
+          "covered": 269,
+          "coverage_rate": 0.8512658227848101,
+          "avg_set_size": 3.5759493670886076
+        },
+        "DF": {
+          "count": 46,
+          "covered": 41,
+          "coverage_rate": 0.8913043478260869,
+          "avg_set_size": 3.8260869565217392
+        },
+        "MEL": {
+          "count": 679,
+          "covered": 646,
+          "coverage_rate": 0.9513991163475699,
+          "avg_set_size": 2.846833578792342
+        },
+        "NV": {
+          "count": 1272,
+          "covered": 1232,
+          "coverage_rate": 0.9685534591194969,
+          "avg_set_size": 2.589622641509434
+        },
+        "SCC": {
+          "count": 87,
+          "covered": 78,
+          "coverage_rate": 0.896551724137931,
+          "avg_set_size": 3.9080459770114944
+        },
+        "VASC": {
+          "count": 37,
+          "covered": 29,
+          "coverage_rate": 0.7837837837837838,
+          "avg_set_size": 3.135135135135135
+        }
+      },
+      "bootstrap": {
+        "coverage": {
+          "estimate": 0.938953488372093,
+          "ci_low": 0.9302244832041343,
+          "ci_high": 0.9470364987080104,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "average_set_size": {
+          "estimate": 3.0513565891472867,
+          "ci_low": 3.0099967700258397,
+          "ci_high": 3.094985465116279,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "coverage_equity_gap": {
+          "estimate": 0.11134017387022965,
+          "ci_low": 0.05554773228679058,
+          "ci_high": 0.16762543006161912,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        }
+      },
+      "per_class_tests": [
+        {
+          "class_name": "AK",
+          "count": 168,
+          "covered": 137,
+          "coverage_rate": 0.8154761904761905,
+          "target_coverage": 0.9,
+          "p_value": 0.0006131856205130138,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.004905484964104111,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "BCC",
+          "count": 491,
+          "covered": 475,
+          "coverage_rate": 0.9674134419551935,
+          "target_coverage": 0.9,
+          "p_value": 0.9999999967230122,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BKL",
+          "count": 316,
+          "covered": 269,
+          "coverage_rate": 0.8512658227848101,
+          "target_coverage": 0.9,
+          "p_value": 0.003982292835550904,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.027876049848856325,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "DF",
+          "count": 46,
+          "covered": 41,
+          "coverage_rate": 0.8913043478260869,
+          "target_coverage": 0.9,
+          "p_value": 0.49268262791171713,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "MEL",
+          "count": 679,
+          "covered": 646,
+          "coverage_rate": 0.9513991163475699,
+          "target_coverage": 0.9,
+          "p_value": 0.9999996694062024,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "NV",
+          "count": 1272,
+          "covered": 1232,
+          "coverage_rate": 0.9685534591194969,
+          "target_coverage": 0.9,
+          "p_value": 0.9999999999999478,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "SCC",
+          "count": 87,
+          "covered": 78,
+          "coverage_rate": 0.896551724137931,
+          "target_coverage": 0.9,
+          "p_value": 0.5092237799928142,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "VASC",
+          "count": 37,
+          "covered": 29,
+          "coverage_rate": 0.7837837837837838,
+          "target_coverage": 0.9,
+          "p_value": 0.02744135996475176,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.16464815978851055,
+          "below_target": true,
+          "significant_below_target": false
+        }
+      ],
+      "diagnostics": {
+        "method": "raps",
+        "alpha": 0.1,
+        "lambda_reg": 0.01,
+        "k_reg": 3,
+        "threshold": 0.9937326312065125
+      }
+    },
+    {
+      "Method": "mondrian_cp",
+      "alpha": 0.1,
+      "Coverage": 0.9069767441860465,
+      "Avg Size": 2.673449612403101,
+      "Coverage Equity Gap": 0.018899164220371523,
+      "# Below Target": 4,
+      "Coverage CI Low": 0.8972868217054264,
+      "Coverage CI High": 0.9166747416020672,
+      "target_coverage": 0.9,
+      "failing_classes": [
+        "BKL",
+        "DF",
+        "MEL",
+        "VASC"
+      ],
+      "per_class": {
+        "AK": {
+          "count": 168,
+          "covered": 152,
+          "coverage_rate": 0.9047619047619048,
+          "avg_set_size": 3.4285714285714284
+        },
+        "BCC": {
+          "count": 491,
+          "covered": 443,
+          "coverage_rate": 0.9022403258655805,
+          "avg_set_size": 3.3523421588594706
+        },
+        "BKL": {
+          "count": 316,
+          "covered": 284,
+          "coverage_rate": 0.8987341772151899,
+          "avg_set_size": 3.142405063291139
+        },
+        "DF": {
+          "count": 46,
+          "covered": 41,
+          "coverage_rate": 0.8913043478260869,
+          "avg_set_size": 3.717391304347826
+        },
+        "MEL": {
+          "count": 679,
+          "covered": 605,
+          "coverage_rate": 0.8910162002945509,
+          "avg_set_size": 2.6273932253313697
+        },
+        "NV": {
+          "count": 1272,
+          "covered": 1170,
+          "coverage_rate": 0.9198113207547169,
+          "avg_set_size": 2.0864779874213837
+        },
+        "SCC": {
+          "count": 87,
+          "covered": 80,
+          "coverage_rate": 0.9195402298850575,
+          "avg_set_size": 3.9080459770114944
+        },
+        "VASC": {
+          "count": 37,
+          "covered": 33,
+          "coverage_rate": 0.8918918918918919,
+          "avg_set_size": 3.054054054054054
+        }
+      },
+      "bootstrap": {
+        "coverage": {
+          "estimate": 0.9069767441860465,
+          "ci_low": 0.8972868217054264,
+          "ci_high": 0.9166747416020672,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "average_set_size": {
+          "estimate": 2.673449612403101,
+          "ci_low": 2.624022932816538,
+          "ci_high": 2.7283672480620154,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "coverage_equity_gap": {
+          "estimate": 0.018899164220371523,
+          "ci_low": -0.02875040121160862,
+          "ci_high": 0.07380969036208801,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        }
+      },
+      "per_class_tests": [
+        {
+          "class_name": "AK",
+          "count": 168,
+          "covered": 152,
+          "coverage_rate": 0.9047619047619048,
+          "target_coverage": 0.9,
+          "p_value": 0.6191057494499208,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BCC",
+          "count": 491,
+          "covered": 443,
+          "coverage_rate": 0.9022403258655805,
+          "target_coverage": 0.9,
+          "p_value": 0.5876938028514642,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BKL",
+          "count": 316,
+          "covered": 284,
+          "coverage_rate": 0.8987341772151899,
+          "target_coverage": 0.9,
+          "p_value": 0.49746253294961845,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "DF",
+          "count": 46,
+          "covered": 41,
+          "coverage_rate": 0.8913043478260869,
+          "target_coverage": 0.9,
+          "p_value": 0.49268262791171713,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "MEL",
+          "count": 679,
+          "covered": 605,
+          "coverage_rate": 0.8910162002945509,
+          "target_coverage": 0.9,
+          "p_value": 0.23431627746806327,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "NV",
+          "count": 1272,
+          "covered": 1170,
+          "coverage_rate": 0.9198113207547169,
+          "target_coverage": 0.9,
+          "p_value": 0.9932047490322239,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "SCC",
+          "count": 87,
+          "covered": 80,
+          "coverage_rate": 0.9195402298850575,
+          "target_coverage": 0.9,
+          "p_value": 0.7787333489726753,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "VASC",
+          "count": 37,
+          "covered": 33,
+          "coverage_rate": 0.8918918918918919,
+          "target_coverage": 0.9,
+          "p_value": 0.5135534468629815,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        }
+      ],
+      "diagnostics": {
+        "method": "mondrian_cp",
+        "alpha": 0.1,
+        "n_classes": 8,
+        "thresholds": [
+          0.9928078651428223,
+          0.8492573499679565,
+          0.9898762106895447,
+          0.9790868759155273,
+          0.9384732842445374,
+          0.7735970616340637,
+          0.9898505210876465,
+          0.9905077815055847
+        ]
+      }
+    },
+    {
+      "Method": "classwise_cp",
+      "alpha": 0.1,
+      "Coverage": 0.9069767441860465,
+      "Avg Size": 2.673449612403101,
+      "Coverage Equity Gap": 0.018899164220371523,
+      "# Below Target": 4,
+      "Coverage CI Low": 0.8972868217054264,
+      "Coverage CI High": 0.9166747416020672,
+      "target_coverage": 0.9,
+      "failing_classes": [
+        "BKL",
+        "DF",
+        "MEL",
+        "VASC"
+      ],
+      "per_class": {
+        "AK": {
+          "count": 168,
+          "covered": 152,
+          "coverage_rate": 0.9047619047619048,
+          "avg_set_size": 3.4285714285714284
+        },
+        "BCC": {
+          "count": 491,
+          "covered": 443,
+          "coverage_rate": 0.9022403258655805,
+          "avg_set_size": 3.3523421588594706
+        },
+        "BKL": {
+          "count": 316,
+          "covered": 284,
+          "coverage_rate": 0.8987341772151899,
+          "avg_set_size": 3.142405063291139
+        },
+        "DF": {
+          "count": 46,
+          "covered": 41,
+          "coverage_rate": 0.8913043478260869,
+          "avg_set_size": 3.717391304347826
+        },
+        "MEL": {
+          "count": 679,
+          "covered": 605,
+          "coverage_rate": 0.8910162002945509,
+          "avg_set_size": 2.6273932253313697
+        },
+        "NV": {
+          "count": 1272,
+          "covered": 1170,
+          "coverage_rate": 0.9198113207547169,
+          "avg_set_size": 2.0864779874213837
+        },
+        "SCC": {
+          "count": 87,
+          "covered": 80,
+          "coverage_rate": 0.9195402298850575,
+          "avg_set_size": 3.9080459770114944
+        },
+        "VASC": {
+          "count": 37,
+          "covered": 33,
+          "coverage_rate": 0.8918918918918919,
+          "avg_set_size": 3.054054054054054
+        }
+      },
+      "bootstrap": {
+        "coverage": {
+          "estimate": 0.9069767441860465,
+          "ci_low": 0.8972868217054264,
+          "ci_high": 0.9166747416020672,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "average_set_size": {
+          "estimate": 2.673449612403101,
+          "ci_low": 2.624022932816538,
+          "ci_high": 2.7283672480620154,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "coverage_equity_gap": {
+          "estimate": 0.018899164220371523,
+          "ci_low": -0.02875040121160862,
+          "ci_high": 0.07380969036208801,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        }
+      },
+      "per_class_tests": [
+        {
+          "class_name": "AK",
+          "count": 168,
+          "covered": 152,
+          "coverage_rate": 0.9047619047619048,
+          "target_coverage": 0.9,
+          "p_value": 0.6191057494499208,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BCC",
+          "count": 491,
+          "covered": 443,
+          "coverage_rate": 0.9022403258655805,
+          "target_coverage": 0.9,
+          "p_value": 0.5876938028514642,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BKL",
+          "count": 316,
+          "covered": 284,
+          "coverage_rate": 0.8987341772151899,
+          "target_coverage": 0.9,
+          "p_value": 0.49746253294961845,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "DF",
+          "count": 46,
+          "covered": 41,
+          "coverage_rate": 0.8913043478260869,
+          "target_coverage": 0.9,
+          "p_value": 0.49268262791171713,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "MEL",
+          "count": 679,
+          "covered": 605,
+          "coverage_rate": 0.8910162002945509,
+          "target_coverage": 0.9,
+          "p_value": 0.23431627746806327,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "NV",
+          "count": 1272,
+          "covered": 1170,
+          "coverage_rate": 0.9198113207547169,
+          "target_coverage": 0.9,
+          "p_value": 0.9932047490322239,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "SCC",
+          "count": 87,
+          "covered": 80,
+          "coverage_rate": 0.9195402298850575,
+          "target_coverage": 0.9,
+          "p_value": 0.7787333489726753,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "VASC",
+          "count": 37,
+          "covered": 33,
+          "coverage_rate": 0.8918918918918919,
+          "target_coverage": 0.9,
+          "p_value": 0.5135534468629815,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        }
+      ],
+      "diagnostics": {
+        "method": "classwise_cp",
+        "alpha": 0.1,
+        "n_classes": 8,
+        "thresholds": [
+          0.9928078651428223,
+          0.8492573499679565,
+          0.9898762106895447,
+          0.9790868759155273,
+          0.9384732842445374,
+          0.7735970616340637,
+          0.9898505210876465,
+          0.9905077815055847
+        ]
+      }
+    },
+    {
+      "Method": "clustered_cp",
+      "alpha": 0.1,
+      "Coverage": 0.9027777777777778,
+      "Avg Size": 2.501937984496124,
+      "Coverage Equity Gap": 0.04083174289109048,
+      "# Below Target": 4,
+      "Coverage CI Low": 0.8930797803617571,
+      "Coverage CI High": 0.9121447028423773,
+      "target_coverage": 0.9,
+      "failing_classes": [
+        "AK",
+        "BKL",
+        "MEL",
+        "VASC"
+      ],
+      "per_class": {
+        "AK": {
+          "count": 168,
+          "covered": 140,
+          "coverage_rate": 0.8333333333333334,
+          "avg_set_size": 3.505952380952381
+        },
+        "BCC": {
+          "count": 491,
+          "covered": 478,
+          "coverage_rate": 0.9735234215885947,
+          "avg_set_size": 3.0285132382892055
+        },
+        "BKL": {
+          "count": 316,
+          "covered": 267,
+          "coverage_rate": 0.8449367088607594,
+          "avg_set_size": 3.0537974683544302
+        },
+        "DF": {
+          "count": 46,
+          "covered": 43,
+          "coverage_rate": 0.9347826086956522,
+          "avg_set_size": 3.5652173913043477
+        },
+        "MEL": {
+          "count": 679,
+          "covered": 556,
+          "coverage_rate": 0.8188512518409425,
+          "avg_set_size": 2.5139911634756995
+        },
+        "NV": {
+          "count": 1272,
+          "covered": 1200,
+          "coverage_rate": 0.9433962264150944,
+          "avg_set_size": 1.8852201257861636
+        },
+        "SCC": {
+          "count": 87,
+          "covered": 79,
+          "coverage_rate": 0.9080459770114943,
+          "avg_set_size": 3.8275862068965516
+        },
+        "VASC": {
+          "count": 37,
+          "covered": 32,
+          "coverage_rate": 0.8648648648648649,
+          "avg_set_size": 2.7837837837837838
+        }
+      },
+      "bootstrap": {
+        "coverage": {
+          "estimate": 0.9027777777777778,
+          "ci_low": 0.8930797803617571,
+          "ci_high": 0.9121447028423773,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "average_set_size": {
+          "estimate": 2.501937984496124,
+          "ci_low": 2.4525193798449614,
+          "ci_high": 2.5607235142118863,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "coverage_equity_gap": {
+          "estimate": 0.04083174289109048,
+          "ci_low": -0.005249056018997779,
+          "ci_high": 0.0908099325070786,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        }
+      },
+      "per_class_tests": [
+        {
+          "class_name": "AK",
+          "count": 168,
+          "covered": 140,
+          "coverage_rate": 0.8333333333333334,
+          "target_coverage": 0.9,
+          "p_value": 0.004992796440281444,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.029956778641688664,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "BCC",
+          "count": 491,
+          "covered": 478,
+          "coverage_rate": 0.9735234215885947,
+          "target_coverage": 0.9,
+          "p_value": 0.9999999999450797,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BKL",
+          "count": 316,
+          "covered": 267,
+          "coverage_rate": 0.8449367088607594,
+          "target_coverage": 0.9,
+          "p_value": 0.0014138891314353988,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.009897223920047792,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "DF",
+          "count": 46,
+          "covered": 43,
+          "coverage_rate": 0.9347826086956522,
+          "target_coverage": 0.9,
+          "p_value": 0.8516246193425211,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "MEL",
+          "count": 679,
+          "covered": 556,
+          "coverage_rate": 0.8188512518409425,
+          "target_coverage": 0.9,
+          "p_value": 9.398527046790183e-11,
+          "adjustment": "holm",
+          "adjusted_p_value": 7.518821637432147e-10,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "NV",
+          "count": 1272,
+          "covered": 1200,
+          "coverage_rate": 0.9433962264150944,
+          "target_coverage": 0.9,
+          "p_value": 0.999999990198863,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "SCC",
+          "count": 87,
+          "covered": 79,
+          "coverage_rate": 0.9080459770114943,
+          "target_coverage": 0.9,
+          "p_value": 0.6510709215611619,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "VASC",
+          "count": 37,
+          "covered": 32,
+          "coverage_rate": 0.8648648648648649,
+          "target_coverage": 0.9,
+          "p_value": 0.3094535637428841,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        }
+      ],
+      "diagnostics": {
+        "method": "clustered_cp",
+        "alpha": 0.1,
+        "n_classes": 8,
+        "n_clusters": 3,
+        "class_counts": [
+          867,
+          3323,
+          2624,
+          238,
+          4522,
+          12874,
+          628,
+          253
+        ],
+        "class_to_cluster": {
+          "3": 0,
+          "7": 0,
+          "6": 0,
+          "0": 1,
+          "2": 1,
+          "1": 1,
+          "4": 2,
+          "5": 2
+        },
+        "cluster_thresholds": {
+          "0": 0.9868685603141785,
+          "1": 0.9804461598396301,
+          "2": 0.870681643486023
+        },
+        "global_threshold": 0.9518738985061646
+      }
+    },
+    {
+      "Method": "rc3p",
+      "alpha": 0.1,
+      "Coverage": 0.9027777777777778,
+      "Avg Size": 2.501937984496124,
+      "Coverage Equity Gap": 0.04083174289109048,
+      "# Below Target": 4,
+      "Coverage CI Low": 0.8930797803617571,
+      "Coverage CI High": 0.9121447028423773,
+      "target_coverage": 0.9,
+      "failing_classes": [
+        "AK",
+        "BKL",
+        "MEL",
+        "VASC"
+      ],
+      "per_class": {
+        "AK": {
+          "count": 168,
+          "covered": 140,
+          "coverage_rate": 0.8333333333333334,
+          "avg_set_size": 3.505952380952381
+        },
+        "BCC": {
+          "count": 491,
+          "covered": 478,
+          "coverage_rate": 0.9735234215885947,
+          "avg_set_size": 3.0285132382892055
+        },
+        "BKL": {
+          "count": 316,
+          "covered": 267,
+          "coverage_rate": 0.8449367088607594,
+          "avg_set_size": 3.0537974683544302
+        },
+        "DF": {
+          "count": 46,
+          "covered": 43,
+          "coverage_rate": 0.9347826086956522,
+          "avg_set_size": 3.5652173913043477
+        },
+        "MEL": {
+          "count": 679,
+          "covered": 556,
+          "coverage_rate": 0.8188512518409425,
+          "avg_set_size": 2.5139911634756995
+        },
+        "NV": {
+          "count": 1272,
+          "covered": 1200,
+          "coverage_rate": 0.9433962264150944,
+          "avg_set_size": 1.8852201257861636
+        },
+        "SCC": {
+          "count": 87,
+          "covered": 79,
+          "coverage_rate": 0.9080459770114943,
+          "avg_set_size": 3.8275862068965516
+        },
+        "VASC": {
+          "count": 37,
+          "covered": 32,
+          "coverage_rate": 0.8648648648648649,
+          "avg_set_size": 2.7837837837837838
+        }
+      },
+      "bootstrap": {
+        "coverage": {
+          "estimate": 0.9027777777777778,
+          "ci_low": 0.8930797803617571,
+          "ci_high": 0.9121447028423773,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "average_set_size": {
+          "estimate": 2.501937984496124,
+          "ci_low": 2.4525193798449614,
+          "ci_high": 2.5607235142118863,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "coverage_equity_gap": {
+          "estimate": 0.04083174289109048,
+          "ci_low": -0.005249056018997779,
+          "ci_high": 0.0908099325070786,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        }
+      },
+      "per_class_tests": [
+        {
+          "class_name": "AK",
+          "count": 168,
+          "covered": 140,
+          "coverage_rate": 0.8333333333333334,
+          "target_coverage": 0.9,
+          "p_value": 0.004992796440281444,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.029956778641688664,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "BCC",
+          "count": 491,
+          "covered": 478,
+          "coverage_rate": 0.9735234215885947,
+          "target_coverage": 0.9,
+          "p_value": 0.9999999999450797,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BKL",
+          "count": 316,
+          "covered": 267,
+          "coverage_rate": 0.8449367088607594,
+          "target_coverage": 0.9,
+          "p_value": 0.0014138891314353988,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.009897223920047792,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "DF",
+          "count": 46,
+          "covered": 43,
+          "coverage_rate": 0.9347826086956522,
+          "target_coverage": 0.9,
+          "p_value": 0.8516246193425211,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "MEL",
+          "count": 679,
+          "covered": 556,
+          "coverage_rate": 0.8188512518409425,
+          "target_coverage": 0.9,
+          "p_value": 9.398527046790183e-11,
+          "adjustment": "holm",
+          "adjusted_p_value": 7.518821637432147e-10,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "NV",
+          "count": 1272,
+          "covered": 1200,
+          "coverage_rate": 0.9433962264150944,
+          "target_coverage": 0.9,
+          "p_value": 0.999999990198863,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "SCC",
+          "count": 87,
+          "covered": 79,
+          "coverage_rate": 0.9080459770114943,
+          "target_coverage": 0.9,
+          "p_value": 0.6510709215611619,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "VASC",
+          "count": 37,
+          "covered": 32,
+          "coverage_rate": 0.8648648648648649,
+          "target_coverage": 0.9,
+          "p_value": 0.3094535637428841,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        }
+      ],
+      "diagnostics": {
+        "method": "rc3p",
+        "alpha": 0.1,
+        "n_classes": 8,
+        "n_clusters": 3,
+        "class_counts": [
+          867,
+          3323,
+          2624,
+          238,
+          4522,
+          12874,
+          628,
+          253
+        ],
+        "class_to_cluster": {
+          "3": 0,
+          "7": 0,
+          "6": 0,
+          "0": 1,
+          "2": 1,
+          "1": 1,
+          "4": 2,
+          "5": 2
+        },
+        "cluster_thresholds": {
+          "0": 0.9868685603141785,
+          "1": 0.9804461598396301,
+          "2": 0.870681643486023
+        },
+        "global_threshold": 0.9518738985061646,
+        "implementation_note": "frequency-clustered substitute for RC3P"
+      }
+    },
+    {
+      "Method": "standard_cp",
+      "alpha": 0.2,
+      "Coverage": 0.8003875968992248,
+      "Avg Size": 1.309108527131783,
+      "Coverage Equity Gap": 0.4066690838670415,
+      "# Below Target": 6,
+      "Coverage CI Low": 0.7861757105943152,
+      "Coverage CI High": 0.8139615633074936,
+      "target_coverage": 0.8,
+      "failing_classes": [
+        "AK",
+        "BKL",
+        "DF",
+        "MEL",
+        "SCC",
+        "VASC"
+      ],
+      "per_class": {
+        "AK": {
+          "count": 168,
+          "covered": 66,
+          "coverage_rate": 0.39285714285714285,
+          "avg_set_size": 1.4523809523809523
+        },
+        "BCC": {
+          "count": 491,
+          "covered": 433,
+          "coverage_rate": 0.8818737270875764,
+          "avg_set_size": 1.3177189409368635
+        },
+        "BKL": {
+          "count": 316,
+          "covered": 174,
+          "coverage_rate": 0.5506329113924051,
+          "avg_set_size": 1.4556962025316456
+        },
+        "DF": {
+          "count": 46,
+          "covered": 24,
+          "coverage_rate": 0.5217391304347826,
+          "avg_set_size": 1.5434782608695652
+        },
+        "MEL": {
+          "count": 679,
+          "covered": 529,
+          "coverage_rate": 0.7790868924889544,
+          "avg_set_size": 1.3107511045655376
+        },
+        "NV": {
+          "count": 1272,
+          "covered": 1187,
+          "coverage_rate": 0.9331761006289309,
+          "avg_set_size": 1.2224842767295598
+        },
+        "SCC": {
+          "count": 87,
+          "covered": 45,
+          "coverage_rate": 0.5172413793103449,
+          "avg_set_size": 1.5862068965517242
+        },
+        "VASC": {
+          "count": 37,
+          "covered": 20,
+          "coverage_rate": 0.5405405405405406,
+          "avg_set_size": 1.2972972972972974
+        }
+      },
+      "bootstrap": {
+        "coverage": {
+          "estimate": 0.8003875968992248,
+          "ci_low": 0.7861757105943152,
+          "ci_high": 0.8139615633074936,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "average_set_size": {
+          "estimate": 1.309108527131783,
+          "ci_low": 1.2910125968992248,
+          "ci_high": 1.328811369509044,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "coverage_equity_gap": {
+          "estimate": 0.4066690838670415,
+          "ci_low": 0.3266427408225459,
+          "ci_high": 0.48380358684662284,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        }
+      },
+      "per_class_tests": [
+        {
+          "class_name": "AK",
+          "count": 168,
+          "covered": 66,
+          "coverage_rate": 0.39285714285714285,
+          "target_coverage": 0.8,
+          "p_value": 1.1697241972639204e-30,
+          "adjustment": "holm",
+          "adjusted_p_value": 9.357793578111363e-30,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "BCC",
+          "count": 491,
+          "covered": 433,
+          "coverage_rate": 0.8818737270875764,
+          "target_coverage": 0.8,
+          "p_value": 0.9999994660075469,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BKL",
+          "count": 316,
+          "covered": 174,
+          "coverage_rate": 0.5506329113924051,
+          "target_coverage": 0.8,
+          "p_value": 1.3031476722259849e-23,
+          "adjustment": "holm",
+          "adjusted_p_value": 9.122033705581894e-23,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "DF",
+          "count": 46,
+          "covered": 24,
+          "coverage_rate": 0.5217391304347826,
+          "target_coverage": 0.8,
+          "p_value": 2.095019602701741e-05,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.00010475098013508705,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "MEL",
+          "count": 679,
+          "covered": 529,
+          "coverage_rate": 0.7790868924889544,
+          "target_coverage": 0.8,
+          "p_value": 0.0954519236951675,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.2863557710855025,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "NV",
+          "count": 1272,
+          "covered": 1187,
+          "coverage_rate": 0.9331761006289309,
+          "target_coverage": 0.8,
+          "p_value": 0.9999999999999286,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "SCC",
+          "count": 87,
+          "covered": 45,
+          "coverage_rate": 0.5172413793103449,
+          "target_coverage": 0.8,
+          "p_value": 3.236486329764105e-09,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.941891797858463e-08,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "VASC",
+          "count": 37,
+          "covered": 20,
+          "coverage_rate": 0.5405405405405406,
+          "target_coverage": 0.8,
+          "p_value": 0.0003284918715503084,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.0013139674862012337,
+          "below_target": true,
+          "significant_below_target": true
+        }
+      ],
+      "diagnostics": {
+        "method": "standard_cp",
+        "alpha": 0.2,
+        "threshold": 0.8093978762626648
+      }
+    },
+    {
+      "Method": "aps",
+      "alpha": 0.2,
+      "Coverage": 0.9218346253229974,
+      "Avg Size": 2.862403100775194,
+      "Coverage Equity Gap": 0.1041653021865746,
+      "# Below Target": 2,
+      "Coverage CI Low": 0.9131056201550387,
+      "Coverage CI High": 0.9312015503875969,
+      "target_coverage": 0.8,
+      "failing_classes": [
+        "AK",
+        "VASC"
+      ],
+      "per_class": {
+        "AK": {
+          "count": 168,
+          "covered": 133,
+          "coverage_rate": 0.7916666666666666,
+          "avg_set_size": 3.857142857142857
+        },
+        "BCC": {
+          "count": 491,
+          "covered": 474,
+          "coverage_rate": 0.9653767820773931,
+          "avg_set_size": 3.7291242362525456
+        },
+        "BKL": {
+          "count": 316,
+          "covered": 264,
+          "coverage_rate": 0.8354430379746836,
+          "avg_set_size": 3.6455696202531644
+        },
+        "DF": {
+          "count": 46,
+          "covered": 41,
+          "coverage_rate": 0.8913043478260869,
+          "avg_set_size": 3.9347826086956523
+        },
+        "MEL": {
+          "count": 679,
+          "covered": 618,
+          "coverage_rate": 0.9101620029455081,
+          "avg_set_size": 2.6980854197349045
+        },
+        "NV": {
+          "count": 1272,
+          "covered": 1218,
+          "coverage_rate": 0.9575471698113207,
+          "avg_set_size": 2.1635220125786163
+        },
+        "SCC": {
+          "count": 87,
+          "covered": 77,
+          "coverage_rate": 0.8850574712643678,
+          "avg_set_size": 4.080459770114943
+        },
+        "VASC": {
+          "count": 37,
+          "covered": 29,
+          "coverage_rate": 0.7837837837837838,
+          "avg_set_size": 3.0
+        }
+      },
+      "bootstrap": {
+        "coverage": {
+          "estimate": 0.9218346253229974,
+          "ci_low": 0.9131056201550387,
+          "ci_high": 0.9312015503875969,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "average_set_size": {
+          "estimate": 2.862403100775194,
+          "ci_low": 2.8065164728682173,
+          "ci_high": 2.9202277131782943,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "coverage_equity_gap": {
+          "estimate": 0.1041653021865746,
+          "ci_low": 0.047487382034641853,
+          "ci_high": 0.1639421170932374,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        }
+      },
+      "per_class_tests": [
+        {
+          "class_name": "AK",
+          "count": 168,
+          "covered": 133,
+          "coverage_rate": 0.7916666666666666,
+          "target_coverage": 0.8,
+          "p_value": 0.42377917807311016,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BCC",
+          "count": 491,
+          "covered": 474,
+          "coverage_rate": 0.9653767820773931,
+          "target_coverage": 0.8,
+          "p_value": 1.0,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BKL",
+          "count": 316,
+          "covered": 264,
+          "coverage_rate": 0.8354430379746836,
+          "target_coverage": 0.8,
+          "p_value": 0.952772883860282,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "DF",
+          "count": 46,
+          "covered": 41,
+          "coverage_rate": 0.8913043478260869,
+          "target_coverage": 0.8,
+          "p_value": 0.9668340388256971,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "MEL",
+          "count": 679,
+          "covered": 618,
+          "coverage_rate": 0.9101620029455081,
+          "target_coverage": 0.8,
+          "p_value": 1.0,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "NV",
+          "count": 1272,
+          "covered": 1218,
+          "coverage_rate": 0.9575471698113207,
+          "target_coverage": 0.8,
+          "p_value": 0.9999999999999286,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "SCC",
+          "count": 87,
+          "covered": 77,
+          "coverage_rate": 0.8850574712643678,
+          "target_coverage": 0.8,
+          "p_value": 0.9874949146722002,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "VASC",
+          "count": 37,
+          "covered": 29,
+          "coverage_rate": 0.7837837837837838,
+          "target_coverage": 0.8,
+          "p_value": 0.46703405224244693,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        }
+      ],
+      "diagnostics": {
+        "method": "aps",
+        "alpha": 0.2,
+        "threshold": 0.9843063354492188
+      }
+    },
+    {
+      "Method": "raps",
+      "alpha": 0.2,
+      "Coverage": 0.9108527131782945,
+      "Avg Size": 2.5733204134366927,
+      "Coverage Equity Gap": 0.11976127778368162,
+      "# Below Target": 2,
+      "Coverage CI Low": 0.9018007105943152,
+      "Coverage CI High": 0.9202277131782947,
+      "target_coverage": 0.8,
+      "failing_classes": [
+        "AK",
+        "VASC"
+      ],
+      "per_class": {
+        "AK": {
+          "count": 168,
+          "covered": 126,
+          "coverage_rate": 0.75,
+          "avg_set_size": 3.3392857142857144
+        },
+        "BCC": {
+          "count": 491,
+          "covered": 471,
+          "coverage_rate": 0.9592668024439919,
+          "avg_set_size": 3.2443991853360488
+        },
+        "BKL": {
+          "count": 316,
+          "covered": 253,
+          "coverage_rate": 0.8006329113924051,
+          "avg_set_size": 3.1772151898734178
+        },
+        "DF": {
+          "count": 46,
+          "covered": 40,
+          "coverage_rate": 0.8695652173913043,
+          "avg_set_size": 3.5
+        },
+        "MEL": {
+          "count": 679,
+          "covered": 613,
+          "coverage_rate": 0.9027982326951399,
+          "avg_set_size": 2.434462444771723
+        },
+        "NV": {
+          "count": 1272,
+          "covered": 1214,
+          "coverage_rate": 0.9544025157232704,
+          "avg_set_size": 2.033805031446541
+        },
+        "SCC": {
+          "count": 87,
+          "covered": 74,
+          "coverage_rate": 0.8505747126436781,
+          "avg_set_size": 3.5517241379310347
+        },
+        "VASC": {
+          "count": 37,
+          "covered": 29,
+          "coverage_rate": 0.7837837837837838,
+          "avg_set_size": 2.675675675675676
+        }
+      },
+      "bootstrap": {
+        "coverage": {
+          "estimate": 0.9108527131782945,
+          "ci_low": 0.9018007105943152,
+          "ci_high": 0.9202277131782947,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "average_set_size": {
+          "estimate": 2.5733204134366927,
+          "ci_low": 2.527123708010336,
+          "ci_high": 2.618217054263566,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "coverage_equity_gap": {
+          "estimate": 0.11976127778368162,
+          "ci_low": 0.06216960195437216,
+          "ci_high": 0.18252895440378217,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        }
+      },
+      "per_class_tests": [
+        {
+          "class_name": "AK",
+          "count": 168,
+          "covered": 126,
+          "coverage_rate": 0.75,
+          "target_coverage": 0.8,
+          "p_value": 0.06660332978798529,
+          "adjustment": "holm",
+          "adjusted_p_value": 0.5328266383038823,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BCC",
+          "count": 491,
+          "covered": 471,
+          "coverage_rate": 0.9592668024439919,
+          "target_coverage": 0.8,
+          "p_value": 1.0,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BKL",
+          "count": 316,
+          "covered": 253,
+          "coverage_rate": 0.8006329113924051,
+          "target_coverage": 0.8,
+          "p_value": 0.5336469630748042,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "DF",
+          "count": 46,
+          "covered": 40,
+          "coverage_rate": 0.8695652173913043,
+          "target_coverage": 0.8,
+          "p_value": 0.9201896972670616,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "MEL",
+          "count": 679,
+          "covered": 613,
+          "coverage_rate": 0.9027982326951399,
+          "target_coverage": 0.8,
+          "p_value": 0.9999999999999227,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "NV",
+          "count": 1272,
+          "covered": 1214,
+          "coverage_rate": 0.9544025157232704,
+          "target_coverage": 0.8,
+          "p_value": 0.9999999999999286,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "SCC",
+          "count": 87,
+          "covered": 74,
+          "coverage_rate": 0.8505747126436781,
+          "target_coverage": 0.8,
+          "p_value": 0.9094445172176553,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "VASC",
+          "count": 37,
+          "covered": 29,
+          "coverage_rate": 0.7837837837837838,
+          "target_coverage": 0.8,
+          "p_value": 0.46703405224244693,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        }
+      ],
+      "diagnostics": {
+        "method": "raps",
+        "alpha": 0.2,
+        "lambda_reg": 0.01,
+        "k_reg": 3,
+        "threshold": 0.9852386116981506
+      }
+    },
+    {
+      "Method": "mondrian_cp",
+      "alpha": 0.2,
+      "Coverage": 0.8078165374677002,
+      "Avg Size": 1.7406330749354004,
+      "Coverage Equity Gap": 0.0015385495251694081,
+      "# Below Target": 3,
+      "Coverage CI Low": 0.7942425710594315,
+      "Coverage CI High": 0.8210594315245479,
+      "target_coverage": 0.8,
+      "failing_classes": [
+        "BKL",
+        "MEL",
+        "VASC"
+      ],
+      "per_class": {
+        "AK": {
+          "count": 168,
+          "covered": 137,
+          "coverage_rate": 0.8154761904761905,
+          "avg_set_size": 2.363095238095238
+        },
+        "BCC": {
+          "count": 491,
+          "covered": 396,
+          "coverage_rate": 0.8065173116089613,
+          "avg_set_size": 2.0916496945010183
+        },
+        "BKL": {
+          "count": 316,
+          "covered": 245,
+          "coverage_rate": 0.7753164556962026,
+          "avg_set_size": 2.0348101265822787
+        },
+        "DF": {
+          "count": 46,
+          "covered": 40,
+          "coverage_rate": 0.8695652173913043,
+          "avg_set_size": 2.4347826086956523
+        },
+        "MEL": {
+          "count": 679,
+          "covered": 534,
+          "coverage_rate": 0.7864506627393225,
+          "avg_set_size": 1.7142857142857142
+        },
+        "NV": {
+          "count": 1272,
+          "covered": 1049,
+          "coverage_rate": 0.824685534591195,
+          "avg_set_size": 1.3632075471698113
+        },
+        "SCC": {
+          "count": 87,
+          "covered": 71,
+          "coverage_rate": 0.8160919540229885,
+          "avg_set_size": 2.735632183908046
+        },
+        "VASC": {
+          "count": 37,
+          "covered": 29,
+          "coverage_rate": 0.7837837837837838,
+          "avg_set_size": 2.0
+        }
+      },
+      "bootstrap": {
+        "coverage": {
+          "estimate": 0.8078165374677002,
+          "ci_low": 0.7942425710594315,
+          "ci_high": 0.8210594315245479,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "average_set_size": {
+          "estimate": 1.7406330749354004,
+          "ci_low": 1.70703326873385,
+          "ci_high": 1.774232881136951,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "coverage_equity_gap": {
+          "estimate": 0.0015385495251694081,
+          "ci_low": -0.061307615738191865,
+          "ci_high": 0.06689679329476074,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        }
+      },
+      "per_class_tests": [
+        {
+          "class_name": "AK",
+          "count": 168,
+          "covered": 137,
+          "coverage_rate": 0.8154761904761905,
+          "target_coverage": 0.8,
+          "p_value": 0.7208008535110696,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BCC",
+          "count": 491,
+          "covered": 396,
+          "coverage_rate": 0.8065173116089613,
+          "target_coverage": 0.8,
+          "p_value": 0.6583717809208869,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BKL",
+          "count": 316,
+          "covered": 245,
+          "coverage_rate": 0.7753164556962026,
+          "target_coverage": 0.8,
+          "p_value": 0.15239203164132142,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "DF",
+          "count": 46,
+          "covered": 40,
+          "coverage_rate": 0.8695652173913043,
+          "target_coverage": 0.8,
+          "p_value": 0.9201896972670616,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "MEL",
+          "count": 679,
+          "covered": 534,
+          "coverage_rate": 0.7864506627393225,
+          "target_coverage": 0.8,
+          "p_value": 0.2011190898946351,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "NV",
+          "count": 1272,
+          "covered": 1049,
+          "coverage_rate": 0.824685534591195,
+          "target_coverage": 0.8,
+          "p_value": 0.9882775243443697,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "SCC",
+          "count": 87,
+          "covered": 71,
+          "coverage_rate": 0.8160919540229885,
+          "target_coverage": 0.8,
+          "p_value": 0.6874515292289197,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "VASC",
+          "count": 37,
+          "covered": 29,
+          "coverage_rate": 0.7837837837837838,
+          "target_coverage": 0.8,
+          "p_value": 0.46703405224244693,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        }
+      ],
+      "diagnostics": {
+        "method": "mondrian_cp",
+        "alpha": 0.2,
+        "n_classes": 8,
+        "thresholds": [
+          0.9781818985939026,
+          0.6525460481643677,
+          0.9635376930236816,
+          0.9571033120155334,
+          0.8179197311401367,
+          0.44885843992233276,
+          0.9663922190666199,
+          0.9785930514335632
+        ]
+      }
+    },
+    {
+      "Method": "classwise_cp",
+      "alpha": 0.2,
+      "Coverage": 0.8078165374677002,
+      "Avg Size": 1.7406330749354004,
+      "Coverage Equity Gap": 0.0015385495251694081,
+      "# Below Target": 3,
+      "Coverage CI Low": 0.7942425710594315,
+      "Coverage CI High": 0.8210594315245479,
+      "target_coverage": 0.8,
+      "failing_classes": [
+        "BKL",
+        "MEL",
+        "VASC"
+      ],
+      "per_class": {
+        "AK": {
+          "count": 168,
+          "covered": 137,
+          "coverage_rate": 0.8154761904761905,
+          "avg_set_size": 2.363095238095238
+        },
+        "BCC": {
+          "count": 491,
+          "covered": 396,
+          "coverage_rate": 0.8065173116089613,
+          "avg_set_size": 2.0916496945010183
+        },
+        "BKL": {
+          "count": 316,
+          "covered": 245,
+          "coverage_rate": 0.7753164556962026,
+          "avg_set_size": 2.0348101265822787
+        },
+        "DF": {
+          "count": 46,
+          "covered": 40,
+          "coverage_rate": 0.8695652173913043,
+          "avg_set_size": 2.4347826086956523
+        },
+        "MEL": {
+          "count": 679,
+          "covered": 534,
+          "coverage_rate": 0.7864506627393225,
+          "avg_set_size": 1.7142857142857142
+        },
+        "NV": {
+          "count": 1272,
+          "covered": 1049,
+          "coverage_rate": 0.824685534591195,
+          "avg_set_size": 1.3632075471698113
+        },
+        "SCC": {
+          "count": 87,
+          "covered": 71,
+          "coverage_rate": 0.8160919540229885,
+          "avg_set_size": 2.735632183908046
+        },
+        "VASC": {
+          "count": 37,
+          "covered": 29,
+          "coverage_rate": 0.7837837837837838,
+          "avg_set_size": 2.0
+        }
+      },
+      "bootstrap": {
+        "coverage": {
+          "estimate": 0.8078165374677002,
+          "ci_low": 0.7942425710594315,
+          "ci_high": 0.8210594315245479,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "average_set_size": {
+          "estimate": 1.7406330749354004,
+          "ci_low": 1.70703326873385,
+          "ci_high": 1.774232881136951,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "coverage_equity_gap": {
+          "estimate": 0.0015385495251694081,
+          "ci_low": -0.061307615738191865,
+          "ci_high": 0.06689679329476074,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        }
+      },
+      "per_class_tests": [
+        {
+          "class_name": "AK",
+          "count": 168,
+          "covered": 137,
+          "coverage_rate": 0.8154761904761905,
+          "target_coverage": 0.8,
+          "p_value": 0.7208008535110696,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BCC",
+          "count": 491,
+          "covered": 396,
+          "coverage_rate": 0.8065173116089613,
+          "target_coverage": 0.8,
+          "p_value": 0.6583717809208869,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BKL",
+          "count": 316,
+          "covered": 245,
+          "coverage_rate": 0.7753164556962026,
+          "target_coverage": 0.8,
+          "p_value": 0.15239203164132142,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "DF",
+          "count": 46,
+          "covered": 40,
+          "coverage_rate": 0.8695652173913043,
+          "target_coverage": 0.8,
+          "p_value": 0.9201896972670616,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "MEL",
+          "count": 679,
+          "covered": 534,
+          "coverage_rate": 0.7864506627393225,
+          "target_coverage": 0.8,
+          "p_value": 0.2011190898946351,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "NV",
+          "count": 1272,
+          "covered": 1049,
+          "coverage_rate": 0.824685534591195,
+          "target_coverage": 0.8,
+          "p_value": 0.9882775243443697,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "SCC",
+          "count": 87,
+          "covered": 71,
+          "coverage_rate": 0.8160919540229885,
+          "target_coverage": 0.8,
+          "p_value": 0.6874515292289197,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "VASC",
+          "count": 37,
+          "covered": 29,
+          "coverage_rate": 0.7837837837837838,
+          "target_coverage": 0.8,
+          "p_value": 0.46703405224244693,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        }
+      ],
+      "diagnostics": {
+        "method": "classwise_cp",
+        "alpha": 0.2,
+        "n_classes": 8,
+        "thresholds": [
+          0.9781818985939026,
+          0.6525460481643677,
+          0.9635376930236816,
+          0.9571033120155334,
+          0.8179197311401367,
+          0.44885843992233276,
+          0.9663922190666199,
+          0.9785930514335632
+        ]
+      }
+    },
+    {
+      "Method": "clustered_cp",
+      "alpha": 0.2,
+      "Coverage": 0.8016795865633075,
+      "Avg Size": 1.5549095607235142,
+      "Coverage Equity Gap": 0.05614504281090793,
+      "# Below Target": 4,
+      "Coverage CI Low": 0.7877906976744186,
+      "Coverage CI High": 0.8152535529715763,
+      "target_coverage": 0.8,
+      "failing_classes": [
+        "AK",
+        "BKL",
+        "MEL",
+        "VASC"
+      ],
+      "per_class": {
+        "AK": {
+          "count": 168,
+          "covered": 97,
+          "coverage_rate": 0.5773809523809523,
+          "avg_set_size": 2.0535714285714284
+        },
+        "BCC": {
+          "count": 491,
+          "covered": 456,
+          "coverage_rate": 0.9287169042769857,
+          "avg_set_size": 1.8187372708757636
+        },
+        "BKL": {
+          "count": 316,
+          "covered": 216,
+          "coverage_rate": 0.6835443037974683,
+          "avg_set_size": 1.8132911392405062
+        },
+        "DF": {
+          "count": 46,
+          "covered": 40,
+          "coverage_rate": 0.8695652173913043,
+          "avg_set_size": 2.217391304347826
+        },
+        "MEL": {
+          "count": 679,
+          "covered": 467,
+          "coverage_rate": 0.6877761413843888,
+          "avg_set_size": 1.5405007363770251
+        },
+        "NV": {
+          "count": 1272,
+          "covered": 1107,
+          "coverage_rate": 0.8702830188679245,
+          "avg_set_size": 1.2476415094339623
+        },
+        "SCC": {
+          "count": 87,
+          "covered": 71,
+          "coverage_rate": 0.8160919540229885,
+          "avg_set_size": 2.2988505747126435
+        },
+        "VASC": {
+          "count": 37,
+          "covered": 28,
+          "coverage_rate": 0.7567567567567568,
+          "avg_set_size": 1.837837837837838
+        }
+      },
+      "bootstrap": {
+        "coverage": {
+          "estimate": 0.8016795865633075,
+          "ci_low": 0.7877906976744186,
+          "ci_high": 0.8152535529715763,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "average_set_size": {
+          "estimate": 1.5549095607235142,
+          "ci_low": 1.5271317829457365,
+          "ci_high": 1.5856104651162792,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "coverage_equity_gap": {
+          "estimate": 0.05614504281090793,
+          "ci_low": -0.008384743863706402,
+          "ci_high": 0.12399383953036684,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        }
+      },
+      "per_class_tests": [
+        {
+          "class_name": "AK",
+          "count": 168,
+          "covered": 97,
+          "coverage_rate": 0.5773809523809523,
+          "target_coverage": 0.8,
+          "p_value": 4.3482496954628887e-11,
+          "adjustment": "holm",
+          "adjusted_p_value": 3.043774786824022e-10,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "BCC",
+          "count": 491,
+          "covered": 456,
+          "coverage_rate": 0.9287169042769857,
+          "target_coverage": 0.8,
+          "p_value": 1.0,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BKL",
+          "count": 316,
+          "covered": 216,
+          "coverage_rate": 0.6835443037974683,
+          "target_coverage": 0.8,
+          "p_value": 6.876215520408274e-07,
+          "adjustment": "holm",
+          "adjusted_p_value": 4.125729312244965e-06,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "DF",
+          "count": 46,
+          "covered": 40,
+          "coverage_rate": 0.8695652173913043,
+          "target_coverage": 0.8,
+          "p_value": 0.9201896972670616,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "MEL",
+          "count": 679,
+          "covered": 467,
+          "coverage_rate": 0.6877761413843888,
+          "target_coverage": 0.8,
+          "p_value": 3.209506537342062e-12,
+          "adjustment": "holm",
+          "adjusted_p_value": 2.5676052298736496e-11,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "NV",
+          "count": 1272,
+          "covered": 1107,
+          "coverage_rate": 0.8702830188679245,
+          "target_coverage": 0.8,
+          "p_value": 0.9999999999832626,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "SCC",
+          "count": 87,
+          "covered": 71,
+          "coverage_rate": 0.8160919540229885,
+          "target_coverage": 0.8,
+          "p_value": 0.6874515292289197,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "VASC",
+          "count": 37,
+          "covered": 28,
+          "coverage_rate": 0.7567567567567568,
+          "target_coverage": 0.8,
+          "p_value": 0.3140919280967468,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        }
+      ],
+      "diagnostics": {
+        "method": "clustered_cp",
+        "alpha": 0.2,
+        "n_classes": 8,
+        "n_clusters": 3,
+        "class_counts": [
+          867,
+          3323,
+          2624,
+          238,
+          4522,
+          12874,
+          628,
+          253
+        ],
+        "class_to_cluster": {
+          "3": 0,
+          "7": 0,
+          "6": 0,
+          "0": 1,
+          "2": 1,
+          "1": 1,
+          "4": 2,
+          "5": 2
+        },
+        "cluster_thresholds": {
+          "0": 0.9663922190666199,
+          "1": 0.9187353849411011,
+          "2": 0.6097972989082336
+        },
+        "global_threshold": 0.8093978762626648
+      }
+    },
+    {
+      "Method": "rc3p",
+      "alpha": 0.2,
+      "Coverage": 0.8016795865633075,
+      "Avg Size": 1.5549095607235142,
+      "Coverage Equity Gap": 0.05614504281090793,
+      "# Below Target": 4,
+      "Coverage CI Low": 0.7877906976744186,
+      "Coverage CI High": 0.8152535529715763,
+      "target_coverage": 0.8,
+      "failing_classes": [
+        "AK",
+        "BKL",
+        "MEL",
+        "VASC"
+      ],
+      "per_class": {
+        "AK": {
+          "count": 168,
+          "covered": 97,
+          "coverage_rate": 0.5773809523809523,
+          "avg_set_size": 2.0535714285714284
+        },
+        "BCC": {
+          "count": 491,
+          "covered": 456,
+          "coverage_rate": 0.9287169042769857,
+          "avg_set_size": 1.8187372708757636
+        },
+        "BKL": {
+          "count": 316,
+          "covered": 216,
+          "coverage_rate": 0.6835443037974683,
+          "avg_set_size": 1.8132911392405062
+        },
+        "DF": {
+          "count": 46,
+          "covered": 40,
+          "coverage_rate": 0.8695652173913043,
+          "avg_set_size": 2.217391304347826
+        },
+        "MEL": {
+          "count": 679,
+          "covered": 467,
+          "coverage_rate": 0.6877761413843888,
+          "avg_set_size": 1.5405007363770251
+        },
+        "NV": {
+          "count": 1272,
+          "covered": 1107,
+          "coverage_rate": 0.8702830188679245,
+          "avg_set_size": 1.2476415094339623
+        },
+        "SCC": {
+          "count": 87,
+          "covered": 71,
+          "coverage_rate": 0.8160919540229885,
+          "avg_set_size": 2.2988505747126435
+        },
+        "VASC": {
+          "count": 37,
+          "covered": 28,
+          "coverage_rate": 0.7567567567567568,
+          "avg_set_size": 1.837837837837838
+        }
+      },
+      "bootstrap": {
+        "coverage": {
+          "estimate": 0.8016795865633075,
+          "ci_low": 0.7877906976744186,
+          "ci_high": 0.8152535529715763,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "average_set_size": {
+          "estimate": 1.5549095607235142,
+          "ci_low": 1.5271317829457365,
+          "ci_high": 1.5856104651162792,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        },
+        "coverage_equity_gap": {
+          "estimate": 0.05614504281090793,
+          "ci_low": -0.008384743863706402,
+          "ci_high": 0.12399383953036684,
+          "confidence": 0.95,
+          "n_bootstrap": 1000
+        }
+      },
+      "per_class_tests": [
+        {
+          "class_name": "AK",
+          "count": 168,
+          "covered": 97,
+          "coverage_rate": 0.5773809523809523,
+          "target_coverage": 0.8,
+          "p_value": 4.3482496954628887e-11,
+          "adjustment": "holm",
+          "adjusted_p_value": 3.043774786824022e-10,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "BCC",
+          "count": 491,
+          "covered": 456,
+          "coverage_rate": 0.9287169042769857,
+          "target_coverage": 0.8,
+          "p_value": 1.0,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "BKL",
+          "count": 316,
+          "covered": 216,
+          "coverage_rate": 0.6835443037974683,
+          "target_coverage": 0.8,
+          "p_value": 6.876215520408274e-07,
+          "adjustment": "holm",
+          "adjusted_p_value": 4.125729312244965e-06,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "DF",
+          "count": 46,
+          "covered": 40,
+          "coverage_rate": 0.8695652173913043,
+          "target_coverage": 0.8,
+          "p_value": 0.9201896972670616,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "MEL",
+          "count": 679,
+          "covered": 467,
+          "coverage_rate": 0.6877761413843888,
+          "target_coverage": 0.8,
+          "p_value": 3.209506537342062e-12,
+          "adjustment": "holm",
+          "adjusted_p_value": 2.5676052298736496e-11,
+          "below_target": true,
+          "significant_below_target": true
+        },
+        {
+          "class_name": "NV",
+          "count": 1272,
+          "covered": 1107,
+          "coverage_rate": 0.8702830188679245,
+          "target_coverage": 0.8,
+          "p_value": 0.9999999999832626,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "SCC",
+          "count": 87,
+          "covered": 71,
+          "coverage_rate": 0.8160919540229885,
+          "target_coverage": 0.8,
+          "p_value": 0.6874515292289197,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": false,
+          "significant_below_target": false
+        },
+        {
+          "class_name": "VASC",
+          "count": 37,
+          "covered": 28,
+          "coverage_rate": 0.7567567567567568,
+          "target_coverage": 0.8,
+          "p_value": 0.3140919280967468,
+          "adjustment": "holm",
+          "adjusted_p_value": 1.0,
+          "below_target": true,
+          "significant_below_target": false
+        }
+      ],
+      "diagnostics": {
+        "method": "rc3p",
+        "alpha": 0.2,
+        "n_classes": 8,
+        "n_clusters": 3,
+        "class_counts": [
+          867,
+          3323,
+          2624,
+          238,
+          4522,
+          12874,
+          628,
+          253
+        ],
+        "class_to_cluster": {
+          "3": 0,
+          "7": 0,
+          "6": 0,
+          "0": 1,
+          "2": 1,
+          "1": 1,
+          "4": 2,
+          "5": 2
+        },
+        "cluster_thresholds": {
+          "0": 0.9663922190666199,
+          "1": 0.9187353849411011,
+          "2": 0.6097972989082336
+        },
+        "global_threshold": 0.8093978762626648,
+        "implementation_note": "frequency-clustered substitute for RC3P"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Local environments
+.env
+.venv/
+venv/
+env/
+
+# Large local data and model artifacts
+assets/ISIC_2019/
+assets/ISIC_2019_Test_Organized/
+assets/bcn_20000_data/
+assets/output/framework_inputs/
+*.pt
+*.pth
+*.ckpt
+*.npy
+
+# Local editor and OS files
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

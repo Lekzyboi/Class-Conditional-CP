@@ -1,0 +1,10 @@
+# Exact and perceptual duplicate audit between ISIC organized test and BCN20000.
+name: isic_bcn_duplicate_audit
+paths:
+  dataset_a_dir: assets/ISIC_2019_Test_Organized
+  dataset_b_dir: assets/bcn_20000_data
+  output_dir: assets/output/audits/isic_bcn_duplicates
+metadata:
+  dataset_a_name: ISIC_2019_Test_Organized
+  dataset_b_name: BCN20000
+  hash_size: 8

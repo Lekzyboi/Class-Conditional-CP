@@ -1,0 +1,11 @@
+# Reproduce and document the current ISIC organized-test calibration/test split.
+name: isic_test_organized_split_seed_42
+paths:
+  dataset_dir: assets/ISIC_2019_Test_Organized
+  metadata_csv: assets/ISIC_2019_Test_GroundTruth.csv
+  output_dir: assets/output/audits/isic_test_organized_split_seed_42
+metadata:
+  seed: 42
+  calibration_fraction: 0.5
+  group_columns: [lesion_id, patient_id]
+  class_names_training: [actinic keratosis, basal cell carcinoma, benign keratosis, dermatofibroma, melanoma, nevus, squamous cell carcinoma, vascular lesion]

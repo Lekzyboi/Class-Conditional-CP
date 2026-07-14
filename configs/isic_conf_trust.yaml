@@ -1,0 +1,13 @@
+# ISIC Conf-Trust experiment config scaffold.
+name: isic_conf_trust
+alpha_values: [0.05, 0.10, 0.20]
+methods: [standard_cp, aps, mondrian_cp, conf_trust_naive, conf_trust_conditional]
+paths:
+  checkpoint: assets/output/best_model.pth
+  train_dir: assets/ISIC_2019/train
+  test_dir: assets/ISIC_2019_Test_Organized
+  output_dir: assets/output/conf_trust_experiments
+metadata:
+  split_seed: 42
+  status: scaffold
+

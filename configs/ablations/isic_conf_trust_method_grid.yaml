@@ -1,0 +1,20 @@
+# ISIC Conf-Trust method-grid config template.
+#
+# Requires archived calibration/test probability arrays plus trust-score arrays.
+name: isic_resnet50_conf_trust_method_grid
+alpha_values: [0.05, 0.10, 0.20]
+methods: [standard_cp, conf_trust_naive, conf_trust_conditional]
+paths:
+  calibration_probs: assets/output/framework_inputs/isic_calibration_probs.npy
+  calibration_labels: assets/output/framework_inputs/isic_calibration_labels.npy
+  calibration_trust: assets/output/framework_inputs/isic_calibration_trust.npy
+  test_probs: assets/output/framework_inputs/isic_test_probs.npy
+  test_labels: assets/output/framework_inputs/isic_test_labels.npy
+  test_trust: assets/output/framework_inputs/isic_test_trust.npy
+  framework_output_dir: assets/output/framework_runs/isic_resnet50_conf_trust_method_grid
+metadata:
+  split_seed: 42
+  status: requires_archived_probability_and_trust_arrays
+  class_names: [AK, BCC, BKL, DF, MEL, NV, SCC, VASC]
+  high_prevalence_classes: [NV]
+  low_prevalence_classes: [DF, SCC, VASC]

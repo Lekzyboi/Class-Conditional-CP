@@ -1,0 +1,23 @@
+# Config for rerunning the current ResNet-50 checkpoint through the framework.
+#
+# Before using this config, export arrays with:
+# python scripts/export_framework_inputs.py
+name: isic_resnet50_framework_inputs
+alpha_values: [0.05, 0.10, 0.20]
+methods: [standard_cp, aps, raps, mondrian_cp, classwise_cp, clustered_cp, rc3p]
+paths:
+  calibration_probs: assets/output/framework_inputs/isic_calibration_probs.npy
+  calibration_labels: assets/output/framework_inputs/isic_calibration_labels.npy
+  test_probs: assets/output/framework_inputs/isic_test_probs.npy
+  test_labels: assets/output/framework_inputs/isic_test_labels.npy
+  framework_output_dir: assets/output/framework_runs/isic_resnet50_framework_inputs
+metadata:
+  split_seed: 42
+  bootstrap_seed: 42
+  n_bootstrap: 1000
+  bootstrap_confidence: 0.95
+  p_value_adjustment: holm
+  class_names: [AK, BCC, BKL, DF, MEL, NV, SCC, VASC]
+  high_prevalence_classes: [NV]
+  low_prevalence_classes: [DF, SCC, VASC]
+  train_frequencies: [867, 3323, 2624, 238, 4522, 12874, 628, 253]

@@ -1,0 +1,398 @@
+﻿\documentclass[preprint,12pt]{elsarticle}
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{microtype}
+\usepackage{doi}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{adjustbox}
+\usepackage{natbib}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{lscape}
+\usepackage{pifont}
+\usepackage{threeparttable}
+\usepackage{tabularx}
+\usepackage{geometry}
+\geometry{margin=4.3cm}
+\usepackage{caption}
+\usepackage{url}
+\usepackage{framed}
+\raggedbottom
+
+\graphicspath{{assets/output/framework_runs/isic_resnet50_framework_inputs/figures/}{assets/output/framework_runs/bcn_kept_overlap_aware_sensitivity/figures/}}
+
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+
+\journal{Computer Methods and Programs in Biomedicine}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{A Reproducible Evaluation Framework for Class-Conditional Conformal Prediction in Imbalanced Biomedical Image Classification}
+
+\author[ufscar]{Sadeeq O. Bello\corref{cor1}}
+\ead{sadeeqbello@estudante.ufscar.br}
+\author[ufscar]{Tiago A. Almeida\corref{cor1}}
+\ead{talmeida@ufscar.br}
+\cortext[cor1]{Corresponding authors.}
+
+\affiliation[ufscar]{organization={Department of Computer Science (DComp)},
+            addressline={Federal University of S{\~a}o Carlos (UFSCar)},
+            city={Sorocaba},
+            postcode={18052-780},
+            state={S{\~a}o Paulo},
+            country={Brazil}}
+
+\begin{abstract}
+\textbf{Background and Objective.} Marginal conformal prediction guarantees can hold even when clinically important diagnostic classes remain under-covered, especially under the class imbalance common in biomedical image classification. We present a reproducible evaluation pipeline for auditing conformal prediction beyond marginal validity.
+\textbf{Methods.} Given stored probability arrays, labels, split indices, class mappings, and provenance manifests, the pipeline compares standard conformal prediction, adaptive and regularized adaptive prediction sets, Mondrian/classwise calibration, and frequency-grouped calibration. It reports marginal, per-class, prevalence-stratified, and size-stratified coverage with bootstrap confidence intervals and per-class below-target tests, and includes non-destructive split, overlap, and duplicate-checking utilities.
+\textbf{Results.} On an eight-class ISIC 2019 dermatoscopic classification task using a fixed ResNet-50 checkpoint, standard conformal prediction reached 0.8995 marginal coverage at 90\% target coverage yet nominally under-covered five of eight classes. Per-class coverage ranged from 0.6667 for actinic keratosis to 0.9662 for melanocytic nevus, and the descriptive high-versus-low prevalence coverage gap was 0.1900. Mondrian/classwise calibration reduced this gap to 0.0189 while increasing average set size from 2.04 to 2.67. Frequency-grouped calibration reduced it to 0.0408 at average set size 2.50.
+\textbf{Conclusions.} Biomedical conformal prediction studies should report class-conditional reliability, dataset provenance, and overlap structure alongside marginal validity.
+\end{abstract}
+
+
+\begin{keyword}
+Conformal prediction \sep Biomedical image classification \sep Uncertainty quantification \sep Class-conditional coverage \sep Reproducibility \sep Dataset provenance
+\end{keyword}
+
+\end{frontmatter}
+
+\section{Introduction}
+\label{sec-introduction}
+
+Conformal prediction (CP) constructs prediction sets that contain the true outcome with user-specified probability under exchangeability assumptions~\cite{vovk2005algorithmic,angelopoulos2022gentle}. In biomedical image classification, these sets can communicate uncertainty more directly than softmax scores. A dermatoscopic classifier may return both basal cell carcinoma and squamous cell carcinoma when visual evidence is ambiguous, while a singleton set may indicate higher confidence.
+
+The standard split conformal guarantee is marginal over the test population. It does not ensure equal coverage for each disease class, clinical subgroup, or prevalence stratum~\cite{barber2021limits}. This matters in medical image analysis, where rare classes can carry high clinical importance. A system can satisfy a 90\% marginal target while repeatedly omitting rare or difficult diagnoses, a concern documented in medical imaging and dermatology~\cite{mehrtens2025pitfalls,bhattacharyya2025conformal}.
+
+Dermatoscopic classification is a useful stress test because lesion datasets combine common nevi with smaller classes such as dermatofibromas, vascular lesions, and keratinocytic tumors~\cite{combalia2019bcn20000,tschandl2018ham10000}. Visual overlap between categories further complicates recognition~\cite{celebi2007methodological,groh2021evaluating}. A pooled conformal threshold can therefore be dominated by common classes.
+
+Biomedical researchers need reproducible software that evaluates conformal predictors beyond marginal validity. Such software should operate on archived model outputs, preserve split and provenance information, compare calibration strategies, quantify class-conditional failures, and flag dataset overlap that would invalidate independent-validation claims.
+
+We describe a reproducible evaluation pipeline for class-conditional conformal coverage in imbalanced biomedical image classification. We demonstrated the pipeline on an ISIC 2019 dermatoscopic classification task, but its inputs are generic probability arrays and labels. Therefore, the same evaluation structure can be applied to other multiclass biomedical classifiers.
+
+The main contributions of this study are as follows.
+\begin{itemize}
+    \item \textit{Evaluation pipeline.} We implement a modular pipeline that consumes stored probabilities, labels, split indices, class mappings, configuration files, and provenance manifests. Results can be reproduced from a fixed checkpoint without retraining.
+    \item \textit{Calibration comparison.} We compare global, adaptive, regularized adaptive, Mondrian/classwise, and frequency-grouped calibration using marginal coverage, average set size, per-class coverage, prevalence-stratified coverage, size-stratified coverage, and prevalence coverage gaps.
+    \item \textit{Uncertainty quantification.} We report bootstrap confidence intervals for global metrics and exact per-class below-target tests with Holm correction.
+    \item \textit{Provenance tooling.} We include non-destructive utilities for split reproduction, overlap detection and filtering, and duplicate screening, so that sensitivity analyses remain separated from independent-validation claims.
+    \item \textit{Demonstration.} We apply the pipeline to an eight-class dermatoscopic classification task and show that standard conformal prediction can achieve near-nominal marginal coverage while substantially under-covering low-prevalence or difficult diagnostic classes.
+\end{itemize}
+
+Section~\ref{sec-related-work} summarizes related work on conformal prediction and fairness-aware evaluation. Section~\ref{sec-framework} describes the computational framework. Section~\ref{sec-case-study} presents the dermatoscopic case study and evaluation protocol. Section~\ref{sec-results} reports the evaluation results, and Section~\ref{sec-discussion} discusses implications, limitations, and reproducibility considerations.
+
+\section{Related Work}
+\label{sec-related-work}
+
+\subsection{Conformal Prediction in Medical Imaging}
+
+Split conformal prediction calibrates nonconformity scores on held-out data and provides finite-sample marginal coverage under exchangeability without retraining the classifier~\cite{vovk2005algorithmic,papadopoulos2002inductive}. Its classifier-agnostic nature has encouraged use in medical imaging, including medical classification, grading, segmentation, triage, and dermatology reliability studies~\cite{hirsch2024conformalized,lu2022improving_miccai,mossina2025conformal,fayyad2023empirical,angelopoulos2024conformal,mehrtens2025pitfalls}. These applications also show that global guarantees alone are often insufficient when prediction sets are used for biomedical decision support.
+
+\subsection{Class-Conditional and Group-Conditional Coverage}
+
+Standard conformal prediction uses one pooled threshold, which guarantees marginal coverage but not subgroup coverage~\cite{barber2021limits}. In heterogeneous populations, class imbalance and class-specific score distributions can cause under-coverage of minority or difficult classes. Similar concerns apply to demographic groups and other clinically meaningful strata~\cite{lu2022fair,zhou2024equalized,bhattacharyya2025conformal}.
+
+Methods for this problem modify the calibration groups or thresholds. Mondrian conformal prediction computes separate thresholds within predefined categories~\cite{vovk2005algorithmic,balasubramanian2014conformal}. Clustered conformal prediction groups classes with related score behavior~\cite{ding2023classconditional}. RC3P targets class-wise coverage with more efficient sets than standard class-conditional calibration~\cite{shi2024rc3p}. Equalized coverage methods adjust selected group quantiles to reduce disparity~\cite{zhou2024equalized}. These methods trade stronger subgroup reliability against larger sets, more calibration data, or stronger grouping assumptions.
+
+\subsection{Reproducible Evaluation and Dataset Provenance}
+
+Reproducible conformal evaluation requires more than a single coverage value. Splits, class mappings, checkpoints, probability arrays, and metric definitions all affect the estimates. Dataset provenance is also critical because public biomedical image datasets may share images, institutions, or acquisition pipelines. A conformal evaluation framework should therefore combine metric computation with provenance checks so that coverage and validation claims remain aligned with the evidence.
+
+\section{Computational Framework}
+\label{sec-framework}
+
+\subsection{Design Goals}
+
+The framework has one design goal. Conformal evaluation should be reproducible from stored model outputs alone. Classifier training is treated as an upstream step, and the pipeline begins with exported probability arrays and labels. Methods, metrics, tables, figures, and sensitivity analyses can therefore be rerun without retraining.
+
+The framework consists of the following components.
+\begin{itemize}
+    \item input manifests describing probability arrays, label arrays, class mappings, and split indices.
+    \item conformal method implementations with a common fit-and-predict interface.
+    \item metric modules for global, class-specific, prevalence-stratified, and size-stratified coverage.
+    \item statistical summaries, including bootstrap confidence intervals and per-class below-target tests.
+    \item provenance modules for split reproduction, identifier overlap, overlap filtering, and duplicate screening.
+\end{itemize}
+
+All runs were configuration-driven. A run specifies the calibration arrays, test arrays, class mapping, target miscoverage levels, methods, bootstrap settings, and output directory. Outputs include machine-readable results, comparison and per-class tables, statistical-test and bootstrap-interval tables, and publication-oriented figures.
+
+\subsection{Input Representation}
+
+For a classifier with $K$ classes, the framework expects a calibration probability matrix $P_{\mathrm{cal}} \in \mathbb{R}^{n_{\mathrm{cal}} \times K}$, calibration labels $y_{\mathrm{cal}}$, a test probability matrix $P_{\mathrm{test}} \in \mathbb{R}^{n_{\mathrm{test}} \times K}$, and test labels $y_{\mathrm{test}}$. Optional inputs include class names, class-frequency metadata, image-level prediction manifests, and dataset-overlap manifests. This representation is intentionally independent of the model architecture and image modality.
+
+The primary nonconformity score for class $y_i$ is
+\[
+s_i = 1 - P_{i,y_i}.
+\]
+For a target miscoverage rate $\alpha$, the split conformal quantile is computed as
+\[
+\hat{q}_{\alpha} =
+\begin{cases}
+s_{(k)}, & k \leq n,\\
+\infty, & k > n,
+\end{cases}
+\quad
+k = \lceil(n+1)(1-\alpha)\rceil,
+\]
+where $s_{(1)} \leq \cdots \leq s_{(n)}$ are the sorted calibration scores. If $k>n$, the threshold is set to $+\infty$, so all labels are included for probability-threshold methods. A test class $k$ is included when $1 - P_{j,k} \leq \hat{q}_{\alpha}$, subject to the method-specific rule.
+
+\subsection{Conformal Methods}
+
+The framework evaluates the following methods.
+
+\paragraph{Standard conformal prediction.}
+Standard CP uses a single global threshold for all calibration scores. It targets marginal coverage and provides a baseline against which class-conditional disparities are measured.
+
+\paragraph{Deterministic adaptive prediction sets with argmax fallback.}
+Adaptive prediction sets (APS) order labels by descending probability and calibrate the cumulative probability mass assigned up to the true label~\cite{romano2020classification}. Ties are handled deterministically, labels are included while their cumulative sorted probability is below the calibrated threshold, and the top-ranked label is returned if the set would otherwise be empty. The implementation omits randomized perturbation.
+
+\paragraph{Deterministic regularized adaptive prediction sets with argmax fallback.}
+Regularized adaptive prediction sets (RAPS) extend APS by penalizing lower-ranked labels when the probability mass is diffuse. The score is the APS cumulative score plus $\lambda \max(r-k_{\mathrm{reg}},0)$, where $r$ is the one-indexed label rank, $\lambda=0.01$, and $k_{\mathrm{reg}}=3$. These parameters are fixed rather than selected on the calibration or test set.
+
+\paragraph{Mondrian/classwise conformal prediction.}
+The Mondrian CP computes a separate threshold for each true class in the calibration set~\cite{vovk2005algorithmic,balasubramanian2014conformal}. In this multiclass setting, the classwise CP is the same class-conditional procedure and is reported as an explicit alias for clarity.
+
+\paragraph{Frequency-grouped conformal prediction.}
+Frequency-grouped CP partitions classes into three bands by training-set frequency and estimates one threshold per band. The counts used for sorting were AK 867, BCC 3,323, BKL 2,624, DF 238, MEL 4,522, NV 12,874, SCC 628, and VASC 253. The resulting groups were \{DF, VASC, SCC\}, \{AK, BKL, BCC\}, and \{MEL, NV\}, with 190, 1,034, and 1,871 calibration observations. Each group uses the same $1-P_{i,y_i}$ score and finite-sample quantile convention as standard CP. If a group had no calibration observations, the implementation would fall back to the global threshold. This fallback was not needed. This method provides group-conditional calibration for frequency bands, not per-class coverage guarantees.
+
+\subsection{Evaluation Metrics}
+
+For each method and value of $\alpha$, the framework reports marginal coverage, average prediction set size, number of classes below target, per-class coverage, per-class average set size, and prevalence-stratified coverage. The prevalence coverage gap is defined as a macro-average difference between class-level coverage rates.
+\[
+\Delta_{\mathrm{prev}} =
+\frac{1}{|\mathcal{H}|}\sum_{c\in\mathcal{H}}\mathrm{Coverage}_c -
+\frac{1}{|\mathcal{L}|}\sum_{c\in\mathcal{L}}\mathrm{Coverage}_c .
+\]
+A positive value indicates higher macro-average coverage for high-prevalence classes than for low-prevalence classes. Here, $\mathcal{H}=\{\mathrm{NV}\}$ and $\mathcal{L}=\{\mathrm{DF},\mathrm{SCC},\mathrm{VASC}\}$, so the gap compares NV with the average of the three lowest-prevalence classes. It is descriptive, not a worst-class disparity metric, and medium-prevalence classes such as AK are evaluated through per-class tables and tests.
+
+Size-stratified coverage groups test samples by prediction-set cardinality. Bootstrap confidence intervals were percentile intervals computed by resampling test images. Per-class below-target tests used the null hypothesis $H_0, p_c \geq 1-\alpha$ and the alternative $H_1, p_c < 1-\alpha$. Tests used one-sided exact binomial tails at significance level 0.05, with Holm correction across the eight classes within each method and target level. Raw and Holm-adjusted $p$ values are provided in the generated table artifacts.
+
+\subsection{Dataset Provenance Checks}
+
+The framework includes dataset provenance utilities. Split checks reproduce calibration/test partitions and record the seed and class counts. Overlap checks compare image stems and metadata identifiers across datasets. Overlap filtering writes non-destructive manifests for images excluded from independence claims. Duplicate screening uses exact file hashes and average perceptual hashes to flag image groups for manual review.
+
+\section{Case Study of Dermatoscopic Image Classification}
+\label{sec-case-study}
+
+\subsection{Dataset and Task}
+
+The case study used the ISIC 2019 Challenge dataset~\cite{combalia2019bcn20000,tschandl2018ham10000}, which comprises dermatoscopic images from eight diagnostic categories. The official test partition includes an additional unknown category, which was excluded because it was not present in the training labels. This dataset retained 6,191 labeled test images across actinic keratosis (AK), basal cell carcinoma (BCC), benign keratosis (BKL), dermatofibroma (DF), melanoma (MEL), melanocytic nevus (NV), squamous cell carcinoma (SCC), and vascular lesion (VASC).
+
+The 6,191 labeled test images were split into 3,095 calibration images and 3,096 test images using fixed seed 42. Test counts were AK 168, BCC 491, BKL 316, DF 46, MEL 679, NV 1,272, SCC 87, and VASC 37. Prevalence strata were defined as high prevalence for NV, medium prevalence for AK, BCC, BKL, and MEL, and low prevalence for DF, SCC, and VASC.
+
+\subsection{Base Classifier and Exported Inputs}
+
+The base classifier was an ImageNet-pretrained ResNet-50~\cite{he2016deep}. Inference resized images to $256 \times 256$ pixels and center-cropped them to $224 \times 224$ pixels. Training used batch size 32, stochastic gradient descent with initial learning rate 0.001, momentum 0.9, weight decay $1 \times 10^{-4}$, and a reduce-on-plateau scheduler. Augmentations included random resized crops, horizontal flips, rotations up to 15 degrees, color jitter, and ImageNet normalization. Supervision combined hard labels with a Kullback-Leibler divergence term weighted by 0.1 and computed from SkinCON soft-label targets~\cite{ren2024skincon}. The selected checkpoint was the best validation-accuracy checkpoint, obtained at epoch 28.
+
+The selected checkpoint achieved 71.2\% top-1 accuracy on the conformal test subset. Probability arrays, labels, argmax predictions, split indices, and class mappings were exported from this checkpoint, making all conformal results deterministic given the arrays.
+
+\subsection{Evaluation Protocol}
+
+We evaluated $\alpha \in \{0.05,0.10,0.20\}$, corresponding to target coverage levels of 95\%, 90\%, and 80\%. The primary results emphasize $\alpha=0.10$, while the full grid shows changes across operating points.
+
+The main framework run evaluated the standard CP, APS, RAPS, Mondrian/classwise CP, and frequency-grouped CP. Bootstrap intervals used 1,000 resamples with fixed random seeds. Per-class below-target tests were computed using exact binomial tests with Holm correction across the eight diagnostic classes for each method and target level.
+
+\section{Results}
+\label{sec-results}
+
+\subsection{Framework Outputs Across Target Coverage Levels}
+
+Table~\ref{tab-global_performance} compares marginal coverage, average set size, and prevalence coverage gap across the five methods. Standard CP stayed close to the marginal target, but its prevalence gap increased as sets became smaller. The gap was 0.098 at $\alpha=0.05$, 0.190 at $\alpha=0.10$, and 0.407 at $\alpha=0.20$.
+
+APS and RAPS produced higher coverage and larger sets than standard CP. At $\alpha=0.10$, APS covered 0.9525 with average set size 3.67, and RAPS covered 0.9390 with average set size 3.05. Mondrian/classwise CP covered 0.9070 with average set size 2.67 and prevalence gap 0.0189. Frequency-grouped CP covered 0.9028 with average set size 2.50 and gap 0.0408. These are fixed-split point estimates, not statistical rankings.
+
+\begin{table}[htbp]
+\centering
+\caption{Framework comparison across target coverage levels. Avg. Size is the mean prediction-set cardinality. Prev. Cov. Gap is the macro-average high-prevalence coverage minus low-prevalence coverage. CI columns give bootstrap 95\% confidence intervals for marginal coverage.}
+\label{tab-global_performance}
+\adjustbox{max width=\linewidth}{%
+\begin{tabular}{lcccccc}
+\toprule
+Method & $\alpha$ & Coverage & 95\% CI & Avg. Size & Prev. Cov. Gap & \# Below Target \\
+\midrule
+Standard CP & 0.05 & 0.9561 & [0.9493, 0.9629] & 2.99 & 0.0982 & 5 \\
+APS & 0.05 & 0.9738 & [0.9687, 0.9793] & 4.47 & 0.0694 & 3 \\
+RAPS & 0.05 & 0.9599 & [0.9528, 0.9664] & 3.59 & 0.0872 & 5 \\
+Mondrian/classwise CP & 0.05 & 0.9483 & [0.9406, 0.9557] & 3.53 & 0.0110 & 3 \\
+Frequency-grouped CP & 0.05 & 0.9525 & [0.9444, 0.9599] & 3.48 & 0.0326 & 5 \\
+\midrule
+Standard CP & 0.10 & 0.8995 & [0.8899, 0.9096] & 2.04 & 0.1900 & 5 \\
+APS & 0.10 & 0.9525 & [0.9454, 0.9596] & 3.67 & 0.0733 & 2 \\
+RAPS & 0.10 & 0.9390 & [0.9302, 0.9470] & 3.05 & 0.1113 & 5 \\
+Mondrian/classwise CP & 0.10 & 0.9070 & [0.8973, 0.9167] & 2.67 & 0.0189 & 4 \\
+Frequency-grouped CP & 0.10 & 0.9028 & [0.8931, 0.9121] & 2.50 & 0.0408 & 4 \\
+\midrule
+Standard CP & 0.20 & 0.8004 & [0.7862, 0.8140] & 1.31 & 0.4067 & 6 \\
+APS & 0.20 & 0.9218 & [0.9131, 0.9312] & 2.86 & 0.1042 & 2 \\
+RAPS & 0.20 & 0.9109 & [0.9018, 0.9202] & 2.57 & 0.1198 & 2 \\
+Mondrian/classwise CP & 0.20 & 0.8078 & [0.7942, 0.8211] & 1.74 & 0.0015 & 3 \\
+Frequency-grouped CP & 0.20 & 0.8017 & [0.7878, 0.8153] & 1.55 & 0.0561 & 4 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{coverage_by_alpha.png}
+\caption{Marginal coverage across target miscoverage levels for the evaluated conformal methods. Dashed reference lines indicate nominal target coverage.}
+\label{fig-coverage_by_alpha}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{method_tradeoff_alpha_0_1.png}
+\caption{Coverage and efficiency trade-off at $\alpha=0.10$. Methods closer to the upper-left region achieve higher coverage with smaller prediction sets, but this global view does not show class-conditional disparities.}
+\label{fig-method_tradeoff}
+\end{figure}
+
+\subsection{Per-Class Coverage at 90\% Target Coverage}
+
+Table~\ref{tab-per_class} reports per-class coverage at $\alpha=0.10$. Standard CP achieved near-nominal marginal coverage, but class coverage ranged from 0.6667 for AK to 0.9662 for NV. AK, BKL, SCC, and VASC remained significantly below target after Holm correction.
+
+APS left only AK and VASC nominally below target, with neither significant after Holm correction. RAPS still significantly under-covered AK and BKL. Mondrian/classwise CP had no significant below-target class after correction, although small classes such as DF and VASC limit test power. Frequency-grouped CP reduced the prevalence gap but significantly under-covered AK, BKL, and MEL.
+
+\begin{table}[htbp]
+\centering
+\caption{Per-class coverage at $\alpha=0.10$ (target coverage 0.90). Values are empirical coverage rates on the 3,096-image ISIC 2019 conformal test subset. Bold values are below target.}
+\label{tab-per_class}
+\adjustbox{max width=\linewidth}{%
+\begin{tabular}{lcccccc}
+\toprule
+Class & $n$ & Standard CP & APS & RAPS & Mondrian/classwise CP & Frequency-grouped CP \\
+\midrule
+NV & 1272 & 0.9662 & 0.9693 & 0.9686 & 0.9198 & 0.9434 \\
+MEL & 679 & 0.9043 & 0.9499 & 0.9514 & \textbf{0.8910} & \textbf{0.8189} \\
+BCC & 491 & 0.9430 & 0.9837 & 0.9674 & 0.9022 & 0.9735 \\
+BKL & 316 & \textbf{0.7500} & 0.9082 & \textbf{0.8513} & \textbf{0.8987} & \textbf{0.8449} \\
+AK & 168 & \textbf{0.6667} & \textbf{0.8690} & \textbf{0.8155} & 0.9048 & \textbf{0.8333} \\
+SCC & 87 & \textbf{0.7241} & 0.9425 & \textbf{0.8966} & 0.9195 & 0.9080 \\
+DF & 46 & \textbf{0.8478} & 0.9348 & \textbf{0.8913} & \textbf{0.8913} & 0.9348 \\
+VASC & 37 & \textbf{0.7568} & \textbf{0.8108} & \textbf{0.7838} & \textbf{0.8919} & \textbf{0.8649} \\
+\bottomrule
+\end{tabular}%
+}
+\begin{flushleft}
+\footnotesize Frequency-grouped CP estimates thresholds after grouping classes by training-set frequency.
+\end{flushleft}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{per_class_coverage_alpha_0_1.png}
+\caption{Per-class coverage at $\alpha=0.10$ for the evaluated methods. The reference line denotes the 0.90 target coverage.}
+\label{fig-per_class_coverage}
+\end{figure}
+
+\subsection{Prevalence-Stratified Coverage and Set-Size Trade-Offs}
+
+Under standard CP at $\alpha=0.10$, high-prevalence coverage exceeded low-prevalence coverage by 0.1900, with bootstrap interval [0.1255, 0.2602].
+
+Mondrian/classwise CP reduced this gap to 0.0189, with interval [-0.0288, 0.0738]. Frequency-grouped CP reduced it to 0.0408, with interval [-0.0052, 0.0908]. Because the intervals overlap, the difference between these strategies is a point-estimate difference. Average set size increased from 2.04 for standard CP to 2.67 for Mondrian/classwise CP and 2.50 for frequency-grouped CP.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{coverage_equity_gap_by_alpha.png}
+\caption{Prevalence coverage gap across target miscoverage levels. Standard CP shows the largest gap, especially at $\alpha=0.20$, while classwise and grouped calibration strategies reduce prevalence-stratified disparity.}
+\label{fig-coverage_equity_gap}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{average_set_size_by_alpha.png}
+\caption{Average prediction set size across target miscoverage levels. More conservative and class-conditional methods generally reduce coverage disparities by increasing the number of labels retained per image.}
+\label{fig-average_set_size}
+\end{figure}
+
+\subsection{Partial Identifier-Overlap BCN20000 Sensitivity Analysis}
+
+The framework found substantial identifier overlap between organized ISIC 2019 test images and BCN20000. The non-destructive filter scanned 18,946 BCN images, excluded 6,533 by image-stem or metadata-identifier overlap, and retained 12,413 images. Of these, 12,204 mapped to the eight study classes, while 209 solar-lentigo images were excluded.
+
+The retained BCN subset was used only as a partial identifier-overlap sensitivity analysis. Table~\ref{tab-bcn_sensitivity} summarizes the results at $\alpha=0.10$, using the same ISIC 2019 calibration probabilities and retained BCN images as the sensitivity test set. Coverage was highly conservative. Exact file-hash screening found no exact cross-dataset file-hash groups. Average-hash screening used hash size 8 and exact hash equality, equivalent to Hamming distance 0, and found 3,613 cross-dataset perceptual-hash groups. These were treated as screening signals. Because case mix, score distributions, and possible residual development-corpus overlap were not disentangled, the results are a limited robustness check, not evidence of prospective clinical generalization.
+
+\begin{table}[htbp]
+\centering
+\caption{Partial identifier-overlap BCN20000 sensitivity analysis at $\alpha=0.10$. The analysis used 12,204 mappable eight-class images retained after non-destructive overlap filtering.}
+\label{tab-bcn_sensitivity}
+\adjustbox{max width=\linewidth}{%
+\begin{tabular}{lccccc}
+\toprule
+Method & Coverage & 95\% CI & Avg. Size & Prev. Cov. Gap & \# Below Target \\
+\midrule
+Standard CP & 0.9934 & [0.9919, 0.9947] & 1.40 & 0.0139 & 0 \\
+APS & 0.9966 & [0.9957, 0.9976] & 2.78 & 0.0024 & 0 \\
+RAPS & 0.9961 & [0.9948, 0.9972] & 2.47 & 0.0052 & 0 \\
+Mondrian/classwise CP & 0.9912 & [0.9895, 0.9928] & 1.87 & -0.0054 & 0 \\
+Frequency-grouped CP & 0.9927 & [0.9912, 0.9941] & 1.69 & -0.0016 & 0 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\section{Discussion}
+\label{sec-discussion}
+
+\subsection{Main Findings}
+
+Marginal conformal validity can hide clinically meaningful class-level failures. In the fixed-checkpoint ISIC 2019 case study, standard CP achieved near-nominal 90\% marginal coverage, yet AK, BKL, SCC, and VASC were significantly below target after Holm correction. The prevalence gap of 0.1900 showed higher coverage for high-prevalence than low-prevalence classes, while the per-class table captured additional medium-prevalence failures.
+
+Class-conditional calibration improved this profile. Mondrian/classwise CP reduced the prevalence gap to 0.0189, and no class remained significantly below target after Holm correction at $\alpha=0.10$, although small-class tests have limited power. Frequency-grouped CP also reduced the gap but shifted under-coverage toward medium-prevalence classes. APS and RAPS improved coverage by producing larger sets, with APS averaging 3.67 labels per image at $\alpha=0.10$. These trade-offs show why coverage, set size, per-class behavior, and prevalence strata should be reported together.
+
+\subsection{Computational Implications}
+
+The framework's contribution is infrastructural. It makes class-conditional conformal evaluation reproducible from archived probability arrays, allowing method comparisons, target coverage changes, figures, and statistical summaries to be rerun without retraining. Because the inputs are generic probability arrays and labels, the same evaluation structure can be applied to other multiclass biomedical classifiers.
+
+The BCN20000 analysis showed how partial overlap filtering changes the interpretation of a secondary dataset. Rather than treating BCN20000 as independent external validation, the framework identified overlapping identifiers, wrote a kept-image manifest, and supported a limited sensitivity analysis. This distinction is important in biomedical imaging, where public datasets often share sources.
+
+\subsection{Relation to Clinical Interpretation}
+
+The framework does not determine clinical utility. Coverage indicates whether the true class is included, not whether the retained set is easy to act on. A set containing clinically similar diagnoses may differ from one that mixes benign and malignant diagnoses. Clinical utility studies remain necessary, but they should build on reliable class-conditional evaluation rather than marginal coverage alone.
+
+\subsection{Limitations}
+
+The main case study used one fixed ResNet-50 checkpoint. Conformal evaluation is deterministic given the exported arrays, but repeated training runs would be needed to quantify stability across independently trained classifiers.
+
+The ISIC 2019 organized test metadata did not provide patient or lesion identifiers suitable for grouped calibration/test splitting. The split check therefore verifies image-level counts but cannot rule out patient-level or lesion-level dependence.
+
+The BCN20000 experiment was a sensitivity analysis. The overlap filter was based on organized ISIC 2019 test images and did not establish absence of overlap with every image used during model development. The retained subset should not be interpreted as prospective clinical validation, and the high coverage values motivate additional overlap, score-distribution, and difficulty diagnostics.
+
+The grouped calibration procedure used class frequency rather than score-distribution clustering or label-rank calibration. Full label-rank class-conditional methods such as RC3P remain future work. The demonstration also focused on disease class and prevalence strata, not demographics, devices, institutions, or image quality.
+
+\section{Conclusion}
+\label{sec-conclusion}
+
+We described a reproducible evaluation pipeline for class-conditional conformal prediction in imbalanced biomedical image classification. In the fixed-checkpoint ISIC 2019 case study, standard CP achieved near-nominal marginal coverage while under-covering several diagnostic classes. Mondrian/classwise calibration reduced the high-versus-low prevalence gap from 0.1900 to 0.0189 with larger prediction sets, while frequency-grouped calibration gave a prevalence-gap point estimate of 0.0408.
+
+Biomedical conformal prediction studies should report class-conditional reliability, prevalence-stratified behavior, set-size trade-offs, and provenance checks for secondary datasets alongside marginal coverage. Without these, a system can appear well calibrated while failing on clinically important diagnostic categories.
+
+\section*{Declarations}
+
+\subsection*{Funding}
+This study did not receive any specific grants from funding agencies in the public, commercial, or not-for-profit sectors.
+
+\subsection*{Ethics approval}
+This study used publicly available, de-identified dermatoscopic images from the ISIC 2019 Challenge and BCN20000 dataset releases. Ethics approval was not required for this secondary analysis of public data. All original data collections were conducted under the ethical approvals, consent procedures, and governance frameworks described in the primary dataset publications and releases.
+
+\subsection*{Author Contributions}
+Sadeeq O. Bello. Conceptualization, methodology, software, validation, formal analysis, investigation, data curation, visualization, and writing original draft. Tiago A. Almeida. Conceptualization, methodology, supervision, writing review and editing, and project administration. The authors have read and approved the final manuscript.
+
+\subsection*{Declaration of competing interest}
+The authors declare no conflicts of interest relevant to this study.
+
+\subsection*{Code Availability}
+The source code, configuration files, environment specification, exported manifests, and analysis scripts will be released in a public GitHub repository before submission and archived with a permanent DOI. The repository URL and DOI will be inserted in the submitted version. The framework is organized to reproduce the conformal analyses from archived probability arrays and labels without retraining the base classifier.
+
+\subsection*{Data availability}
+The datasets used in this study are publicly available from the ISIC 2019 Challenge and BCN20000 dataset releases cited in the manuscript. Derived artifacts generated in this study include calibration/test split indices, class mappings, overlap-filter manifests, prediction manifests, result tables, and figure-generation outputs.
+
+\bibliographystyle{elsarticle-num}
+\bibliography{cas-refs}
+
+\end{document}
+

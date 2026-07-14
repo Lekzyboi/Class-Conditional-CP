@@ -1,0 +1,306 @@
+% References for the conformal evaluation framework manuscript.
+
+% ---- Conformal prediction: foundational theory --------------------------------
+
+@book{vovk2005algorithmic,
+  title     = {Algorithmic Learning in a Random World},
+  author    = {Vovk, Vladimir and Gammerman, Alexander and Shafer, Glenn},
+  year      = {2005},
+  publisher = {Springer},
+  address   = {New York},
+  isbn      = {978-0-387-00152-4},
+}
+
+@book{balasubramanian2014conformal,
+  title     = {Conformal Prediction for Reliable Machine Learning: Theory,
+               Adaptations and Applications},
+  editor    = {Balasubramanian, Vineeth N. and Ho, Shen-Shyang and
+               Vovk, Vladimir},
+  year      = {2014},
+  publisher = {Morgan Kaufmann},
+  address   = {Amsterdam},
+  isbn      = {978-0-12-398537-8},
+}
+
+@misc{angelopoulos2022gentle,
+  title        = {A Gentle Introduction to Conformal Prediction and
+                  Distribution-Free Uncertainty Quantification},
+  author       = {Angelopoulos, Anastasios N. and Bates, Stephen},
+  howpublished = {Technical report},
+  year         = {2022},
+  note         = {Version dated December 8, 2022. Available at
+                  \url{https://people.eecs.berkeley.edu/~angelopoulos/publications/downloads/gentle_intro_conformal_dfuq.pdf}},
+}
+
+@inproceedings{papadopoulos2002inductive,
+  title     = {Inductive Confidence Machines for Regression},
+  author    = {Papadopoulos, Harris and Proedrou, Kostas and Vovk, Vladimir
+               and Gammerman, Alex},
+  booktitle = {Proceedings of the Thirteenth European Conference on Machine
+               Learning ({ECML} 2002)},
+  editor    = {Elomaa, Tapio and Mannila, Heikki and Toivonen, Hannu},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {2430},
+  pages     = {345--356},
+  publisher = {Springer},
+  year      = {2002},
+}
+
+@inproceedings{romano2020classification,
+  title     = {Classification with Valid and Adaptive Coverage},
+  author    = {Romano, Yaniv and Sesia, Matteo and Cand{\`e}s, Emmanuel J.},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2020},
+  volume    = {33},
+  doi       = {10.48550/arXiv.2006.02544},
+  eprint    = {2006.02544},
+  archivePrefix = {arXiv},
+  note      = {arXiv:2006.02544},
+}
+
+@article{barber2021limits,
+  title   = {The Limits of Distribution-Free Conditional Predictive
+             Inference},
+  author  = {Barber, Rina Foygel and Cand{\`e}s, Emmanuel J. and
+             Ramdas, Aaditya and Tibshirani, Ryan J.},
+  journal = {Information and Inference: A Journal of the {IMA}},
+  volume  = {10},
+  number  = {2},
+  pages   = {455--482},
+  year    = {2021},
+  doi     = {10.1093/imaiai/iaaa041},
+}
+
+% ---- Coverage guarantees and conditional coverage ----------------------------
+
+@inproceedings{ding2023classconditional,
+  title     = {Class-Conditional Conformal Prediction with Many Classes},
+  author    = {Ding, Tiffany and Angelopoulos, Anastasios N. and Bates,
+               Stephen and Jordan, Michael I. and Tibshirani, Ryan J.},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2023},
+  volume    = {36},
+  pages     = {2034--2045},
+}
+
+@inproceedings{shi2024rc3p,
+  title     = {Conformal Prediction for Class-wise Coverage via Augmented
+               Label Rank Calibration},
+  author    = {Shi, Yuanjie and Ghosh, Subhankar and Belkhouja, Taha and
+               Doppa, Janardhan Rao and Yan, Yan},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2024},
+  volume    = {37},
+  doi       = {10.48550/arXiv.2406.06818},
+  eprint    = {2406.06818},
+  archivePrefix = {arXiv},
+  note      = {arXiv:2406.06818},
+}
+
+@inproceedings{zhou2024equalized,
+  title     = {Conformal Classification with Equalized Coverage for
+               Adaptively Selected Groups},
+  author    = {Zhou, Yanfei and Sesia, Matteo},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2024},
+  volume    = {37},
+  doi       = {10.48550/arXiv.2405.15106},
+  eprint    = {2405.15106},
+  archivePrefix = {arXiv},
+  note      = {arXiv:2405.15106},
+}
+
+% ---- Fairness and equalized coverage -----------------------------------------
+
+@inproceedings{lu2022fair,
+  title     = {Fair Conformal Predictors for Applications in Medical
+               Imaging},
+  author    = {Lu, Charles and Lemay, Andreanne and Chang, Ken and Hoebel,
+               Katharina and Kalpathy-Cramer, Jayashree},
+  booktitle = {Proceedings of the AAAI Conference on Artificial
+               Intelligence},
+  volume    = {36},
+  number    = {11},
+  pages     = {12008--12016},
+  year      = {2022},
+  doi       = {10.48550/arXiv.2109.04392},
+  eprint    = {2109.04392},
+  archivePrefix = {arXiv},
+  note      = {arXiv:2109.04392},
+}
+
+% ---- Conformal prediction: medical imaging applications ----------------------
+
+@inproceedings{lu2022improving_miccai,
+  title     = {Improving Trustworthiness of {AI} Disease Severity Rating in
+               Medical Imaging with Ordinal Conformal Prediction Sets},
+  author    = {Lu, Charles and Angelopoulos, Anastasios N. and Pomerantz,
+               Scott R. and Gonzalez, R. Gilberto and Lev, Michael H. and
+               Jordan, Michael I. and Malik, Jitendra},
+  booktitle = {Medical Image Computing and Computer-Assisted Intervention
+               -- {MICCAI} 2022},
+  editor    = {de Bruijne, Marleen and Cattin, Philippe C. and Cotin,
+               St{\'e}phane and Padoy, Nicolas and Speidel, Stefanie and
+               Zheng, Yefeng and Essert, Caroline},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {13431},
+  pages     = {443--453},
+  publisher = {Springer},
+  year      = {2022},
+  doi       = {10.1007/978-3-031-16452-1_52},
+}
+
+@article{angelopoulos2024conformal,
+  title   = {Conformal Triage for Medical Imaging {AI} Deployment},
+  author  = {Angelopoulos, Anastasios N. and Pomerantz, Scott R. and Do,
+             Synho and Bates, Stephen and Bridge, Christopher P. and Elton,
+             Daniel C. and Lev, Michael H. and Gonzalez, R. Gilberto and
+             Jordan, Michael I. and Malik, Jitendra},
+  journal = {medRxiv},
+  year    = {2024},
+  doi     = {10.1101/2024.02.09.24302543},
+}
+
+@misc{mehrtens2025pitfalls,
+  title     = {Pitfalls of Conformal Predictions for Medical Image
+               Classification},
+  author    = {Mehrtens, Hendrik and Bucher, Tabea and Brinker, Titus J.},
+  year      = {2025},
+  eprint    = {2506.18162},
+  archivePrefix = {arXiv},
+  doi       = {10.48550/arXiv.2506.18162},
+  note      = {arXiv:2506.18162},
+}
+
+@misc{hirsch2024conformalized,
+  title         = {A Conformalized Learning of a Prediction Set with
+                   Applications to Medical Imaging Classification},
+  author        = {Hirsch, Roy and Goldberger, Jacob},
+  year          = {2024},
+  eprint        = {2408.05037},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  doi           = {10.48550/arXiv.2408.05037},
+}
+
+@misc{mossina2025conformal,
+  title     = {Conformal Prediction for Image Segmentation Using
+               Morphological Prediction Sets},
+  author    = {Mossina, Luca and Friedrich, Corentin},
+  year      = {2025},
+  eprint    = {2503.05618},
+  archivePrefix = {arXiv},
+  doi       = {10.48550/arXiv.2503.05618},
+  note      = {arXiv:2503.05618},
+}
+
+@misc{bhattacharyya2025conformal,
+  title   = {Conformal uncertainty quantification to evaluate predictive
+             fairness of foundation {AI} model for skin lesion classes
+             across patient demographics},
+  author  = {Bhattacharyya, Swarnava and Pal, Umapada and Chakraborti,
+             Tapabrata},
+  year    = {2025},
+  eprint  = {2503.23819},
+  archivePrefix = {arXiv},
+  doi     = {10.48550/arXiv.2503.23819},
+  note    = {arXiv:2503.23819},
+}
+
+% ---- Dermatoscopic datasets --------------------------------------------------
+
+@article{tschandl2018ham10000,
+  title   = {The {HAM10000} dataset, a large collection of multi-source
+             dermatoscopic images of common pigmented skin lesions},
+  author  = {Tschandl, Philipp and Rosendahl, Cliff and Kittler, Harald},
+  journal = {Scientific Data},
+  volume  = {5},
+  pages   = {180161},
+  year    = {2018},
+  doi     = {10.1038/sdata.2018.161},
+}
+
+@misc{combalia2019bcn20000,
+  title         = {{BCN20000}: Dermoscopic Lesions in the Wild},
+  author        = {Combalia, Marc and Codella, Noel C. F. and Rotemberg,
+                   Veronica and Helba, Brian and Vilaplana, Veronica and
+                   Reiter, Ofer and Carrera, Cristina and Barreiro, Alicia
+                   and Halpern, Allan C. and Puig, Susana and Malvehy,
+                   Josep},
+  year          = {2019},
+  eprint        = {1908.02288},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  doi           = {10.48550/arXiv.1908.02288},
+}
+
+% ---- Skin lesion classification: deep learning -------------------------------
+
+@article{celebi2007methodological,
+  title   = {A methodological approach to the classification of dermoscopy
+             images},
+  author  = {Celebi, M. Emre and Kingravi, Hassan A. and Uddin, B. and
+             Iyatomi, Hitoshi and Aslandogan, Y. Alp and Stoecker,
+             William V. and Moss, Randy H.},
+  journal = {Computerized Medical Imaging and Graphics},
+  volume  = {31},
+  number  = {6},
+  pages   = {362--373},
+  year    = {2007},
+  doi     = {10.1016/j.compmedimag.2007.01.003},
+}
+
+@inproceedings{groh2021evaluating,
+  title     = {Evaluating Deep Neural Networks Trained on Clinical Images in
+               Dermatology with the {Fitzpatrick} 17k Dataset},
+  author    = {Groh, Matthew and Harris, Caleb and Soenksen, Luis and Lau,
+               Felix and Han, Rachel and Kim, Aerin and Koochek, Arash and
+               Badri, Omar and Daneshjou, Roxana},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and
+               Pattern Recognition ({CVPR})},
+  year      = {2021},
+  pages     = {1820--1828},
+}
+
+@misc{fayyad2023empirical,
+  title   = {Empirical validation of {Conformal} {Prediction} for
+             trustworthy skin lesions classification},
+  author  = {Fayyad, Jamil and Alijani, Shadi and Najjaran, Homayoun},
+  year    = {2023},
+  eprint  = {2312.07460},
+  archivePrefix = {arXiv},
+  doi     = {10.48550/arXiv.2312.07460},
+  note    = {arXiv:2312.07460},
+}
+
+@inproceedings{ren2024skincon,
+  title     = {{SkinCON}: Towards Consensus for the Uncertainty of Skin
+               Cancer Sub-typing through Distribution Regularized Adaptive
+               Predictive Sets ({DRAPS})},
+  author    = {Ren, Zhihang and Li, Yunqi and Li, Xinyu and Xie, Xinrong
+               and Duhaime, Erik P. and Fang, Kathy and Chakraborti,
+               Tapabrata and Guo, Yunhui and Yu, Stella X. and Whitney,
+               David},
+  booktitle = {Medical Image Computing and Computer Assisted Intervention
+               -- {MICCAI} 2024},
+  year      = {2024},
+  publisher = {Springer Nature Switzerland},
+  address   = {Cham},
+  pages     = {405--415},
+  volume    = {15001},
+  series    = {Lecture Notes in Computer Science},
+  doi       = {10.1007/978-3-031-72378-0_38},
+}
+
+% ---- Neural network architectures -------------------------------------------
+
+@inproceedings{he2016deep,
+  title     = {Deep Residual Learning for Image Recognition},
+  author    = {He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun,
+               Jian},
+  booktitle = {Proceedings of the {IEEE} Conference on Computer Vision and
+               Pattern Recognition ({CVPR})},
+  year      = {2016},
+  pages     = {770--778},
+  doi       = {10.1109/CVPR.2016.90},
+}

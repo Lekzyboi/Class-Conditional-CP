@@ -1,0 +1,146 @@
+{
+  "dataset_a": "ISIC_2019_Test_Organized",
+  "dataset_b": "BCN20000",
+  "image_stem_overlap": {
+    "dataset_a_unique": 6191,
+    "dataset_b_unique": 18946,
+    "overlap_count": 4486,
+    "sample_overlap": [
+      "ISIC_0053453",
+      "ISIC_0053458",
+      "ISIC_0053460",
+      "ISIC_0053462",
+      "ISIC_0053477",
+      "ISIC_0053480",
+      "ISIC_0053481",
+      "ISIC_0053488",
+      "ISIC_0053489",
+      "ISIC_0053490",
+      "ISIC_0053494",
+      "ISIC_0053495",
+      "ISIC_0053499",
+      "ISIC_0053502",
+      "ISIC_0053512",
+      "ISIC_0053516",
+      "ISIC_0053517",
+      "ISIC_0053518",
+      "ISIC_0053520",
+      "ISIC_0053525",
+      "ISIC_0053526",
+      "ISIC_0053527",
+      "ISIC_0053536",
+      "ISIC_0053547",
+      "ISIC_0053553"
+    ]
+  },
+  "metadata_identifier_overlap": {
+    "dataset_a_unique": 8238,
+    "dataset_b_unique": 24386,
+    "overlap_count": 6533,
+    "sample_overlap": [
+      "ISIC_0053453",
+      "ISIC_0053455",
+      "ISIC_0053458",
+      "ISIC_0053460",
+      "ISIC_0053461",
+      "ISIC_0053462",
+      "ISIC_0053465",
+      "ISIC_0053468",
+      "ISIC_0053477",
+      "ISIC_0053480",
+      "ISIC_0053481",
+      "ISIC_0053486",
+      "ISIC_0053488",
+      "ISIC_0053489",
+      "ISIC_0053490",
+      "ISIC_0053494",
+      "ISIC_0053495",
+      "ISIC_0053499",
+      "ISIC_0053502",
+      "ISIC_0053512",
+      "ISIC_0053516",
+      "ISIC_0053517",
+      "ISIC_0053518",
+      "ISIC_0053520",
+      "ISIC_0053525"
+    ]
+  },
+  "same_column_overlap": {
+    "image": {
+      "available_in_dataset_a": true,
+      "available_in_dataset_b": false,
+      "overlap_count": 0,
+      "sample_overlap": []
+    },
+    "isic_id": {
+      "available_in_dataset_a": false,
+      "available_in_dataset_b": true,
+      "overlap_count": 0,
+      "sample_overlap": []
+    },
+    "lesion_id": {
+      "available_in_dataset_a": false,
+      "available_in_dataset_b": true,
+      "overlap_count": 0,
+      "sample_overlap": []
+    },
+    "patient_id": {
+      "available_in_dataset_a": false,
+      "available_in_dataset_b": false,
+      "overlap_count": 0,
+      "sample_overlap": []
+    }
+  },
+  "availability": {
+    "dataset_a_metadata_columns": [
+      "image",
+      "MEL",
+      "NV",
+      "BCC",
+      "AK",
+      "BKL",
+      "DF",
+      "VASC",
+      "SCC",
+      "UNK",
+      "score_weight",
+      "validation_weight"
+    ],
+    "dataset_b_metadata_columns": [
+      "isic_id",
+      "attribution",
+      "copyright_license",
+      "age_approx",
+      "anatom_site_general",
+      "anatom_site_special",
+      "benign_malignant",
+      "concomitant_biopsy",
+      "diagnosis",
+      "diagnosis_1",
+      "diagnosis_2",
+      "diagnosis_3",
+      "diagnosis_confirm_type",
+      "image_type",
+      "lesion_id",
+      "melanocytic",
+      "sex"
+    ]
+  },
+  "summary_rows": [
+    {
+      "source": "image_stem",
+      "dataset_a_unique": 6191,
+      "dataset_b_unique": 18946,
+      "overlap_count": 4486,
+      "sample_overlap": "ISIC_0053453;ISIC_0053458;ISIC_0053460;ISIC_0053462;ISIC_0053477;ISIC_0053480;ISIC_0053481;ISIC_0053488;ISIC_0053489;ISIC_0053490"
+    },
+    {
+      "source": "metadata_identifier_pool",
+      "dataset_a_unique": 8238,
+      "dataset_b_unique": 24386,
+      "overlap_count": 6533,
+      "sample_overlap": "ISIC_0053453;ISIC_0053455;ISIC_0053458;ISIC_0053460;ISIC_0053461;ISIC_0053462;ISIC_0053465;ISIC_0053468;ISIC_0053477;ISIC_0053480"
+    }
+  ],
+  "output_dir": "assets\\output\\audits\\isic_bcn_overlap"
+}

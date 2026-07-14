@@ -1,0 +1,12 @@
+# Identifier overlap audit between the organized ISIC test set and BCN20000.
+name: isic_bcn_overlap_audit
+paths:
+  dataset_a_dir: assets/ISIC_2019_Test_Organized
+  dataset_b_dir: assets/bcn_20000_data
+  dataset_a_metadata: assets/ISIC_2019_Test_GroundTruth.csv
+  dataset_b_metadata: assets/bcn_20000_data/metadata.csv
+  output_dir: assets/output/audits/isic_bcn_overlap
+metadata:
+  dataset_a_name: ISIC_2019_Test_Organized
+  dataset_b_name: BCN20000
+  id_columns: [image, isic_id, lesion_id, patient_id]

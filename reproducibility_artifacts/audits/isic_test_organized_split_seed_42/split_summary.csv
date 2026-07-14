@@ -1,0 +1,17 @@
+partition,class_name,count
+calibration,actinic keratosis,206
+calibration,basal cell carcinoma,484
+calibration,benign keratosis,344
+calibration,dermatofibroma,45
+calibration,melanoma,648
+calibration,nevus,1223
+calibration,squamous cell carcinoma,78
+calibration,vascular lesion,67
+test,actinic keratosis,168
+test,basal cell carcinoma,491
+test,benign keratosis,316
+test,dermatofibroma,46
+test,melanoma,679
+test,nevus,1272
+test,squamous cell carcinoma,87
+test,vascular lesion,37
