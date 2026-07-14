@@ -30,4 +30,4 @@ The conformal evaluation is deterministic given the exported arrays. The origina
 
 ## Archive Record
 
-The archive record for this release is `10.5281/zenodo.21362694`. The binary reproducibility set tracked for this manuscript consists of the checkpoint, exported probability arrays, labels, split indices, class mapping, final configs, generated tables, and the Git commit identifier for the public code release.
+The archive record for this release is `10.5281/zenodo.21362694`. The binary reproducibility set tracked for this manuscript consists of the checkpoint, exported probability arrays, labels, split indices, class mapping, final configs, generated tables, and the public GitHub release tag.

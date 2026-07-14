@@ -23,7 +23,7 @@
 \usepackage{framed}
 \raggedbottom
 
-\graphicspath{{assets/output/framework_runs/isic_resnet50_framework_inputs/figures/}{assets/output/framework_runs/bcn_kept_overlap_aware_sensitivity/figures/}}
+\graphicspath{{reproducibility_artifacts/isic_resnet50_framework_inputs/figures/}{reproducibility_artifacts/bcn_kept_overlap_aware_sensitivity/figures/}}
 
 \newcommand{\cmark}{\ding{51}}
 \newcommand{\xmark}{\ding{55}}
@@ -138,7 +138,7 @@ s_{(k)}, & k \leq n,\\
 \quad
 k = \lceil(n+1)(1-\alpha)\rceil,
 \]
-where $s_{(1)} \leq \cdots \leq s_{(n)}$ are the sorted calibration scores. If $k>n$, the threshold is set to $+\infty$, so all labels are included for probability-threshold methods. A test class $k$ is included when $1 - P_{j,k} \leq \hat{q}_{\alpha}$, subject to the method-specific rule.
+where $s_{(1)} \leq \cdots \leq s_{(n)}$ are the sorted calibration scores. If $k>n$, the threshold is set to $+\infty$, so all labels are included for probability-threshold methods. A candidate class $c$ is included for test sample $j$ when $1 - P_{j,c} \leq \hat{q}_{\alpha}$, subject to the method-specific rule.
 
 \subsection{Conformal Methods}
 
@@ -169,7 +169,7 @@ For each method and value of $\alpha$, the framework reports marginal coverage, 
 \]
 A positive value indicates higher macro-average coverage for high-prevalence classes than for low-prevalence classes. Here, $\mathcal{H}=\{\mathrm{NV}\}$ and $\mathcal{L}=\{\mathrm{DF},\mathrm{SCC},\mathrm{VASC}\}$, so the gap compares NV with the average of the three lowest-prevalence classes. It is descriptive, not a worst-class disparity metric, and medium-prevalence classes such as AK are evaluated through per-class tables and tests.
 
-Size-stratified coverage groups test samples by prediction-set cardinality. Bootstrap confidence intervals were percentile intervals computed by resampling test images. Per-class below-target tests used the null hypothesis $H_0, p_c \geq 1-\alpha$ and the alternative $H_1, p_c < 1-\alpha$. Tests used one-sided exact binomial tails at significance level 0.05, with Holm correction across the eight classes within each method and target level. Raw and Holm-adjusted $p$ values are provided in the generated table artifacts.
+Size-stratified coverage groups test samples by prediction-set cardinality. Bootstrap confidence intervals were percentile intervals computed by resampling test images. Per-class below-target tests used the null hypothesis $H_0, p_c \geq 1-\alpha$ and the alternative $H_1, p_c < 1-\alpha$. Tests used one-sided exact binomial tails at significance level 0.05, with Holm correction across the eight classes within each method and target level. Raw and Holm-adjusted $p$ values are reported in Supplementary Table S2 and in the generated table artifact \texttt{per\_class\_below\_target\_tests.csv}.
 
 \subsection{Dataset Provenance Checks}
 

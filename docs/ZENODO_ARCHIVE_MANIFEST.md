@@ -7,7 +7,7 @@ This manifest lists binary and provenance files associated with the public code 
 | Field | Value |
 |---|---|
 | GitHub repository | `https://github.com/Lekzyboi/Class-Conditional-CP` |
-| Current local commit | `9eaec6380dfc57bca8d79d53a7cad1ff4d2bcff8` |
+| GitHub release tag | `v5` |
 | DOI | `10.5281/zenodo.21362694` |
 
 ## Binary Inputs
