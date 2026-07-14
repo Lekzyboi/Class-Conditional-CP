@@ -12,9 +12,9 @@
     "bootstrap_tex": "assets\\output\\framework_runs\\isic_resnet50_framework_inputs\\tables\\bootstrap_intervals.tex"
   },
   "row_counts": {
-    "comparison": 21,
-    "per_class": 168,
-    "class_tests": 168,
-    "bootstrap": 63
+    "comparison": 15,
+    "per_class": 120,
+    "class_tests": 120,
+    "bootstrap": 45
   }
 }

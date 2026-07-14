@@ -5,16 +5,6 @@ from __future__ import annotations
 import numpy as np
 
 
-def conformal_quantile_level(n: int, alpha: float) -> float:
-    """Return finite-sample corrected conformal quantile level."""
-
-    if n <= 0:
-        raise ValueError("n must be positive")
-    if not 0 < alpha < 1:
-        raise ValueError("alpha must be between 0 and 1")
-    return min(float(np.ceil((n + 1) * (1.0 - alpha)) / n), 1.0)
-
-
 def conformal_quantile_rank(n: int, alpha: float) -> int:
     """Return the one-indexed finite-sample conformal rank."""
 

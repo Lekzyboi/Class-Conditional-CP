@@ -5,10 +5,9 @@ type: software
 authors:
   - family-names: Bello
     given-names: Sadeeq O.
-  - family-names: 
-    given-names:
+  - family-names: Almeida
+    given-names: Tiago A.
 date-released: 2026-07-13
 version: "0.1.0"
-repository-code: "https://github.com/Lekzyboi/Class-Conditional-CP.git"
-doi: "10.5281/zenodo.REPLACE"
+repository-code: "https://github.com/Lekzyboi/Class-Conditional-CP"
 license: MIT

@@ -25,7 +25,7 @@ Create the environment with:
 
 ```bash
 conda env create -f environment.yml
-conda activate conformal
+conda activate conformal-biomedical-cp
 ```
 
 For lightweight framework tests, a modern Python environment with `numpy`, `scipy`, `pandas`, `matplotlib`, `pillow`, and `pytest` is sufficient. The export scripts require PyTorch and torchvision.
@@ -77,13 +77,19 @@ reproducibility_artifacts/isic_resnet50_framework_inputs/tables/per_class_below_
 The partial identifier-overlap BCN20000 sensitivity artifacts are in:
 
 ```text
-reproducibility_artifacts/bcn_kept_partial_identifier_sensitivity/
+reproducibility_artifacts/bcn_kept_overlap_aware_sensitivity/
+```
+
+The binary array and checkpoint files that should be deposited in Zenodo are listed in:
+
+```text
+docs/ZENODO_ARCHIVE_MANIFEST.md
 ```
 
 ## Code Availability Statement
 
-Before manuscript submission, replace the placeholders in `docs/CODE_AVAILABILITY_TEMPLATE.md` with the public GitHub repository URL and the archived release DOI.
+Before manuscript submission, replace the remaining DOI placeholder in `docs/CODE_AVAILABILITY_TEMPLATE.md` with the archived release DOI.
 
 ## Citation
 
-Use the `CITATION.cff` file after filling in the final repository URL, DOI, and manuscript metadata.
+Use the `CITATION.cff` file after adding the final Zenodo DOI.

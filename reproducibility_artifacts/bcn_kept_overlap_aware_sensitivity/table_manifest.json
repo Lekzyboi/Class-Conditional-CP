@@ -1,0 +1,20 @@
+{
+  "source_results": "assets\\output\\framework_runs\\bcn_kept_overlap_aware_sensitivity\\results.json",
+  "output_dir": "assets\\output\\framework_runs\\bcn_kept_overlap_aware_sensitivity\\tables",
+  "generated_files": {
+    "comparison_csv": "assets\\output\\framework_runs\\bcn_kept_overlap_aware_sensitivity\\tables\\comparison_table.csv",
+    "comparison_tex": "assets\\output\\framework_runs\\bcn_kept_overlap_aware_sensitivity\\tables\\comparison_table.tex",
+    "per_class_csv": "assets\\output\\framework_runs\\bcn_kept_overlap_aware_sensitivity\\tables\\per_class_coverage.csv",
+    "per_class_tex": "assets\\output\\framework_runs\\bcn_kept_overlap_aware_sensitivity\\tables\\per_class_coverage.tex",
+    "class_tests_csv": "assets\\output\\framework_runs\\bcn_kept_overlap_aware_sensitivity\\tables\\per_class_below_target_tests.csv",
+    "class_tests_tex": "assets\\output\\framework_runs\\bcn_kept_overlap_aware_sensitivity\\tables\\per_class_below_target_tests.tex",
+    "bootstrap_csv": "assets\\output\\framework_runs\\bcn_kept_overlap_aware_sensitivity\\tables\\bootstrap_intervals.csv",
+    "bootstrap_tex": "assets\\output\\framework_runs\\bcn_kept_overlap_aware_sensitivity\\tables\\bootstrap_intervals.tex"
+  },
+  "row_counts": {
+    "comparison": 15,
+    "per_class": 120,
+    "class_tests": 120,
+    "bootstrap": 45
+  }
+}

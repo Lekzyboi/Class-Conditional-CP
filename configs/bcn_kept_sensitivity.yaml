@@ -5,7 +5,7 @@
 # independent external validation.
 name: bcn_kept_overlap_aware_sensitivity
 alpha_values: [0.05, 0.10, 0.20]
-methods: [standard_cp, aps, raps, mondrian_cp, classwise_cp, clustered_cp, rc3p]
+methods: [standard_cp, aps, raps, mondrian_cp, frequency_grouped_cp]
 paths:
   calibration_probs: assets/output/framework_inputs/isic_calibration_probs.npy
   calibration_labels: assets/output/framework_inputs/isic_calibration_labels.npy

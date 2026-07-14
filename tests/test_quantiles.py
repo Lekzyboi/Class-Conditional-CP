@@ -5,13 +5,8 @@ import numpy as np
 from conformal_audit.utils.quantiles import (
     conformal_quantile,
     conformal_quantile_index,
-    conformal_quantile_level,
     conformal_quantile_rank,
 )
-
-
-def test_conformal_quantile_level_is_capped_at_one():
-    assert conformal_quantile_level(5, 0.01) == 1.0
 
 
 def test_conformal_quantile_uses_order_statistic():

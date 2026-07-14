@@ -12,13 +12,12 @@ from conformal_audit.config import ExperimentConfig, require_path
 from conformal_audit.methods import (
     APS,
     ClasswiseCP,
-    ClusteredCP,
     ConfTrustConditionalCP,
     ConfTrustCP,
     ConfTrustNaiveCP,
+    FrequencyGroupedCP,
     MondrianCP,
     RAPS,
-    RC3P,
     StandardCP,
 )
 from conformal_audit.metrics.coverage import average_set_size, coverage, per_class_coverage
@@ -37,9 +36,8 @@ METHODS = {
     "mondrian": MondrianCP,
     "classwise_cp": ClasswiseCP,
     "classwise": ClasswiseCP,
-    "clustered_cp": ClusteredCP,
-    "clustered": ClusteredCP,
-    "rc3p": RC3P,
+    "frequency_grouped_cp": FrequencyGroupedCP,
+    "frequency_grouped": FrequencyGroupedCP,
     "conf_trust_cp": ConfTrustCP,
     "conf_trust_naive": ConfTrustNaiveCP,
     "conf_trust_conditional": ConfTrustConditionalCP,

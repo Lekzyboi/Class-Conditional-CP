@@ -1,0 +1,11 @@
+{
+  "source_results": "assets\\output\\framework_runs\\bcn_kept_overlap_aware_sensitivity\\results.json",
+  "output_dir": "assets\\output\\framework_runs\\bcn_kept_overlap_aware_sensitivity\\figures",
+  "generated_files": {
+    "coverage_by_alpha": "assets\\output\\framework_runs\\bcn_kept_overlap_aware_sensitivity\\figures\\coverage_by_alpha.png",
+    "average_set_size_by_alpha": "assets\\output\\framework_runs\\bcn_kept_overlap_aware_sensitivity\\figures\\average_set_size_by_alpha.png",
+    "coverage_equity_gap_by_alpha": "assets\\output\\framework_runs\\bcn_kept_overlap_aware_sensitivity\\figures\\coverage_equity_gap_by_alpha.png",
+    "method_tradeoff_primary_alpha": "assets\\output\\framework_runs\\bcn_kept_overlap_aware_sensitivity\\figures\\method_tradeoff_alpha_0_1.png",
+    "per_class_coverage_primary_alpha": "assets\\output\\framework_runs\\bcn_kept_overlap_aware_sensitivity\\figures\\per_class_coverage_alpha_0_1.png"
+  }
+}

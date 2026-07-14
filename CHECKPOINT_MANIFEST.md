@@ -1,67 +1,33 @@
-# Checkpoint Manifest
+# Checkpoint Archive Manifest
 
 ## Purpose
 
-This manifest records the model checkpoints currently present in the repository. It exists so the new CMPB framework can reproduce current results before any legacy scripts are retired.
+This manifest describes the model checkpoint used to export the probability arrays for the manuscript analyses. The checkpoint is not included in the GitHub repository because it is a large binary artifact. It should be deposited in the archived release together with the exported arrays and labels.
 
-No checkpoint should be deleted, renamed, or overwritten without explicit approval.
+## Main Checkpoint
 
-## Checkpoint Inventory
+| File for archive | Local source path | Size | SHA-256 | Role |
+|---|---|---:|---|---|
+| `best_model.pth` | `assets/output/best_model.pth` | 188,563,359 bytes | `B4D483C63A13469067ECAF8EE8C2D46F6CBB90ABD74613955989E8C03AA84512` | ResNet-50 checkpoint used to export the ISIC and BCN probability arrays |
 
-| Path | Approx. size | Last modified | Known role |
-|---|---:|---|---|
-| `assets/output/best_model.pth` | 179.8 MB | 2025-11-27 19:33:40 | Main ResNet-50 checkpoint used by current manuscript analyses |
-| `assets/output/final_model.pth` | 90.0 MB | 2025-11-27 19:33:40 | Final model save from older training flow |
-| `assets/output/checkpoint_epoch_4.pth` | 179.8 MB | 2025-11-27 15:24:08 | Training checkpoint |
-| `assets/output/checkpoint_epoch_9.pth` | 179.8 MB | 2025-11-27 16:11:54 | Training checkpoint |
-| `assets/output/checkpoint_epoch_14.pth` | 179.8 MB | 2025-11-27 17:00:44 | Training checkpoint |
-| `assets/output/checkpoint_epoch_19.pth` | 179.8 MB | 2025-11-27 17:53:12 | Training checkpoint |
-| `assets/output/checkpoint_epoch_24.pth` | 179.8 MB | 2025-11-27 18:46:57 | Training checkpoint |
-| `assets/output/efficientnet_b3_8ep.pth` | 41.4 MB | 2026-03-30 23:15:17 | EfficientNet-B3 sensitivity/check architecture checkpoint |
+## Model Metadata
 
-## Current Checkpoint Usage
-
-| Checkpoint | Used by |
+| Field | Value |
 |---|---|
-| `assets/output/best_model.pth` | `measure.py`, `paper1.py`, `conf_trust_cp.py`, `validation.py`, `conf_trust_bcn_validation.py`, `bcn_distribution_shift.py`, `scripts/regenerate_test_predictions.py`, `run_ablations.py` |
-| `assets/output/efficientnet_b3_8ep.pth` | `train_efficientnet_cp.py` output and architecture-sensitivity comparison |
-| `assets/output/checkpoint_epoch_*.pth` | Training history/reference |
-| `assets/output/final_model.pth` | Older final model artifact |
+| Architecture | ResNet-50 |
+| Number of classes | 8 |
+| Initialization | ImageNet-pretrained weights |
+| Training data | Organized ISIC 2019 training and validation folders |
+| Soft-label source | `assets/SkinCON.csv` |
+| Selected checkpoint | Best validation-accuracy checkpoint from the recorded run |
+| Selected epoch | 28 |
+| Training seed | Not fully recoverable from the legacy training run |
+| Conformal test top-1 accuracy | 71.2 percent |
 
-## Required Framework Checkpoint Metadata
+## Important Limitation
 
-The framework should eventually generate a structured checkpoint metadata file for each model:
+The conformal evaluation is deterministic given the exported arrays. The original training run did not fully record all random seeds, so independently retraining the same architecture may not reproduce the exact checkpoint. This limitation is stated in the manuscript.
 
-```yaml
-model_id: resnet50_skincon_seed_unknown
-architecture: resnet50
-num_classes: 8
-training_data: assets/ISIC_2019/train
-validation_data: assets/ISIC_2019/val
-soft_label_file: assets/SkinCON.csv
-training_seed: unknown
-checkpoint_path: assets/output/best_model.pth
-validation_accuracy: 0.8725
-notes: Main checkpoint used by current manuscript.
-```
+## Archive Requirement
 
-## Known Issues
-
-1. The main ResNet-50 training seed is not documented.
-2. The exact code state that produced `best_model.pth` is not fully tracked.
-3. EfficientNet-B3 comparison is not training-matched to ResNet-50.
-4. Future CMPB experiments should use multiple independently seeded checkpoints.
-5. Checkpoints should be archived separately from the code repository for public release.
-
-## Minimum CMPB Requirement
-
-For submission, the reproducibility package should include:
-
-- Checkpoint download links or DOI archive.
-- Model architecture and class-index mapping.
-- Training configuration.
-- Training seed.
-- Validation metrics.
-- Dataset version and split indices.
-- Hashes for released checkpoint files.
-
+Before submission, deposit `best_model.pth` in the Zenodo release or another permanent archive. The DOI archive should also include the exported probability arrays, labels, split indices, class mapping, final configs, generated tables, and the Git commit identifier for the public code release.

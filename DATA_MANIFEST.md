@@ -24,6 +24,8 @@ No dataset should be deleted, moved, renamed, or overwritten without explicit ap
 
 Path: `assets/ISIC_2019/`
 
+The effective SkinCON-supervised training cohort contains 25,329 images. Two ISIC 2019 training images, one NV and one DF, lacked matching SkinCON soft-label records and were excluded from the soft-label training population.
+
 | Split | Files |
 |---|---:|
 | `train` | 22,796 |
@@ -114,4 +116,3 @@ The new framework should validate:
 - Calibration and test splits are disjoint.
 - Optional lesion/patient groups do not cross split boundaries.
 - BCN/ISIC overlap status is recorded before analysis.
-

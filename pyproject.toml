@@ -7,7 +7,7 @@ name = "conformal-biomedical-cp-framework"
 version = "0.1.0"
 description = "Reproducible evaluation framework for class-conditional conformal prediction in imbalanced biomedical image classification."
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 authors = [
   {name = "Sadeeq O. Bello"},
   {name = "Tiago A. Almeida"}

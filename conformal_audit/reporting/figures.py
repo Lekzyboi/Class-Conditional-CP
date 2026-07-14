@@ -24,8 +24,7 @@ PUBLICATION_METHOD_NAMES = {
     "raps": "RAPS",
     "mondrian_cp": "Mondrian/classwise CP",
     "classwise_cp": "Mondrian/classwise CP",
-    "clustered_cp": "Frequency-grouped CP",
-    "rc3p": "Frequency-grouped CP",
+    "frequency_grouped_cp": "Frequency-grouped CP",
 }
 
 PUBLICATION_METHOD_PRIORITY = {
@@ -34,8 +33,7 @@ PUBLICATION_METHOD_PRIORITY = {
     "raps": 2,
     "mondrian_cp": 3,
     "classwise_cp": 4,
-    "clustered_cp": 5,
-    "rc3p": 6,
+    "frequency_grouped_cp": 5,
 }
 
 

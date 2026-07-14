@@ -8,14 +8,12 @@ The full conformal baseline grid should include:
 - `aps`
 - `raps`
 - `mondrian_cp`
-- `classwise_cp`
-- `clustered_cp`
-- `rc3p`
+- `frequency_grouped_cp`
 - `conf_trust_naive`
 - `conf_trust_conditional`
 - `temperature_scaling`
 
-`rc3p` is currently registered as a documented frequency-clustered substitute until a faithful RC3P implementation is added.
+`frequency_grouped_cp` partitions classes by training-set frequency. It is not a score-distribution clustering method or a faithful RC3P implementation.
 
 The Conf-Trust methods require extra arrays:
 

@@ -5,7 +5,7 @@
 # configs/isic_resnet50_baseline.yaml
 name: isic_resnet50_full_method_grid
 alpha_values: [0.05, 0.10, 0.20]
-methods: [standard_cp, aps, raps, mondrian_cp, classwise_cp, clustered_cp, rc3p]
+methods: [standard_cp, aps, raps, mondrian_cp, frequency_grouped_cp]
 paths:
   calibration_probs: assets/output/framework_inputs/isic_calibration_probs.npy
   calibration_labels: assets/output/framework_inputs/isic_calibration_labels.npy

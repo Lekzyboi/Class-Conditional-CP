@@ -74,7 +74,7 @@ Dermatoscopic classification is a useful stress test because lesion datasets com
 
 Biomedical researchers need reproducible software that evaluates conformal predictors beyond marginal validity. Such software should operate on archived model outputs, preserve split and provenance information, compare calibration strategies, quantify class-conditional failures, and flag dataset overlap that would invalidate independent-validation claims.
 
-We describe a reproducible evaluation pipeline for class-conditional conformal coverage in imbalanced biomedical image classification. We demonstrated the pipeline on an ISIC 2019 dermatoscopic classification task, but its inputs are generic probability arrays and labels. Therefore, the same evaluation structure can be applied to other multiclass biomedical classifiers.
+We describe a reproducible evaluation pipeline for class-conditional conformal coverage in imbalanced biomedical image classification. The pipeline is demonstrated on ISIC 2019, but its inputs are generic probability arrays and labels.
 
 The main contributions of this study are as follows.
 \begin{itemize}
@@ -85,7 +85,7 @@ The main contributions of this study are as follows.
     \item \textit{Demonstration.} We apply the pipeline to an eight-class dermatoscopic classification task and show that standard conformal prediction can achieve near-nominal marginal coverage while substantially under-covering low-prevalence or difficult diagnostic classes.
 \end{itemize}
 
-Section~\ref{sec-related-work} summarizes related work on conformal prediction and fairness-aware evaluation. Section~\ref{sec-framework} describes the computational framework. Section~\ref{sec-case-study} presents the dermatoscopic case study and evaluation protocol. Section~\ref{sec-results} reports the evaluation results, and Section~\ref{sec-discussion} discusses implications, limitations, and reproducibility considerations.
+Section~\ref{sec-related-work} summarizes related work. Section~\ref{sec-framework} describes the framework. Section~\ref{sec-case-study} presents the case study. Section~\ref{sec-results} reports results, and Section~\ref{sec-discussion} discusses implications and limitations.
 
 \section{Related Work}
 \label{sec-related-work}
@@ -189,6 +189,8 @@ The 6,191 labeled test images were split into 3,095 calibration images and 3,096
 \subsection{Base Classifier and Exported Inputs}
 
 The base classifier was an ImageNet-pretrained ResNet-50~\cite{he2016deep}. Inference resized images to $256 \times 256$ pixels and center-cropped them to $224 \times 224$ pixels. Training used batch size 32, stochastic gradient descent with initial learning rate 0.001, momentum 0.9, weight decay $1 \times 10^{-4}$, and a reduce-on-plateau scheduler. Augmentations included random resized crops, horizontal flips, rotations up to 15 degrees, color jitter, and ImageNet normalization. Supervision combined hard labels with a Kullback-Leibler divergence term weighted by 0.1 and computed from SkinCON soft-label targets~\cite{ren2024skincon}. The selected checkpoint was the best validation-accuracy checkpoint, obtained at epoch 28.
+
+Two ISIC 2019 training images, one NV and one DF, lacked matching SkinCON soft-label records and were excluded, leaving an effective training cohort of 25,329 images.
 
 The selected checkpoint achieved 71.2\% top-1 accuracy on the conformal test subset. Probability arrays, labels, argmax predictions, split indices, and class mappings were exported from this checkpoint, making all conformal results deterministic given the arrays.
 
@@ -386,7 +388,7 @@ Sadeeq O. Bello. Conceptualization, methodology, software, validation, formal an
 The authors declare no conflicts of interest relevant to this study.
 
 \subsection*{Code Availability}
-The source code, configuration files, environment specification, exported manifests, and analysis scripts will be released in a public GitHub repository before submission and archived with a permanent DOI. The repository URL and DOI will be inserted in the submitted version. The framework is organized to reproduce the conformal analyses from archived probability arrays and labels without retraining the base classifier.
+The source code, configuration files, environment specification, exported manifests, and analysis scripts are available at \url{https://github.com/Lekzyboi/Class-Conditional-CP}. The release used for this manuscript will be archived with a permanent DOI before submission. The framework is organized to reproduce the conformal analyses from archived probability arrays and labels without retraining the base classifier.
 
 \subsection*{Data availability}
 The datasets used in this study are publicly available from the ISIC 2019 Challenge and BCN20000 dataset releases cited in the manuscript. Derived artifacts generated in this study include calibration/test split indices, class mappings, overlap-filter manifests, prediction manifests, result tables, and figure-generation outputs.
