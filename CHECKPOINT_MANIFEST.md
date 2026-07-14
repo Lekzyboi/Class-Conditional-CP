@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This manifest describes the model checkpoint used to export the probability arrays for the manuscript analyses. The checkpoint is not included in the GitHub repository because it is a large binary artifact. The archived release is identified by DOI `10.5281/zenodo.21362369`.
+This manifest describes the model checkpoint used to export the probability arrays for the manuscript analyses. The checkpoint is not included in the GitHub repository because it is a large binary artifact. The archived release is identified by DOI `10.5281/zenodo.21362694`.
 
 ## Main Checkpoint
 
@@ -30,4 +30,4 @@ The conformal evaluation is deterministic given the exported arrays. The origina
 
 ## Archive Record
 
-The archive record for this release is `10.5281/zenodo.21362369`. The binary reproducibility set tracked for this manuscript consists of the checkpoint, exported probability arrays, labels, split indices, class mapping, final configs, generated tables, and the Git commit identifier for the public code release.
+The archive record for this release is `10.5281/zenodo.21362694`. The binary reproducibility set tracked for this manuscript consists of the checkpoint, exported probability arrays, labels, split indices, class mapping, final configs, generated tables, and the Git commit identifier for the public code release.
